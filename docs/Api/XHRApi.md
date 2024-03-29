@@ -1,26 +1,26 @@
-# OpenAPI\Client\DeveloperApi
+# OpenAPI\Client\XHRApi
 
 All URIs are relative to https://api.affixapi.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**developerCompanies20230301()**](DeveloperApi.md#developerCompanies20230301) | **GET** /2023-03-01/developer/company | Company
-[**developerCreateEmployee20230301()**](DeveloperApi.md#developerCreateEmployee20230301) | **POST** /2023-03-01/developer/employee | Create employee
-[**developerEmployees20230301()**](DeveloperApi.md#developerEmployees20230301) | **GET** /2023-03-01/developer/employees | Employees
-[**developerGroups20230301()**](DeveloperApi.md#developerGroups20230301) | **GET** /2023-03-01/developer/groups | Groups
-[**developerIdentity20230301()**](DeveloperApi.md#developerIdentity20230301) | **GET** /2023-03-01/developer/identity | Identity
-[**developerPayruns20230301()**](DeveloperApi.md#developerPayruns20230301) | **GET** /2023-03-01/developer/payruns | Payruns
-[**developerPayslips20230301()**](DeveloperApi.md#developerPayslips20230301) | **GET** /2023-03-01/developer/payruns/{payrun_id} | Payslips
-[**developerTimeOffBalances20230301()**](DeveloperApi.md#developerTimeOffBalances20230301) | **GET** /2023-03-01/developer/time-off-balances | Time off balances
-[**developerTimeOffEntries20230301()**](DeveloperApi.md#developerTimeOffEntries20230301) | **GET** /2023-03-01/developer/time-off-entries | Time off entries
-[**developerTimesheets20230301()**](DeveloperApi.md#developerTimesheets20230301) | **GET** /2023-03-01/developer/timesheets | Timesheets
-[**developerWorkLocations20230301()**](DeveloperApi.md#developerWorkLocations20230301) | **GET** /2023-03-01/developer/work-locations | Work locations
+[**xhrCompanies20230301()**](XHRApi.md#xhrCompanies20230301) | **GET** /2023-03-01/xhr/company | Company
+[**xhrCreateEmployee20230301()**](XHRApi.md#xhrCreateEmployee20230301) | **POST** /2023-03-01/xhr/employee | Create employee
+[**xhrEmployees20230301()**](XHRApi.md#xhrEmployees20230301) | **GET** /2023-03-01/xhr/employees | Employees
+[**xhrGroups20230301()**](XHRApi.md#xhrGroups20230301) | **GET** /2023-03-01/xhr/groups | Groups
+[**xhrIdentity20230301()**](XHRApi.md#xhrIdentity20230301) | **GET** /2023-03-01/xhr/identity | Identity
+[**xhrPayruns20230301()**](XHRApi.md#xhrPayruns20230301) | **GET** /2023-03-01/xhr/payruns | Payruns
+[**xhrPayslips20230301()**](XHRApi.md#xhrPayslips20230301) | **GET** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
+[**xhrTimeOffBalances20230301()**](XHRApi.md#xhrTimeOffBalances20230301) | **GET** /2023-03-01/xhr/time-off-balances | Time off balances
+[**xhrTimeOffEntries20230301()**](XHRApi.md#xhrTimeOffEntries20230301) | **GET** /2023-03-01/xhr/time-off-entries | Time off entries
+[**xhrTimesheets20230301()**](XHRApi.md#xhrTimesheets20230301) | **GET** /2023-03-01/xhr/timesheets | Timesheets
+[**xhrWorkLocations20230301()**](XHRApi.md#xhrWorkLocations20230301) | **GET** /2023-03-01/xhr/work-locations | Work locations
 
 
-## `developerCompanies20230301()`
+## `xhrCompanies20230301()`
 
 ```php
-developerCompanies20230301(): \OpenAPI\Client\Model\CompanyResponse[]
+xhrCompanies20230301(): \OpenAPI\Client\Model\CompanyResponse[]
 ```
 
 Company
@@ -40,7 +40,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -48,10 +48,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerCompanies20230301();
+    $result = $apiInstance->xhrCompanies20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerCompanies20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrCompanies20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -76,10 +76,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerCreateEmployee20230301()`
+## `xhrCreateEmployee20230301()`
 
 ```php
-developerCreateEmployee20230301($create_employee_request): \OpenAPI\Client\Model\EmployeeResponse
+xhrCreateEmployee20230301($create_employee_request): \OpenAPI\Client\Model\EmployeeResponse
 ```
 
 Create employee
@@ -99,7 +99,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -108,10 +108,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 $create_employee_request = new \OpenAPI\Client\Model\CreateEmployeeRequest(); // \OpenAPI\Client\Model\CreateEmployeeRequest
 
 try {
-    $result = $apiInstance->developerCreateEmployee20230301($create_employee_request);
+    $result = $apiInstance->xhrCreateEmployee20230301($create_employee_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerCreateEmployee20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrCreateEmployee20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -138,10 +138,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerEmployees20230301()`
+## `xhrEmployees20230301()`
 
 ```php
-developerEmployees20230301(): \OpenAPI\Client\Model\EmployeeResponse[]
+xhrEmployees20230301(): \OpenAPI\Client\Model\EmployeeResponse[]
 ```
 
 Employees
@@ -161,7 +161,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -169,10 +169,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerEmployees20230301();
+    $result = $apiInstance->xhrEmployees20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerEmployees20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrEmployees20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -197,10 +197,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerGroups20230301()`
+## `xhrGroups20230301()`
 
 ```php
-developerGroups20230301(): \OpenAPI\Client\Model\GroupResponse[]
+xhrGroups20230301(): \OpenAPI\Client\Model\GroupResponse[]
 ```
 
 Groups
@@ -220,7 +220,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -228,10 +228,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerGroups20230301();
+    $result = $apiInstance->xhrGroups20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerGroups20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrGroups20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -256,10 +256,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerIdentity20230301()`
+## `xhrIdentity20230301()`
 
 ```php
-developerIdentity20230301(): \OpenAPI\Client\Model\IdentityResponse
+xhrIdentity20230301(): \OpenAPI\Client\Model\IdentityResponse
 ```
 
 Identity
@@ -279,7 +279,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -287,10 +287,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerIdentity20230301();
+    $result = $apiInstance->xhrIdentity20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerIdentity20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrIdentity20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -315,10 +315,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerPayruns20230301()`
+## `xhrPayruns20230301()`
 
 ```php
-developerPayruns20230301($start_date, $end_date): \OpenAPI\Client\Model\PayrunResponse[]
+xhrPayruns20230301($start_date, $end_date): \OpenAPI\Client\Model\PayrunResponse[]
 ```
 
 Payruns
@@ -338,7 +338,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -348,10 +348,10 @@ $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The sta
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the search period
 
 try {
-    $result = $apiInstance->developerPayruns20230301($start_date, $end_date);
+    $result = $apiInstance->xhrPayruns20230301($start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerPayruns20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrPayruns20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -379,10 +379,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerPayslips20230301()`
+## `xhrPayslips20230301()`
 
 ```php
-developerPayslips20230301($payrun_id): \OpenAPI\Client\Model\PayslipResponse[]
+xhrPayslips20230301($payrun_id): \OpenAPI\Client\Model\PayslipResponse[]
 ```
 
 Payslips
@@ -402,7 +402,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -411,10 +411,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 $payrun_id = 'payrun_id_example'; // string | The id of the payrun.
 
 try {
-    $result = $apiInstance->developerPayslips20230301($payrun_id);
+    $result = $apiInstance->xhrPayslips20230301($payrun_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerPayslips20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrPayslips20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -441,10 +441,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerTimeOffBalances20230301()`
+## `xhrTimeOffBalances20230301()`
 
 ```php
-developerTimeOffBalances20230301(): \OpenAPI\Client\Model\TimeOffBalanceResponse[]
+xhrTimeOffBalances20230301(): \OpenAPI\Client\Model\TimeOffBalanceResponse[]
 ```
 
 Time off balances
@@ -464,7 +464,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -472,10 +472,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerTimeOffBalances20230301();
+    $result = $apiInstance->xhrTimeOffBalances20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerTimeOffBalances20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrTimeOffBalances20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -500,10 +500,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerTimeOffEntries20230301()`
+## `xhrTimeOffEntries20230301()`
 
 ```php
-developerTimeOffEntries20230301(): \OpenAPI\Client\Model\TimeOffEntryResponse[]
+xhrTimeOffEntries20230301(): \OpenAPI\Client\Model\TimeOffEntryResponse[]
 ```
 
 Time off entries
@@ -523,7 +523,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -531,10 +531,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerTimeOffEntries20230301();
+    $result = $apiInstance->xhrTimeOffEntries20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerTimeOffEntries20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrTimeOffEntries20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -559,10 +559,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerTimesheets20230301()`
+## `xhrTimesheets20230301()`
 
 ```php
-developerTimesheets20230301(): \OpenAPI\Client\Model\TimesheetResponse[]
+xhrTimesheets20230301(): \OpenAPI\Client\Model\TimesheetResponse[]
 ```
 
 Timesheets
@@ -582,7 +582,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -590,10 +590,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerTimesheets20230301();
+    $result = $apiInstance->xhrTimesheets20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerTimesheets20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrTimesheets20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -618,10 +618,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `developerWorkLocations20230301()`
+## `xhrWorkLocations20230301()`
 
 ```php
-developerWorkLocations20230301(): \OpenAPI\Client\Model\LocationResponse[]
+xhrWorkLocations20230301(): \OpenAPI\Client\Model\LocationResponse[]
 ```
 
 Work locations
@@ -641,7 +641,7 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DeveloperApi(
+$apiInstance = new OpenAPI\Client\Api\XHRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -649,10 +649,10 @@ $apiInstance = new OpenAPI\Client\Api\DeveloperApi(
 );
 
 try {
-    $result = $apiInstance->developerWorkLocations20230301();
+    $result = $apiInstance->xhrWorkLocations20230301();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DeveloperApi->developerWorkLocations20230301: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling XHRApi->xhrWorkLocations20230301: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

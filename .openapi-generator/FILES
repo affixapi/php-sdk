@@ -6,9 +6,9 @@ README.md
 composer.json
 docs/Api/Class20230301Api.md
 docs/Api/CoreApi.md
-docs/Api/DeveloperApi.md
 docs/Api/ManagementApi.md
 docs/Api/OfficialApi.md
+docs/Api/XHRApi.md
 docs/Model/AddressNoNonNullRequest.md
 docs/Model/AddressResponse.md
 docs/Model/ClientRequest.md
@@ -54,9 +54,9 @@ docs/Model/TokenResponse.md
 git_push.sh
 lib/Api/Class20230301Api.php
 lib/Api/CoreApi.php
-lib/Api/DeveloperApi.php
 lib/Api/ManagementApi.php
 lib/Api/OfficialApi.php
+lib/Api/XHRApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -107,9 +107,9 @@ lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/Class20230301ApiTest.php
 test/Api/CoreApiTest.php
-test/Api/DeveloperApiTest.php
 test/Api/ManagementApiTest.php
 test/Api/OfficialApiTest.php
+test/Api/XHRApiTest.php
 test/Model/AddressNoNonNullRequestTest.php
 test/Model/AddressResponseTest.php
 test/Model/ClientRequestTest.php

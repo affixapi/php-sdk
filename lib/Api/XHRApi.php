@@ -1,6 +1,6 @@
 <?php
 /**
- * DeveloperApi
+ * XHRApi
  * PHP version 7.2
  *
  * @category Class
@@ -12,7 +12,7 @@
 /**
  * Affix API
  *
- * The affixapi.com API documentation.  # Introduction Affix API is an OAuth 2.1 application that allows developers to access customer data, without developers needing to manage or maintain integrations; or collect login credentials or API keys from users for these third party systems.  # OAuth 2.1 Affix API follows the [OAuth 2.1 spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).  As an OAuth application, Affix API handles not only both the collection of sensitive user credentials or API keys, but also builds and maintains the integrations with the providers, so you don't have to.  # How to obtain an access token in order to get started, you must:   - register a `client_id`   - direct your user to the sign in flow  (`https://connect.affixapi.com`     [with the appropriate query     parameters](https://github.com/affixapi/starter-kit/tree/master/connect))   - capture `authorization_code` we will send to your redirect URI after     the sign in flow is complete and exchange that `authorization_code` for     a Bearer token  # Sandbox keys (developer mode) ### dev ``` eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ ```  #### `employees` endpoint sample: ``` curl --fail \\   -X GET \\   -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \\   'https://dev.api.affixapi.com/2023-03-01/developer/employees' ```  ### prod ``` eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw ```  #### `employees` endpoint sample: ``` curl --fail \\   -X GET \\   -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \\   'https://api.affixapi.com/2023-03-01/developer/employees' ```  # Compression We support `brotli`, `gzip`, and `deflate` compression algorithms.  To enable, pass the `Accept-Encoding` header with one or all of the values: `br`, `gzip`, `deflate`, or `identity` (no compression)  In the response, you will receive the `Content-Encoding` response header indicating the compression algorithm used in the data payload to enable you to decompress the result. If the `Accept-Encoding: identity` header was passed, no `Content-Encoding` response header is sent back, as no compression algorithm was used.  # Webhooks An exciting feature for HR/Payroll modes are webhooks.  If enabled, your `webhook_uri` is set on your `client_id` for the respective environment: `dev | prod`  Webhooks are configured to make live requests to the underlying integration 1x/hr, and if a difference is detected since the last request, we will send a request to your `webhook_uri` with this shape:  ``` {    added: <api.v20230301.Employees>[     <api.v20230301.Employee>{       ...,       date_of_birth: '2010-08-06',       display_full_name: 'Daija Rogahn',       employee_number: '57993',       employment_status: 'pending',       employment_type: 'other',       employments: [         {           currency: 'eur',           effective_date: '2022-02-25',           employment_type: 'other',           job_title: 'Dynamic Implementation Manager',           pay_frequency: 'semimonthly',           pay_period: 'YEAR',           pay_rate: 96000,         },       ],       first_name: 'Daija',       ...     }   ],   removed: [],   updated: [     <api.v20230301.Employee>{       ...,       date_of_birth: '2009-11-09',       display_full_name: 'Lourdes Stiedemann',       employee_number: '63189',       employment_status: 'leave',       employment_type: 'full_time',       employments: [         {           currency: 'gbp',           effective_date: '2023-01-16',           employment_type: 'full_time',           job_title: 'Forward Brand Planner',           pay_frequency: 'semimonthly',           pay_period: 'YEAR',           pay_rate: 86000,         },       ],       first_name: 'Lourdes',     }   ] } ```  the following headers will be sent with webhook requests:  ``` x-affix-api-signature: ab8474e609db95d5df3adc39ea3add7a7544bd215c5c520a30a650ae93a2fba7  x-affix-api-origin:  webhooks-employees-webhook  user-agent:  affixapi.com ```  Before trusting the payload, you should sign the payload and verify the signature matches the signature sent by the `affixapi.com` service.  This secures that the data sent to your `webhook_uri` is from the `affixapi.com` server.  The signature is created by combining the signing secret (your `client_secret`) with the body of the request sent using a standard HMAC-SHA256 keyed hash.  The signature can be created via:   - create an `HMAC` with your `client_secret`   - update the `HMAC` with the payload   - get the hex digest -> this is the signature  Sample `typescript` code that follows this recipe:  ``` import { createHmac } from 'crypto';  export const computeSignature = ({   str,   signingSecret, }: {   signingSecret: string;   str: string; }): string => {   const hmac = createHmac('sha256', signingSecret);   hmac.update(str);   const signature = hmac.digest('hex');    return signature; }; ```  While verifying the Affix API signature header should be your primary method of confirming validity, you can also whitelist our outbound webhook static IP addresses.  ``` dev:   - 52.210.169.82   - 52.210.38.77   - 3.248.135.204  prod:   - 52.51.160.102   - 54.220.83.244   - 3.254.213.171 ```  ## Rate limits Open endpoints (not gated by an API key) (applied at endpoint level):   - 15 requests every 1 minute (by IP address)   - 25 requests every 5 minutes (by IP address)  Gated endpoints (require an API key) (applied at endpoint level):   - 40 requests every 1 minute (by IP address)   - 40 requests every 5 minutes (by `client_id`)  Things to keep in mind:   - Open endpoints (not gated by an API key) will likely be called by your     users, not you, so rate limits generally would not apply to you.   - As a developer, rate limits are applied at the endpoint granularity.     - For example, say the rate limits below are 10 requests per minute by ip.       from that same ip, within 1 minute, you get:       - 10 requests per minute on `/orders`,       - another 10 requests per minute on `/items`,       - and another 10 requests per minute on `/identity`,       - for a total of 30 requests per minute.
+ * The affixapi.com API documentation.  # Introduction Affix API is an OAuth 2.1 application that allows developers to access customer data, without developers needing to manage or maintain integrations; or collect login credentials or API keys from users for these third party systems.  # OAuth 2.1 Affix API follows the [OAuth 2.1 spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).  As an OAuth application, Affix API handles not only both the collection of sensitive user credentials or API keys, but also builds and maintains the integrations with the providers, so you don't have to.  # How to obtain an access token in order to get started, you must:   - register a `client_id`   - direct your user to the sign in flow  (`https://connect.affixapi.com`     [with the appropriate query     parameters](https://github.com/affixapi/starter-kit/tree/master/connect))   - capture `authorization_code` we will send to your redirect URI after     the sign in flow is complete and exchange that `authorization_code` for     a Bearer token  # Sandbox keys (xhr mode) ### dev ``` eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ ```  #### `employees` endpoint sample: ``` curl --fail \\   -X GET \\   -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \\   'https://dev.api.affixapi.com/2023-03-01/xhr/employees' ```  ### prod ``` eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw ```  #### `employees` endpoint sample: ``` curl --fail \\   -X GET \\   -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \\   'https://api.affixapi.com/2023-03-01/xhr/employees' ```  # Compression We support `brotli`, `gzip`, and `deflate` compression algorithms.  To enable, pass the `Accept-Encoding` header with one or all of the values: `br`, `gzip`, `deflate`, or `identity` (no compression)  In the response, you will receive the `Content-Encoding` response header indicating the compression algorithm used in the data payload to enable you to decompress the result. If the `Accept-Encoding: identity` header was passed, no `Content-Encoding` response header is sent back, as no compression algorithm was used.  # Webhooks An exciting feature for HR/Payroll modes are webhooks.  If enabled, your `webhook_uri` is set on your `client_id` for the respective environment: `dev | prod`  Webhooks are configured to make live requests to the underlying integration 1x/hr, and if a difference is detected since the last request, we will send a request to your `webhook_uri` with this shape:  ``` {    added: <api.v20230301.Employees>[     <api.v20230301.Employee>{       ...,       date_of_birth: '2010-08-06',       display_full_name: 'Daija Rogahn',       employee_number: '57993',       employment_status: 'pending',       employment_type: 'other',       employments: [         {           currency: 'eur',           effective_date: '2022-02-25',           employment_type: 'other',           job_title: 'Dynamic Implementation Manager',           pay_frequency: 'semimonthly',           pay_period: 'YEAR',           pay_rate: 96000,         },       ],       first_name: 'Daija',       ...     }   ],   removed: [],   updated: [     <api.v20230301.Employee>{       ...,       date_of_birth: '2009-11-09',       display_full_name: 'Lourdes Stiedemann',       employee_number: '63189',       employment_status: 'leave',       employment_type: 'full_time',       employments: [         {           currency: 'gbp',           effective_date: '2023-01-16',           employment_type: 'full_time',           job_title: 'Forward Brand Planner',           pay_frequency: 'semimonthly',           pay_period: 'YEAR',           pay_rate: 86000,         },       ],       first_name: 'Lourdes',     }   ] } ```  the following headers will be sent with webhook requests:  ``` x-affix-api-signature: ab8474e609db95d5df3adc39ea3add7a7544bd215c5c520a30a650ae93a2fba7  x-affix-api-origin:  webhooks-employees-webhook  user-agent:  affixapi.com ```  Before trusting the payload, you should sign the payload and verify the signature matches the signature sent by the `affixapi.com` service.  This secures that the data sent to your `webhook_uri` is from the `affixapi.com` server.  The signature is created by combining the signing secret (your `client_secret`) with the body of the request sent using a standard HMAC-SHA256 keyed hash.  The signature can be created via:   - create an `HMAC` with your `client_secret`   - update the `HMAC` with the payload   - get the hex digest -> this is the signature  Sample `typescript` code that follows this recipe:  ``` import { createHmac } from 'crypto';  export const computeSignature = ({   str,   signingSecret, }: {   signingSecret: string;   str: string; }): string => {   const hmac = createHmac('sha256', signingSecret);   hmac.update(str);   const signature = hmac.digest('hex');    return signature; }; ```  While verifying the Affix API signature header should be your primary method of confirming validity, you can also whitelist our outbound webhook static IP addresses.  ``` dev:   - 52.210.169.82   - 52.210.38.77   - 3.248.135.204  prod:   - 52.51.160.102   - 54.220.83.244   - 3.254.213.171 ```  ## Rate limits Open endpoints (not gated by an API key) (applied at endpoint level):   - 15 requests every 1 minute (by IP address)   - 25 requests every 5 minutes (by IP address)  Gated endpoints (require an API key) (applied at endpoint level):   - 40 requests every 1 minute (by IP address)   - 40 requests every 5 minutes (by `client_id`)  Things to keep in mind:   - Open endpoints (not gated by an API key) will likely be called by your     users, not you, so rate limits generally would not apply to you.   - As a developer, rate limits are applied at the endpoint granularity.     - For example, say the rate limits below are 10 requests per minute by ip.       from that same ip, within 1 minute, you get:       - 10 requests per minute on `/orders`,       - another 10 requests per minute on `/items`,       - and another 10 requests per minute on `/identity`,       - for a total of 30 requests per minute.
  *
  * The version of the OpenAPI document: 2023-03-01
  * Contact: developers@affixapi.com
@@ -40,14 +40,14 @@ use OpenAPI\Client\HeaderSelector;
 use OpenAPI\Client\ObjectSerializer;
 
 /**
- * DeveloperApi Class Doc Comment
+ * XHRApi Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DeveloperApi
+class XHRApi
 {
     /**
      * @var ClientInterface
@@ -116,7 +116,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerCompanies20230301
+     * Operation xhrCompanies20230301
      *
      * Company
      *
@@ -125,14 +125,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CompanyResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerCompanies20230301()
+    public function xhrCompanies20230301()
     {
-        list($response) = $this->developerCompanies20230301WithHttpInfo();
+        list($response) = $this->xhrCompanies20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerCompanies20230301WithHttpInfo
+     * Operation xhrCompanies20230301WithHttpInfo
      *
      * Company
      *
@@ -141,9 +141,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CompanyResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerCompanies20230301WithHttpInfo()
+    public function xhrCompanies20230301WithHttpInfo()
     {
-        $request = $this->developerCompanies20230301Request();
+        $request = $this->xhrCompanies20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -317,7 +317,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerCompanies20230301Async
+     * Operation xhrCompanies20230301Async
      *
      * Company
      *
@@ -325,9 +325,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerCompanies20230301Async()
+    public function xhrCompanies20230301Async()
     {
-        return $this->developerCompanies20230301AsyncWithHttpInfo()
+        return $this->xhrCompanies20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -336,7 +336,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerCompanies20230301AsyncWithHttpInfo
+     * Operation xhrCompanies20230301AsyncWithHttpInfo
      *
      * Company
      *
@@ -344,10 +344,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerCompanies20230301AsyncWithHttpInfo()
+    public function xhrCompanies20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\CompanyResponse[]';
-        $request = $this->developerCompanies20230301Request();
+        $request = $this->xhrCompanies20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -383,16 +383,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerCompanies20230301'
+     * Create request for operation 'xhrCompanies20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerCompanies20230301Request()
+    public function xhrCompanies20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/company';
+        $resourcePath = '/2023-03-01/xhr/company';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -466,7 +466,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerCreateEmployee20230301
+     * Operation xhrCreateEmployee20230301
      *
      * Create employee
      *
@@ -476,14 +476,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\EmployeeResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerCreateEmployee20230301($create_employee_request)
+    public function xhrCreateEmployee20230301($create_employee_request)
     {
-        list($response) = $this->developerCreateEmployee20230301WithHttpInfo($create_employee_request);
+        list($response) = $this->xhrCreateEmployee20230301WithHttpInfo($create_employee_request);
         return $response;
     }
 
     /**
-     * Operation developerCreateEmployee20230301WithHttpInfo
+     * Operation xhrCreateEmployee20230301WithHttpInfo
      *
      * Create employee
      *
@@ -493,9 +493,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\EmployeeResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerCreateEmployee20230301WithHttpInfo($create_employee_request)
+    public function xhrCreateEmployee20230301WithHttpInfo($create_employee_request)
     {
-        $request = $this->developerCreateEmployee20230301Request($create_employee_request);
+        $request = $this->xhrCreateEmployee20230301Request($create_employee_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -649,7 +649,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerCreateEmployee20230301Async
+     * Operation xhrCreateEmployee20230301Async
      *
      * Create employee
      *
@@ -658,9 +658,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerCreateEmployee20230301Async($create_employee_request)
+    public function xhrCreateEmployee20230301Async($create_employee_request)
     {
-        return $this->developerCreateEmployee20230301AsyncWithHttpInfo($create_employee_request)
+        return $this->xhrCreateEmployee20230301AsyncWithHttpInfo($create_employee_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -669,7 +669,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerCreateEmployee20230301AsyncWithHttpInfo
+     * Operation xhrCreateEmployee20230301AsyncWithHttpInfo
      *
      * Create employee
      *
@@ -678,10 +678,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerCreateEmployee20230301AsyncWithHttpInfo($create_employee_request)
+    public function xhrCreateEmployee20230301AsyncWithHttpInfo($create_employee_request)
     {
         $returnType = '\OpenAPI\Client\Model\EmployeeResponse';
-        $request = $this->developerCreateEmployee20230301Request($create_employee_request);
+        $request = $this->xhrCreateEmployee20230301Request($create_employee_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -717,23 +717,23 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerCreateEmployee20230301'
+     * Create request for operation 'xhrCreateEmployee20230301'
      *
      * @param  \OpenAPI\Client\Model\CreateEmployeeRequest $create_employee_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerCreateEmployee20230301Request($create_employee_request)
+    public function xhrCreateEmployee20230301Request($create_employee_request)
     {
         // verify the required parameter 'create_employee_request' is set
         if ($create_employee_request === null || (is_array($create_employee_request) && count($create_employee_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $create_employee_request when calling developerCreateEmployee20230301'
+                'Missing the required parameter $create_employee_request when calling xhrCreateEmployee20230301'
             );
         }
 
-        $resourcePath = '/2023-03-01/developer/employee';
+        $resourcePath = '/2023-03-01/xhr/employee';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -813,7 +813,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerEmployees20230301
+     * Operation xhrEmployees20230301
      *
      * Employees
      *
@@ -822,14 +822,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\EmployeeResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerEmployees20230301()
+    public function xhrEmployees20230301()
     {
-        list($response) = $this->developerEmployees20230301WithHttpInfo();
+        list($response) = $this->xhrEmployees20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerEmployees20230301WithHttpInfo
+     * Operation xhrEmployees20230301WithHttpInfo
      *
      * Employees
      *
@@ -838,9 +838,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\EmployeeResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerEmployees20230301WithHttpInfo()
+    public function xhrEmployees20230301WithHttpInfo()
     {
-        $request = $this->developerEmployees20230301Request();
+        $request = $this->xhrEmployees20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1014,7 +1014,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerEmployees20230301Async
+     * Operation xhrEmployees20230301Async
      *
      * Employees
      *
@@ -1022,9 +1022,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerEmployees20230301Async()
+    public function xhrEmployees20230301Async()
     {
-        return $this->developerEmployees20230301AsyncWithHttpInfo()
+        return $this->xhrEmployees20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1033,7 +1033,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerEmployees20230301AsyncWithHttpInfo
+     * Operation xhrEmployees20230301AsyncWithHttpInfo
      *
      * Employees
      *
@@ -1041,10 +1041,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerEmployees20230301AsyncWithHttpInfo()
+    public function xhrEmployees20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\EmployeeResponse[]';
-        $request = $this->developerEmployees20230301Request();
+        $request = $this->xhrEmployees20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1080,16 +1080,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerEmployees20230301'
+     * Create request for operation 'xhrEmployees20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerEmployees20230301Request()
+    public function xhrEmployees20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/employees';
+        $resourcePath = '/2023-03-01/xhr/employees';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1163,7 +1163,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerGroups20230301
+     * Operation xhrGroups20230301
      *
      * Groups
      *
@@ -1172,14 +1172,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GroupResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerGroups20230301()
+    public function xhrGroups20230301()
     {
-        list($response) = $this->developerGroups20230301WithHttpInfo();
+        list($response) = $this->xhrGroups20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerGroups20230301WithHttpInfo
+     * Operation xhrGroups20230301WithHttpInfo
      *
      * Groups
      *
@@ -1188,9 +1188,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GroupResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerGroups20230301WithHttpInfo()
+    public function xhrGroups20230301WithHttpInfo()
     {
-        $request = $this->developerGroups20230301Request();
+        $request = $this->xhrGroups20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1364,7 +1364,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerGroups20230301Async
+     * Operation xhrGroups20230301Async
      *
      * Groups
      *
@@ -1372,9 +1372,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerGroups20230301Async()
+    public function xhrGroups20230301Async()
     {
-        return $this->developerGroups20230301AsyncWithHttpInfo()
+        return $this->xhrGroups20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1383,7 +1383,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerGroups20230301AsyncWithHttpInfo
+     * Operation xhrGroups20230301AsyncWithHttpInfo
      *
      * Groups
      *
@@ -1391,10 +1391,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerGroups20230301AsyncWithHttpInfo()
+    public function xhrGroups20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\GroupResponse[]';
-        $request = $this->developerGroups20230301Request();
+        $request = $this->xhrGroups20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1430,16 +1430,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerGroups20230301'
+     * Create request for operation 'xhrGroups20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerGroups20230301Request()
+    public function xhrGroups20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/groups';
+        $resourcePath = '/2023-03-01/xhr/groups';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1513,7 +1513,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerIdentity20230301
+     * Operation xhrIdentity20230301
      *
      * Identity
      *
@@ -1522,14 +1522,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\IdentityResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerIdentity20230301()
+    public function xhrIdentity20230301()
     {
-        list($response) = $this->developerIdentity20230301WithHttpInfo();
+        list($response) = $this->xhrIdentity20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerIdentity20230301WithHttpInfo
+     * Operation xhrIdentity20230301WithHttpInfo
      *
      * Identity
      *
@@ -1538,9 +1538,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\IdentityResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerIdentity20230301WithHttpInfo()
+    public function xhrIdentity20230301WithHttpInfo()
     {
-        $request = $this->developerIdentity20230301Request();
+        $request = $this->xhrIdentity20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1674,7 +1674,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerIdentity20230301Async
+     * Operation xhrIdentity20230301Async
      *
      * Identity
      *
@@ -1682,9 +1682,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerIdentity20230301Async()
+    public function xhrIdentity20230301Async()
     {
-        return $this->developerIdentity20230301AsyncWithHttpInfo()
+        return $this->xhrIdentity20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1693,7 +1693,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerIdentity20230301AsyncWithHttpInfo
+     * Operation xhrIdentity20230301AsyncWithHttpInfo
      *
      * Identity
      *
@@ -1701,10 +1701,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerIdentity20230301AsyncWithHttpInfo()
+    public function xhrIdentity20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\IdentityResponse';
-        $request = $this->developerIdentity20230301Request();
+        $request = $this->xhrIdentity20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1740,16 +1740,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerIdentity20230301'
+     * Create request for operation 'xhrIdentity20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerIdentity20230301Request()
+    public function xhrIdentity20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/identity';
+        $resourcePath = '/2023-03-01/xhr/identity';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1823,7 +1823,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerPayruns20230301
+     * Operation xhrPayruns20230301
      *
      * Payruns
      *
@@ -1834,14 +1834,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PayrunResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerPayruns20230301($start_date, $end_date)
+    public function xhrPayruns20230301($start_date, $end_date)
     {
-        list($response) = $this->developerPayruns20230301WithHttpInfo($start_date, $end_date);
+        list($response) = $this->xhrPayruns20230301WithHttpInfo($start_date, $end_date);
         return $response;
     }
 
     /**
-     * Operation developerPayruns20230301WithHttpInfo
+     * Operation xhrPayruns20230301WithHttpInfo
      *
      * Payruns
      *
@@ -1852,9 +1852,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PayrunResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerPayruns20230301WithHttpInfo($start_date, $end_date)
+    public function xhrPayruns20230301WithHttpInfo($start_date, $end_date)
     {
-        $request = $this->developerPayruns20230301Request($start_date, $end_date);
+        $request = $this->xhrPayruns20230301Request($start_date, $end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2028,7 +2028,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerPayruns20230301Async
+     * Operation xhrPayruns20230301Async
      *
      * Payruns
      *
@@ -2038,9 +2038,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerPayruns20230301Async($start_date, $end_date)
+    public function xhrPayruns20230301Async($start_date, $end_date)
     {
-        return $this->developerPayruns20230301AsyncWithHttpInfo($start_date, $end_date)
+        return $this->xhrPayruns20230301AsyncWithHttpInfo($start_date, $end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2049,7 +2049,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerPayruns20230301AsyncWithHttpInfo
+     * Operation xhrPayruns20230301AsyncWithHttpInfo
      *
      * Payruns
      *
@@ -2059,10 +2059,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerPayruns20230301AsyncWithHttpInfo($start_date, $end_date)
+    public function xhrPayruns20230301AsyncWithHttpInfo($start_date, $end_date)
     {
         $returnType = '\OpenAPI\Client\Model\PayrunResponse[]';
-        $request = $this->developerPayruns20230301Request($start_date, $end_date);
+        $request = $this->xhrPayruns20230301Request($start_date, $end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2098,7 +2098,7 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerPayruns20230301'
+     * Create request for operation 'xhrPayruns20230301'
      *
      * @param  \DateTime $start_date The start date of the search period (required)
      * @param  \DateTime $end_date The end date of the search period (required)
@@ -2106,22 +2106,22 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerPayruns20230301Request($start_date, $end_date)
+    public function xhrPayruns20230301Request($start_date, $end_date)
     {
         // verify the required parameter 'start_date' is set
         if ($start_date === null || (is_array($start_date) && count($start_date) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $start_date when calling developerPayruns20230301'
+                'Missing the required parameter $start_date when calling xhrPayruns20230301'
             );
         }
         // verify the required parameter 'end_date' is set
         if ($end_date === null || (is_array($end_date) && count($end_date) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $end_date when calling developerPayruns20230301'
+                'Missing the required parameter $end_date when calling xhrPayruns20230301'
             );
         }
 
-        $resourcePath = '/2023-03-01/developer/payruns';
+        $resourcePath = '/2023-03-01/xhr/payruns';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2217,7 +2217,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerPayslips20230301
+     * Operation xhrPayslips20230301
      *
      * Payslips
      *
@@ -2227,14 +2227,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PayslipResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerPayslips20230301($payrun_id)
+    public function xhrPayslips20230301($payrun_id)
     {
-        list($response) = $this->developerPayslips20230301WithHttpInfo($payrun_id);
+        list($response) = $this->xhrPayslips20230301WithHttpInfo($payrun_id);
         return $response;
     }
 
     /**
-     * Operation developerPayslips20230301WithHttpInfo
+     * Operation xhrPayslips20230301WithHttpInfo
      *
      * Payslips
      *
@@ -2244,9 +2244,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PayslipResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerPayslips20230301WithHttpInfo($payrun_id)
+    public function xhrPayslips20230301WithHttpInfo($payrun_id)
     {
-        $request = $this->developerPayslips20230301Request($payrun_id);
+        $request = $this->xhrPayslips20230301Request($payrun_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2420,7 +2420,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerPayslips20230301Async
+     * Operation xhrPayslips20230301Async
      *
      * Payslips
      *
@@ -2429,9 +2429,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerPayslips20230301Async($payrun_id)
+    public function xhrPayslips20230301Async($payrun_id)
     {
-        return $this->developerPayslips20230301AsyncWithHttpInfo($payrun_id)
+        return $this->xhrPayslips20230301AsyncWithHttpInfo($payrun_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2440,7 +2440,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerPayslips20230301AsyncWithHttpInfo
+     * Operation xhrPayslips20230301AsyncWithHttpInfo
      *
      * Payslips
      *
@@ -2449,10 +2449,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerPayslips20230301AsyncWithHttpInfo($payrun_id)
+    public function xhrPayslips20230301AsyncWithHttpInfo($payrun_id)
     {
         $returnType = '\OpenAPI\Client\Model\PayslipResponse[]';
-        $request = $this->developerPayslips20230301Request($payrun_id);
+        $request = $this->xhrPayslips20230301Request($payrun_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2488,23 +2488,23 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerPayslips20230301'
+     * Create request for operation 'xhrPayslips20230301'
      *
      * @param  string $payrun_id The id of the payrun. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerPayslips20230301Request($payrun_id)
+    public function xhrPayslips20230301Request($payrun_id)
     {
         // verify the required parameter 'payrun_id' is set
         if ($payrun_id === null || (is_array($payrun_id) && count($payrun_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $payrun_id when calling developerPayslips20230301'
+                'Missing the required parameter $payrun_id when calling xhrPayslips20230301'
             );
         }
 
-        $resourcePath = '/2023-03-01/developer/payruns/{payrun_id}';
+        $resourcePath = '/2023-03-01/xhr/payruns/{payrun_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2586,7 +2586,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimeOffBalances20230301
+     * Operation xhrTimeOffBalances20230301
      *
      * Time off balances
      *
@@ -2595,14 +2595,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\TimeOffBalanceResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerTimeOffBalances20230301()
+    public function xhrTimeOffBalances20230301()
     {
-        list($response) = $this->developerTimeOffBalances20230301WithHttpInfo();
+        list($response) = $this->xhrTimeOffBalances20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerTimeOffBalances20230301WithHttpInfo
+     * Operation xhrTimeOffBalances20230301WithHttpInfo
      *
      * Time off balances
      *
@@ -2611,9 +2611,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\TimeOffBalanceResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerTimeOffBalances20230301WithHttpInfo()
+    public function xhrTimeOffBalances20230301WithHttpInfo()
     {
-        $request = $this->developerTimeOffBalances20230301Request();
+        $request = $this->xhrTimeOffBalances20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2787,7 +2787,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimeOffBalances20230301Async
+     * Operation xhrTimeOffBalances20230301Async
      *
      * Time off balances
      *
@@ -2795,9 +2795,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerTimeOffBalances20230301Async()
+    public function xhrTimeOffBalances20230301Async()
     {
-        return $this->developerTimeOffBalances20230301AsyncWithHttpInfo()
+        return $this->xhrTimeOffBalances20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2806,7 +2806,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimeOffBalances20230301AsyncWithHttpInfo
+     * Operation xhrTimeOffBalances20230301AsyncWithHttpInfo
      *
      * Time off balances
      *
@@ -2814,10 +2814,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerTimeOffBalances20230301AsyncWithHttpInfo()
+    public function xhrTimeOffBalances20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\TimeOffBalanceResponse[]';
-        $request = $this->developerTimeOffBalances20230301Request();
+        $request = $this->xhrTimeOffBalances20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2853,16 +2853,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerTimeOffBalances20230301'
+     * Create request for operation 'xhrTimeOffBalances20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerTimeOffBalances20230301Request()
+    public function xhrTimeOffBalances20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/time-off-balances';
+        $resourcePath = '/2023-03-01/xhr/time-off-balances';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2936,7 +2936,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimeOffEntries20230301
+     * Operation xhrTimeOffEntries20230301
      *
      * Time off entries
      *
@@ -2945,14 +2945,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\TimeOffEntryResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerTimeOffEntries20230301()
+    public function xhrTimeOffEntries20230301()
     {
-        list($response) = $this->developerTimeOffEntries20230301WithHttpInfo();
+        list($response) = $this->xhrTimeOffEntries20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerTimeOffEntries20230301WithHttpInfo
+     * Operation xhrTimeOffEntries20230301WithHttpInfo
      *
      * Time off entries
      *
@@ -2961,9 +2961,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\TimeOffEntryResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerTimeOffEntries20230301WithHttpInfo()
+    public function xhrTimeOffEntries20230301WithHttpInfo()
     {
-        $request = $this->developerTimeOffEntries20230301Request();
+        $request = $this->xhrTimeOffEntries20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3137,7 +3137,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimeOffEntries20230301Async
+     * Operation xhrTimeOffEntries20230301Async
      *
      * Time off entries
      *
@@ -3145,9 +3145,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerTimeOffEntries20230301Async()
+    public function xhrTimeOffEntries20230301Async()
     {
-        return $this->developerTimeOffEntries20230301AsyncWithHttpInfo()
+        return $this->xhrTimeOffEntries20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3156,7 +3156,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimeOffEntries20230301AsyncWithHttpInfo
+     * Operation xhrTimeOffEntries20230301AsyncWithHttpInfo
      *
      * Time off entries
      *
@@ -3164,10 +3164,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerTimeOffEntries20230301AsyncWithHttpInfo()
+    public function xhrTimeOffEntries20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\TimeOffEntryResponse[]';
-        $request = $this->developerTimeOffEntries20230301Request();
+        $request = $this->xhrTimeOffEntries20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3203,16 +3203,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerTimeOffEntries20230301'
+     * Create request for operation 'xhrTimeOffEntries20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerTimeOffEntries20230301Request()
+    public function xhrTimeOffEntries20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/time-off-entries';
+        $resourcePath = '/2023-03-01/xhr/time-off-entries';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3286,7 +3286,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimesheets20230301
+     * Operation xhrTimesheets20230301
      *
      * Timesheets
      *
@@ -3295,14 +3295,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\TimesheetResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerTimesheets20230301()
+    public function xhrTimesheets20230301()
     {
-        list($response) = $this->developerTimesheets20230301WithHttpInfo();
+        list($response) = $this->xhrTimesheets20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerTimesheets20230301WithHttpInfo
+     * Operation xhrTimesheets20230301WithHttpInfo
      *
      * Timesheets
      *
@@ -3311,9 +3311,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\TimesheetResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerTimesheets20230301WithHttpInfo()
+    public function xhrTimesheets20230301WithHttpInfo()
     {
-        $request = $this->developerTimesheets20230301Request();
+        $request = $this->xhrTimesheets20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3487,7 +3487,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimesheets20230301Async
+     * Operation xhrTimesheets20230301Async
      *
      * Timesheets
      *
@@ -3495,9 +3495,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerTimesheets20230301Async()
+    public function xhrTimesheets20230301Async()
     {
-        return $this->developerTimesheets20230301AsyncWithHttpInfo()
+        return $this->xhrTimesheets20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3506,7 +3506,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerTimesheets20230301AsyncWithHttpInfo
+     * Operation xhrTimesheets20230301AsyncWithHttpInfo
      *
      * Timesheets
      *
@@ -3514,10 +3514,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerTimesheets20230301AsyncWithHttpInfo()
+    public function xhrTimesheets20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\TimesheetResponse[]';
-        $request = $this->developerTimesheets20230301Request();
+        $request = $this->xhrTimesheets20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3553,16 +3553,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerTimesheets20230301'
+     * Create request for operation 'xhrTimesheets20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerTimesheets20230301Request()
+    public function xhrTimesheets20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/timesheets';
+        $resourcePath = '/2023-03-01/xhr/timesheets';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3636,7 +3636,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerWorkLocations20230301
+     * Operation xhrWorkLocations20230301
      *
      * Work locations
      *
@@ -3645,14 +3645,14 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LocationResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function developerWorkLocations20230301()
+    public function xhrWorkLocations20230301()
     {
-        list($response) = $this->developerWorkLocations20230301WithHttpInfo();
+        list($response) = $this->xhrWorkLocations20230301WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation developerWorkLocations20230301WithHttpInfo
+     * Operation xhrWorkLocations20230301WithHttpInfo
      *
      * Work locations
      *
@@ -3661,9 +3661,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LocationResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function developerWorkLocations20230301WithHttpInfo()
+    public function xhrWorkLocations20230301WithHttpInfo()
     {
-        $request = $this->developerWorkLocations20230301Request();
+        $request = $this->xhrWorkLocations20230301Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3837,7 +3837,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerWorkLocations20230301Async
+     * Operation xhrWorkLocations20230301Async
      *
      * Work locations
      *
@@ -3845,9 +3845,9 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerWorkLocations20230301Async()
+    public function xhrWorkLocations20230301Async()
     {
-        return $this->developerWorkLocations20230301AsyncWithHttpInfo()
+        return $this->xhrWorkLocations20230301AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3856,7 +3856,7 @@ class DeveloperApi
     }
 
     /**
-     * Operation developerWorkLocations20230301AsyncWithHttpInfo
+     * Operation xhrWorkLocations20230301AsyncWithHttpInfo
      *
      * Work locations
      *
@@ -3864,10 +3864,10 @@ class DeveloperApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function developerWorkLocations20230301AsyncWithHttpInfo()
+    public function xhrWorkLocations20230301AsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\LocationResponse[]';
-        $request = $this->developerWorkLocations20230301Request();
+        $request = $this->xhrWorkLocations20230301Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3903,16 +3903,16 @@ class DeveloperApi
     }
 
     /**
-     * Create request for operation 'developerWorkLocations20230301'
+     * Create request for operation 'xhrWorkLocations20230301'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function developerWorkLocations20230301Request()
+    public function xhrWorkLocations20230301Request()
     {
 
-        $resourcePath = '/2023-03-01/developer/work-locations';
+        $resourcePath = '/2023-03-01/xhr/work-locations';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

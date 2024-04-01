@@ -85,18 +85,6 @@ class XHRVerticallyIntegratedApiTest extends TestCase
     }
 
     /**
-     * Test case for xhrCreateEmployee20230301
-     *
-     * Create employee.
-     *
-     */
-    public function testXhrCreateEmployee20230301()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for xhrEmployees20230301
      *
      * Employees.

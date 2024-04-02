@@ -43,6 +43,7 @@ class CurrencyResponse
     /**
      * Possible values of this enum
      */
+    const NULL = 'null';
     const USD = 'usd';
     const GBP = 'gbp';
     const EUR = 'eur';
@@ -54,6 +55,7 @@ class CurrencyResponse
     public static function getAllowableEnumValues()
     {
         return [
+            self::NULL,
             self::USD,
             self::GBP,
             self::EUR,

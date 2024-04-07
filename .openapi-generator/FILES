@@ -20,6 +20,7 @@ docs/Model/CurrencyNotNullRequest.md
 docs/Model/CurrencyResponse.md
 docs/Model/DisconnectResponse.md
 docs/Model/EmployeeResponse.md
+docs/Model/EmployeeResponseManager.md
 docs/Model/EmploymentNoNullEnumRequest.md
 docs/Model/EmploymentResponse.md
 docs/Model/GroupNoNullEnumRequest.md
@@ -70,6 +71,7 @@ lib/Model/CurrencyNotNullRequest.php
 lib/Model/CurrencyResponse.php
 lib/Model/DisconnectResponse.php
 lib/Model/EmployeeResponse.php
+lib/Model/EmployeeResponseManager.php
 lib/Model/EmploymentNoNullEnumRequest.php
 lib/Model/EmploymentResponse.php
 lib/Model/GroupNoNullEnumRequest.php
@@ -118,6 +120,7 @@ test/Model/CreateEmployeeRequestTest.php
 test/Model/CurrencyNotNullRequestTest.php
 test/Model/CurrencyResponseTest.php
 test/Model/DisconnectResponseTest.php
+test/Model/EmployeeResponseManagerTest.php
 test/Model/EmployeeResponseTest.php
 test/Model/EmploymentNoNullEnumRequestTest.php
 test/Model/EmploymentResponseTest.php

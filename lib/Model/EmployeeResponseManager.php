@@ -1,6 +1,7 @@
 <?php
 /**
- * Configuration
+ * EmployeeResponseManager
+ *
  * PHP version 7.2
  *
  * @category Class
@@ -26,467 +27,430 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client;
+namespace OpenAPI\Client\Model;
+
+use \ArrayAccess;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * Configuration Class Doc Comment
- * PHP version 7.2
+ * EmployeeResponseManager Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class Configuration
+class EmployeeResponseManager implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    /**
-     * @var Configuration
-     */
-    private static $defaultConfiguration;
+    public const DISCRIMINATOR = null;
 
     /**
-     * Associate array to store API key(s)
+      * The original name of the model.
+      *
+      * @var string
+      */
+    protected static $openAPIModelName = 'EmployeeResponse_manager';
+
+    /**
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
+    protected static $openAPITypes = [
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'id' => 'string',
+        'work_email' => 'string',
+        'remote_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
+      */
+    protected static $openAPIFormats = [
+        'first_name' => null,
+        'last_name' => null,
+        'id' => null,
+        'work_email' => null,
+        'remote_id' => null
+    ];
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function openAPITypes()
+    {
+        return self::$openAPITypes;
+    }
+
+    /**
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function openAPIFormats()
+    {
+        return self::$openAPIFormats;
+    }
+
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
      *
      * @var string[]
      */
-    protected $apiKeys = [];
+    protected static $attributeMap = [
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'id' => 'id',
+        'work_email' => 'work_email',
+        'remote_id' => 'remote_id'
+    ];
 
     /**
-     * Associate array to store API prefix (e.g. Bearer)
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
-    protected $apiKeyPrefixes = [];
+    protected static $setters = [
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'id' => 'setId',
+        'work_email' => 'setWorkEmail',
+        'remote_id' => 'setRemoteId'
+    ];
 
     /**
-     * Access token for OAuth/Bearer authentication
+     * Array of attributes to getter functions (for serialization of requests)
      *
-     * @var string
+     * @var string[]
      */
-    protected $accessToken = '';
+    protected static $getters = [
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'id' => 'getId',
+        'work_email' => 'getWorkEmail',
+        'remote_id' => 'getRemoteId'
+    ];
 
     /**
-     * Username for HTTP basic authentication
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
      *
-     * @var string
+     * @return array
      */
-    protected $username = '';
-
-    /**
-     * Password for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $password = '';
-
-    /**
-     * The host
-     *
-     * @var string
-     */
-    protected $host = 'https://api.affixapi.com';
-
-    /**
-     * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
-     *
-     * @var string
-     */
-    protected $userAgent = 'OpenAPI-Generator/1.1.51/PHP';
-
-    /**
-     * Debug switch (default set to false)
-     *
-     * @var bool
-     */
-    protected $debug = false;
-
-    /**
-     * Debug file location (log to STDOUT by default)
-     *
-     * @var string
-     */
-    protected $debugFile = 'php://output';
-
-    /**
-     * Debug file location (log to STDOUT by default)
-     *
-     * @var string
-     */
-    protected $tempFolderPath;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public static function attributeMap()
     {
-        $this->tempFolderPath = sys_get_temp_dir();
+        return self::$attributeMap;
     }
 
     /**
-     * Sets API key
+     * Array of attributes to setter functions (for deserialization of responses)
      *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
-     *
-     * @return $this
+     * @return array
      */
-    public function setApiKey($apiKeyIdentifier, $key)
+    public static function setters()
     {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
-        return $this;
+        return self::$setters;
     }
 
     /**
-     * Gets API key
+     * Array of attributes to getter functions (for serialization of requests)
      *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return null|string API key or token
+     * @return array
      */
-    public function getApiKey($apiKeyIdentifier)
+    public static function getters()
     {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
+        return self::$getters;
     }
 
     /**
-     * Sets the prefix for API key (e.g. Bearer)
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
-     *
-     * @return $this
-     */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
-    {
-        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-        return $this;
-    }
-
-    /**
-     * Gets API key prefix
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return null|string
-     */
-    public function getApiKeyPrefix($apiKeyIdentifier)
-    {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
-    }
-
-    /**
-     * Sets the access token for OAuth
-     *
-     * @param string $accessToken Token for OAuth
-     *
-     * @return $this
-     */
-    public function setAccessToken($accessToken)
-    {
-        $this->accessToken = $accessToken;
-        return $this;
-    }
-
-    /**
-     * Gets the access token for OAuth
-     *
-     * @return string Access token for OAuth
-     */
-    public function getAccessToken()
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * Sets the username for HTTP basic authentication
-     *
-     * @param string $username Username for HTTP basic authentication
-     *
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    /**
-     * Gets the username for HTTP basic authentication
-     *
-     * @return string Username for HTTP basic authentication
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * Sets the password for HTTP basic authentication
-     *
-     * @param string $password Password for HTTP basic authentication
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-        return $this;
-    }
-
-    /**
-     * Gets the password for HTTP basic authentication
-     *
-     * @return string Password for HTTP basic authentication
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Sets the host
-     *
-     * @param string $host Host
-     *
-     * @return $this
-     */
-    public function setHost($host)
-    {
-        $this->host = $host;
-        return $this;
-    }
-
-    /**
-     * Gets the host
-     *
-     * @return string Host
-     */
-    public function getHost()
-    {
-        return $this->host;
-    }
-
-    /**
-     * Sets the user agent of the api client
-     *
-     * @param string $userAgent the user agent of the api client
-     *
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setUserAgent($userAgent)
-    {
-        if (!is_string($userAgent)) {
-            throw new \InvalidArgumentException('User-agent must be a string.');
-        }
-
-        $this->userAgent = $userAgent;
-        return $this;
-    }
-
-    /**
-     * Gets the user agent of the api client
-     *
-     * @return string user agent
-     */
-    public function getUserAgent()
-    {
-        return $this->userAgent;
-    }
-
-    /**
-     * Sets debug flag
-     *
-     * @param bool $debug Debug flag
-     *
-     * @return $this
-     */
-    public function setDebug($debug)
-    {
-        $this->debug = $debug;
-        return $this;
-    }
-
-    /**
-     * Gets the debug flag
-     *
-     * @return bool
-     */
-    public function getDebug()
-    {
-        return $this->debug;
-    }
-
-    /**
-     * Sets the debug file
-     *
-     * @param string $debugFile Debug file
-     *
-     * @return $this
-     */
-    public function setDebugFile($debugFile)
-    {
-        $this->debugFile = $debugFile;
-        return $this;
-    }
-
-    /**
-     * Gets the debug file
+     * The original name of the model.
      *
      * @return string
      */
-    public function getDebugFile()
+    public function getModelName()
     {
-        return $this->debugFile;
+        return self::$openAPIModelName;
+    }
+
+
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /**
+     * Constructor
+     *
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
+     */
+    public function __construct(array $data = null)
+    {
+        $this->container['first_name'] = $data['first_name'] ?? null;
+        $this->container['last_name'] = $data['last_name'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['work_email'] = $data['work_email'] ?? null;
+        $this->container['remote_id'] = $data['remote_id'] ?? null;
     }
 
     /**
-     * Sets the temp folder path
+     * Show all the invalid properties with reasons.
      *
-     * @param string $tempFolderPath Temp folder path
-     *
-     * @return $this
+     * @return array invalid properties with reasons
      */
-    public function setTempFolderPath($tempFolderPath)
+    public function listInvalidProperties()
     {
-        $this->tempFolderPath = $tempFolderPath;
+        $invalidProperties = [];
+
+        if ($this->container['first_name'] === null) {
+            $invalidProperties[] = "'first_name' can't be null";
+        }
+        if ($this->container['last_name'] === null) {
+            $invalidProperties[] = "'last_name' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['work_email'] === null) {
+            $invalidProperties[] = "'work_email' can't be null";
+        }
+        if ($this->container['remote_id'] === null) {
+            $invalidProperties[] = "'remote_id' can't be null";
+        }
+        return $invalidProperties;
+    }
+
+    /**
+     * Validate all the properties in the model
+     * return true if all passed
+     *
+     * @return bool True if all properties are valid
+     */
+    public function valid()
+    {
+        return count($this->listInvalidProperties()) === 0;
+    }
+
+
+    /**
+     * Gets first_name
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->container['first_name'];
+    }
+
+    /**
+     * Sets first_name
+     *
+     * @param string $first_name first_name
+     *
+     * @return self
+     */
+    public function setFirstName($first_name)
+    {
+        $this->container['first_name'] = $first_name;
+
         return $this;
     }
 
     /**
-     * Gets the temp folder path
+     * Gets last_name
      *
-     * @return string Temp folder path
+     * @return string
      */
-    public function getTempFolderPath()
+    public function getLastName()
     {
-        return $this->tempFolderPath;
+        return $this->container['last_name'];
     }
 
     /**
-     * Gets the default configuration instance
+     * Sets last_name
      *
-     * @return Configuration
+     * @param string $last_name last_name
+     *
+     * @return self
      */
-    public static function getDefaultConfiguration()
+    public function setLastName($last_name)
     {
-        if (self::$defaultConfiguration === null) {
-            self::$defaultConfiguration = new Configuration();
-        }
+        $this->container['last_name'] = $last_name;
 
-        return self::$defaultConfiguration;
+        return $this;
     }
 
     /**
-     * Sets the detault configuration instance
+     * Gets id
      *
-     * @param Configuration $config An instance of the Configuration Object
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id the Affix-assigned ID of the individual. Nullable if the system only reports the name of the manager; not their ID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets work_email
+     *
+     * @return string
+     */
+    public function getWorkEmail()
+    {
+        return $this->container['work_email'];
+    }
+
+    /**
+     * Sets work_email
+     *
+     * @param string $work_email work_email
+     *
+     * @return self
+     */
+    public function setWorkEmail($work_email)
+    {
+        $this->container['work_email'] = $work_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets remote_id
+     *
+     * @return string
+     */
+    public function getRemoteId()
+    {
+        return $this->container['remote_id'];
+    }
+
+    /**
+     * Sets remote_id
+     *
+     * @param string $remote_id remote_id
+     *
+     * @return self
+     */
+    public function setRemoteId($remote_id)
+    {
+        $this->container['remote_id'] = $remote_id;
+
+        return $this;
+    }
+    /**
+     * Returns true if offset exists. False otherwise.
+     *
+     * @param integer $offset Offset
+     *
+     * @return boolean
+     */
+    public function offsetExists($offset)
+    {
+        return isset($this->container[$offset]);
+    }
+
+    /**
+     * Gets offset.
+     *
+     * @param integer $offset Offset
+     *
+     * @return mixed|null
+     */
+    public function offsetGet($offset)
+    {
+        return $this->container[$offset] ?? null;
+    }
+
+    /**
+     * Sets value based on offset.
+     *
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
      *
      * @return void
      */
-    public static function setDefaultConfiguration(Configuration $config)
+    public function offsetSet($offset, $value)
     {
-        self::$defaultConfiguration = $config;
-    }
-
-    /**
-     * Gets the essential information for debugging
-     *
-     * @return string The report for debugging
-     */
-    public static function toDebugReport()
-    {
-        $report  = 'PHP SDK (OpenAPI\Client) Debug Report:' . PHP_EOL;
-        $report .= '    OS: ' . php_uname() . PHP_EOL;
-        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    The version of the OpenAPI document: 2023-03-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.1.51' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
-
-        return $report;
-    }
-
-    /**
-     * Get API key (with prefix if set)
-     *
-     * @param  string $apiKeyIdentifier name of apikey
-     *
-     * @return null|string API key with the prefix
-     */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
-        $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->getApiKey($apiKeyIdentifier);
-
-        if ($apiKey === null) {
-            return null;
-        }
-
-        if ($prefix === null) {
-            $keyWithPrefix = $apiKey;
+        if (is_null($offset)) {
+            $this->container[] = $value;
         } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
+            $this->container[$offset] = $value;
         }
-
-        return $keyWithPrefix;
     }
 
     /**
-     * Returns an array of host settings
+     * Unsets offset.
      *
-     * @return array an array of host settings
+     * @param integer $offset Offset
+     *
+     * @return void
      */
-    public function getHostSettings()
+    public function offsetUnset($offset)
     {
-        return [
-            [
-                "url" => "https://api.affixapi.com",
-                "description" => "Production server (EU)",
-            ],
-            [
-                "url" => "https://dev.api.affixapi.com",
-                "description" => "Development server (EU)",
-            ]
-        ];
+        unset($this->container[$offset]);
     }
 
     /**
-     * Returns URL based on the index and variables
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
-     * @param int        $index     index of the host settings
-     * @param array|null $variables hash of variable and the corresponding value (optional)
-     * @return string URL based on host settings
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
      */
-    public function getHostFromSettings($index, $variables = null)
+    public function jsonSerialize()
     {
-        if (null === $variables) {
-            $variables = [];
-        }
+       return ObjectSerializer::sanitizeForSerialization($this);
+    }
 
-        $hosts = $this->getHostSettings();
+    /**
+     * Gets the string presentation of the object
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
-        // check array index out of bound
-        if ($index < 0 || $index >= sizeof($hosts)) {
-            throw new \InvalidArgumentException("Invalid index $index when selecting the host. Must be less than ".sizeof($hosts));
-        }
-
-        $host = $hosts[$index];
-        $url = $host["url"];
-
-        // go through variable and assign a value
-        foreach ($host["variables"] ?? [] as $name => $variable) {
-            if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
-                if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
-                    $url = str_replace("{".$name."}", $variables[$name], $url);
-                } else {
-                    throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");
-                }
-            } else {
-                // use default value
-                $url = str_replace("{".$name."}", $variable["default_value"], $url);
-            }
-        }
-
-        return $url;
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue()
+    {
+        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

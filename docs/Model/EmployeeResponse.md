@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **avatar** | **string** |  |
 **home_location** | [**\OpenAPI\Client\Model\AddressResponse**](AddressResponse.md) |  |
 **work_location** | [**\OpenAPI\Client\Model\LocationResponse**](LocationResponse.md) |  |
-**manager** | [**\OpenAPI\Client\Model\CreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  |
+**manager** | [**\OpenAPI\Client\Model\EmployeeResponseManager**](EmployeeResponseManager.md) |  |
 **bank_account** | [**\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  |
 **employments** | [**\OpenAPI\Client\Model\EmploymentResponse[]**](EmploymentResponse.md) |  |
 **custom_fields** | **object** |  |

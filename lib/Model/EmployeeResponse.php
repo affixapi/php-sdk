@@ -84,7 +84,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'avatar' => 'string',
         'home_location' => '\OpenAPI\Client\Model\AddressResponse',
         'work_location' => '\OpenAPI\Client\Model\LocationResponse',
-        'manager' => '\OpenAPI\Client\Model\CreateEmployeeRequestManager',
+        'manager' => '\OpenAPI\Client\Model\EmployeeResponseManager',
         'bank_account' => '\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount',
         'employments' => '\OpenAPI\Client\Model\EmploymentResponse[]',
         'custom_fields' => 'object',
@@ -1242,7 +1242,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets manager
      *
-     * @return \OpenAPI\Client\Model\CreateEmployeeRequestManager
+     * @return \OpenAPI\Client\Model\EmployeeResponseManager
      */
     public function getManager()
     {
@@ -1252,7 +1252,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets manager
      *
-     * @param \OpenAPI\Client\Model\CreateEmployeeRequestManager $manager manager
+     * @param \OpenAPI\Client\Model\EmployeeResponseManager $manager manager
      *
      * @return self
      */

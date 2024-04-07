@@ -184,9 +184,11 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     const COUNTRY_AT = 'AT';
+    const COUNTRY_AU = 'AU';
     const COUNTRY_BE = 'BE';
     const COUNTRY_CA = 'CA';
     const COUNTRY_CH = 'CH';
+    const COUNTRY_CN = 'CN';
     const COUNTRY_CZ = 'CZ';
     const COUNTRY_DE = 'DE';
     const COUNTRY_DK = 'DK';
@@ -194,6 +196,7 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     const COUNTRY_ES = 'ES';
     const COUNTRY_FR = 'FR';
     const COUNTRY_GB = 'GB';
+    const COUNTRY_HK = 'HK';
     const COUNTRY_IE = 'IE';
     const COUNTRY_IT = 'IT';
     const COUNTRY_JP = 'JP';
@@ -201,11 +204,13 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     const COUNTRY_LV = 'LV';
     const COUNTRY_NL = 'NL';
     const COUNTRY_NO = 'NO';
+    const COUNTRY_PH = 'PH';
     const COUNTRY_PL = 'PL';
     const COUNTRY_RO = 'RO';
     const COUNTRY_SE = 'SE';
     const COUNTRY_SG = 'SG';
     const COUNTRY_SK = 'SK';
+    const COUNTRY_TW = 'TW';
     const COUNTRY_US = 'US';
 
     /**
@@ -217,9 +222,11 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         return [
             self::COUNTRY_AT,
+            self::COUNTRY_AU,
             self::COUNTRY_BE,
             self::COUNTRY_CA,
             self::COUNTRY_CH,
+            self::COUNTRY_CN,
             self::COUNTRY_CZ,
             self::COUNTRY_DE,
             self::COUNTRY_DK,
@@ -227,6 +234,7 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
             self::COUNTRY_ES,
             self::COUNTRY_FR,
             self::COUNTRY_GB,
+            self::COUNTRY_HK,
             self::COUNTRY_IE,
             self::COUNTRY_IT,
             self::COUNTRY_JP,
@@ -234,11 +242,13 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
             self::COUNTRY_LV,
             self::COUNTRY_NL,
             self::COUNTRY_NO,
+            self::COUNTRY_PH,
             self::COUNTRY_PL,
             self::COUNTRY_RO,
             self::COUNTRY_SE,
             self::COUNTRY_SG,
             self::COUNTRY_SK,
+            self::COUNTRY_TW,
             self::COUNTRY_US,
         ];
     }

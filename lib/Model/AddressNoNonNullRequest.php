@@ -197,11 +197,16 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     const COUNTRY_FR = 'FR';
     const COUNTRY_GB = 'GB';
     const COUNTRY_HK = 'HK';
+    const COUNTRY_ID = 'ID';
     const COUNTRY_IE = 'IE';
+    const COUNTRY_IN = 'IN';
     const COUNTRY_IT = 'IT';
     const COUNTRY_JP = 'JP';
+    const COUNTRY_KR = 'KR';
     const COUNTRY_LT = 'LT';
     const COUNTRY_LV = 'LV';
+    const COUNTRY_MO = 'MO';
+    const COUNTRY_MY = 'MY';
     const COUNTRY_NL = 'NL';
     const COUNTRY_NO = 'NO';
     const COUNTRY_PH = 'PH';
@@ -235,11 +240,16 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
             self::COUNTRY_FR,
             self::COUNTRY_GB,
             self::COUNTRY_HK,
+            self::COUNTRY_ID,
             self::COUNTRY_IE,
+            self::COUNTRY_IN,
             self::COUNTRY_IT,
             self::COUNTRY_JP,
+            self::COUNTRY_KR,
             self::COUNTRY_LT,
             self::COUNTRY_LV,
+            self::COUNTRY_MO,
+            self::COUNTRY_MY,
             self::COUNTRY_NL,
             self::COUNTRY_NO,
             self::COUNTRY_PH,

@@ -73,6 +73,7 @@ class ProviderResponse
     const GUSTO = 'gusto';
     const ITRENT = 'itrent';
     const JUSTWORKS = 'justworks';
+    const ONPAY = 'onpay';
     const OYSTERHR = 'oysterhr';
     const PAYCIRCLE = 'paycircle';
     const PENTO_IO = 'pento.io';
@@ -120,6 +121,7 @@ class ProviderResponse
             self::GUSTO,
             self::ITRENT,
             self::JUSTWORKS,
+            self::ONPAY,
             self::OYSTERHR,
             self::PAYCIRCLE,
             self::PENTO_IO,

@@ -183,30 +183,30 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
         return self::$openAPIModelName;
     }
 
+    const COUNTRY_CA = 'CA';
+    const COUNTRY_US = 'US';
+    const COUNTRY_MX = 'MX';
     const COUNTRY_AT = 'AT';
     const COUNTRY_AU = 'AU';
     const COUNTRY_BE = 'BE';
-    const COUNTRY_CA = 'CA';
     const COUNTRY_CH = 'CH';
-    const COUNTRY_CN = 'CN';
     const COUNTRY_CZ = 'CZ';
     const COUNTRY_DE = 'DE';
     const COUNTRY_DK = 'DK';
     const COUNTRY_EE = 'EE';
     const COUNTRY_ES = 'ES';
+    const COUNTRY_FI = 'FI';
     const COUNTRY_FR = 'FR';
     const COUNTRY_GB = 'GB';
-    const COUNTRY_HK = 'HK';
-    const COUNTRY_ID = 'ID';
     const COUNTRY_IE = 'IE';
-    const COUNTRY_IN = 'IN';
+    const COUNTRY_IM = 'IM';
+    const COUNTRY_IS = 'IS';
     const COUNTRY_IT = 'IT';
-    const COUNTRY_JP = 'JP';
-    const COUNTRY_KR = 'KR';
+    const COUNTRY_LI = 'LI';
+    const COUNTRY_LT = 'LT';
     const COUNTRY_LT = 'LT';
     const COUNTRY_LV = 'LV';
-    const COUNTRY_MO = 'MO';
-    const COUNTRY_MY = 'MY';
+    const COUNTRY_LU = 'LU';
     const COUNTRY_NL = 'NL';
     const COUNTRY_NO = 'NO';
     const COUNTRY_PH = 'PH';
@@ -215,8 +215,16 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     const COUNTRY_SE = 'SE';
     const COUNTRY_SG = 'SG';
     const COUNTRY_SK = 'SK';
+    const COUNTRY_CN = 'CN';
+    const COUNTRY_ID = 'ID';
+    const COUNTRY_IN = 'IN';
+    const COUNTRY_JP = 'JP';
+    const COUNTRY_KR = 'KR';
+    const COUNTRY_MO = 'MO';
+    const COUNTRY_MY = 'MY';
+    const COUNTRY_SG = 'SG';
+    const COUNTRY_HK = 'HK';
     const COUNTRY_TW = 'TW';
-    const COUNTRY_US = 'US';
 
     /**
      * Gets allowable values of the enum
@@ -226,30 +234,30 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function getCountryAllowableValues()
     {
         return [
+            self::COUNTRY_CA,
+            self::COUNTRY_US,
+            self::COUNTRY_MX,
             self::COUNTRY_AT,
             self::COUNTRY_AU,
             self::COUNTRY_BE,
-            self::COUNTRY_CA,
             self::COUNTRY_CH,
-            self::COUNTRY_CN,
             self::COUNTRY_CZ,
             self::COUNTRY_DE,
             self::COUNTRY_DK,
             self::COUNTRY_EE,
             self::COUNTRY_ES,
+            self::COUNTRY_FI,
             self::COUNTRY_FR,
             self::COUNTRY_GB,
-            self::COUNTRY_HK,
-            self::COUNTRY_ID,
             self::COUNTRY_IE,
-            self::COUNTRY_IN,
+            self::COUNTRY_IM,
+            self::COUNTRY_IS,
             self::COUNTRY_IT,
-            self::COUNTRY_JP,
-            self::COUNTRY_KR,
+            self::COUNTRY_LI,
+            self::COUNTRY_LT,
             self::COUNTRY_LT,
             self::COUNTRY_LV,
-            self::COUNTRY_MO,
-            self::COUNTRY_MY,
+            self::COUNTRY_LU,
             self::COUNTRY_NL,
             self::COUNTRY_NO,
             self::COUNTRY_PH,
@@ -258,8 +266,16 @@ class AddressNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSeria
             self::COUNTRY_SE,
             self::COUNTRY_SG,
             self::COUNTRY_SK,
+            self::COUNTRY_CN,
+            self::COUNTRY_ID,
+            self::COUNTRY_IN,
+            self::COUNTRY_JP,
+            self::COUNTRY_KR,
+            self::COUNTRY_MO,
+            self::COUNTRY_MY,
+            self::COUNTRY_SG,
+            self::COUNTRY_HK,
             self::COUNTRY_TW,
-            self::COUNTRY_US,
         ];
     }
 

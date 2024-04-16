@@ -60,7 +60,6 @@ class ProviderRequest
     const PAYFIT = 'payfit';
     const PERSONIO_DE = 'personio.de';
     const PLANDAY = 'planday';
-    const QUICKBOOKS_UK = 'quickbooks uk';
     const SAGEHR = 'sagehr';
     const SAPLINGHR = 'saplinghr';
     const STAFFOLOGY = 'staffology';
@@ -83,6 +82,8 @@ class ProviderRequest
     const SAGEONE = 'sageone';
     const SHAPE_PAYROLL = 'shape payroll';
     const SIMPLEPAY_IE = 'simplepay.ie';
+    const QUICKBOOKS_ONLINE = 'quickbooks online';
+    const ZOHO = 'zoho';
     
     /**
      * Gets allowable values of the enum
@@ -108,7 +109,6 @@ class ProviderRequest
             self::PAYFIT,
             self::PERSONIO_DE,
             self::PLANDAY,
-            self::QUICKBOOKS_UK,
             self::SAGEHR,
             self::SAPLINGHR,
             self::STAFFOLOGY,
@@ -131,6 +131,8 @@ class ProviderRequest
             self::SAGEONE,
             self::SHAPE_PAYROLL,
             self::SIMPLEPAY_IE,
+            self::QUICKBOOKS_ONLINE,
+            self::ZOHO,
         ];
     }
 }

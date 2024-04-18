@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **tax_id** | **string** |  |
 **gender** | **string** |  |
 **ethnicity** | **string** |  |
-**marital_status** | **string** |  |
+**marital_status** | **string** | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, divorced, widowed, etc |
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  |
 **employment_status** | **string** |  |
 **employment_type** | **string** |  |

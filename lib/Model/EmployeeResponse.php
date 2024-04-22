@@ -76,7 +76,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'ethnicity' => 'string',
         'marital_status' => 'string',
         'date_of_birth' => '\DateTime',
-        'employment_status' => 'string',
+        'employment_status' => '\OpenAPI\Client\Model\EmploymentStatusResponse',
         'employment_type' => 'string',
         'start_date' => '\DateTime',
         'remote_created_at' => '\DateTime',
@@ -88,7 +88,9 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'bank_account' => '\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount',
         'employments' => '\OpenAPI\Client\Model\EmploymentResponse[]',
         'custom_fields' => 'object',
-        'groups' => '\OpenAPI\Client\Model\GroupResponse[]'
+        'groups' => '\OpenAPI\Client\Model\GroupResponse[]',
+        'dependents' => '\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]',
+        'emergency_contacts' => '\OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]'
     ];
 
     /**
@@ -127,7 +129,9 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'bank_account' => null,
         'employments' => null,
         'custom_fields' => null,
-        'groups' => null
+        'groups' => null,
+        'dependents' => null,
+        'emergency_contacts' => null
     ];
 
     /**
@@ -185,7 +189,9 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'bank_account' => 'bank_account',
         'employments' => 'employments',
         'custom_fields' => 'custom_fields',
-        'groups' => 'groups'
+        'groups' => 'groups',
+        'dependents' => 'dependents',
+        'emergency_contacts' => 'emergency_contacts'
     ];
 
     /**
@@ -222,7 +228,9 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'bank_account' => 'setBankAccount',
         'employments' => 'setEmployments',
         'custom_fields' => 'setCustomFields',
-        'groups' => 'setGroups'
+        'groups' => 'setGroups',
+        'dependents' => 'setDependents',
+        'emergency_contacts' => 'setEmergencyContacts'
     ];
 
     /**
@@ -259,7 +267,9 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'bank_account' => 'getBankAccount',
         'employments' => 'getEmployments',
         'custom_fields' => 'getCustomFields',
-        'groups' => 'getGroups'
+        'groups' => 'getGroups',
+        'dependents' => 'getDependents',
+        'emergency_contacts' => 'getEmergencyContacts'
     ];
 
     /**
@@ -320,11 +330,6 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const MARITAL_STATUS_NOT_SPECIFIED = 'not_specified';
     const MARITAL_STATUS_OTHER = 'other';
     const MARITAL_STATUS_NULL = 'null';
-    const EMPLOYMENT_STATUS_NULL = 'null';
-    const EMPLOYMENT_STATUS_ACTIVE = 'active';
-    const EMPLOYMENT_STATUS_INACTIVE = 'inactive';
-    const EMPLOYMENT_STATUS_PENDING = 'pending';
-    const EMPLOYMENT_STATUS_LEAVE = 'leave';
     const EMPLOYMENT_TYPE_NULL = 'null';
     const EMPLOYMENT_TYPE_FULL_TIME = 'full_time';
     const EMPLOYMENT_TYPE_PART_TIME = 'part_time';
@@ -378,22 +383,6 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             self::MARITAL_STATUS_NOT_SPECIFIED,
             self::MARITAL_STATUS_OTHER,
             self::MARITAL_STATUS_NULL,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getEmploymentStatusAllowableValues()
-    {
-        return [
-            self::EMPLOYMENT_STATUS_NULL,
-            self::EMPLOYMENT_STATUS_ACTIVE,
-            self::EMPLOYMENT_STATUS_INACTIVE,
-            self::EMPLOYMENT_STATUS_PENDING,
-            self::EMPLOYMENT_STATUS_LEAVE,
         ];
     }
 
@@ -457,6 +446,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['employments'] = $data['employments'] ?? null;
         $this->container['custom_fields'] = $data['custom_fields'] ?? null;
         $this->container['groups'] = $data['groups'] ?? null;
+        $this->container['dependents'] = $data['dependents'] ?? null;
+        $this->container['emergency_contacts'] = $data['emergency_contacts'] ?? null;
     }
 
     /**
@@ -546,15 +537,6 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['employment_status'] === null) {
             $invalidProperties[] = "'employment_status' can't be null";
         }
-        $allowedValues = $this->getEmploymentStatusAllowableValues();
-        if (!is_null($this->container['employment_status']) && !in_array($this->container['employment_status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'employment_status', must be one of '%s'",
-                $this->container['employment_status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['employment_type'] === null) {
             $invalidProperties[] = "'employment_type' can't be null";
         }
@@ -599,6 +581,12 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['groups'] === null) {
             $invalidProperties[] = "'groups' can't be null";
+        }
+        if ($this->container['dependents'] === null) {
+            $invalidProperties[] = "'dependents' can't be null";
+        }
+        if ($this->container['emergency_contacts'] === null) {
+            $invalidProperties[] = "'emergency_contacts' can't be null";
         }
         return $invalidProperties;
     }
@@ -1032,7 +1020,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets employment_status
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\EmploymentStatusResponse
      */
     public function getEmploymentStatus()
     {
@@ -1042,22 +1030,12 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets employment_status
      *
-     * @param string $employment_status employment_status
+     * @param \OpenAPI\Client\Model\EmploymentStatusResponse $employment_status employment_status
      *
      * @return self
      */
     public function setEmploymentStatus($employment_status)
     {
-        $allowedValues = $this->getEmploymentStatusAllowableValues();
-        if (!in_array($employment_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'employment_status', must be one of '%s'",
-                    $employment_status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['employment_status'] = $employment_status;
 
         return $this;
@@ -1357,6 +1335,54 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGroups($groups)
     {
         $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets dependents
+     *
+     * @return \OpenAPI\Client\Model\CreateEmployeeRequestDependents[]
+     */
+    public function getDependents()
+    {
+        return $this->container['dependents'];
+    }
+
+    /**
+     * Sets dependents
+     *
+     * @param \OpenAPI\Client\Model\CreateEmployeeRequestDependents[] $dependents dependents
+     *
+     * @return self
+     */
+    public function setDependents($dependents)
+    {
+        $this->container['dependents'] = $dependents;
+
+        return $this;
+    }
+
+    /**
+     * Gets emergency_contacts
+     *
+     * @return \OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]
+     */
+    public function getEmergencyContacts()
+    {
+        return $this->container['emergency_contacts'];
+    }
+
+    /**
+     * Sets emergency_contacts
+     *
+     * @param \OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[] $emergency_contacts emergency_contacts
+     *
+     * @return self
+     */
+    public function setEmergencyContacts($emergency_contacts)
+    {
+        $this->container['emergency_contacts'] = $emergency_contacts;
 
         return $this;
     }

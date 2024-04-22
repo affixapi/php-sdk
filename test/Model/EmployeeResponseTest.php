@@ -340,4 +340,22 @@ class EmployeeResponseTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "dependents"
+     */
+    public function testPropertyDependents()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "emergency_contacts"
+     */
+    public function testPropertyEmergencyContacts()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

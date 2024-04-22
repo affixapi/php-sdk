@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **ethnicity** | **string** |  | [optional]
 **marital_status** | **string** |  | [optional]
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  | [optional]
-**employment_status** | **string** |  | [optional]
+**employment_status** | [**\OpenAPI\Client\Model\EmploymentStatusNotNullRequest**](EmploymentStatusNotNullRequest.md) |  | [optional]
 **employment_type** | **string** |  | [optional]
 **start_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **termination_date** | [**\DateTime**](\DateTime.md) |  | [optional]
@@ -30,5 +30,7 @@ Name | Type | Description | Notes
 **employments** | [**\OpenAPI\Client\Model\EmploymentNoNullEnumRequest[]**](EmploymentNoNullEnumRequest.md) |  | [optional]
 **custom_fields** | **object** |  | [optional]
 **groups** | [**\OpenAPI\Client\Model\GroupNoNullEnumRequest[]**](GroupNoNullEnumRequest.md) |  | [optional]
+**dependents** | [**\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]**](CreateEmployeeRequestDependents.md) |  | [optional]
+**emergency_contacts** | [**\OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]**](CreateEmployeeRequestEmergencyContacts.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

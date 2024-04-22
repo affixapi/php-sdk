@@ -470,14 +470,15 @@ class Class20230301Api
      *
      * Employees
      *
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\EmployeeResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function xhrEmployees20230301()
+    public function xhrEmployees20230301($employment_status = null)
     {
-        list($response) = $this->xhrEmployees20230301WithHttpInfo();
+        list($response) = $this->xhrEmployees20230301WithHttpInfo($employment_status);
         return $response;
     }
 
@@ -486,14 +487,15 @@ class Class20230301Api
      *
      * Employees
      *
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\EmployeeResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function xhrEmployees20230301WithHttpInfo()
+    public function xhrEmployees20230301WithHttpInfo($employment_status = null)
     {
-        $request = $this->xhrEmployees20230301Request();
+        $request = $this->xhrEmployees20230301Request($employment_status);
 
         try {
             $options = $this->createHttpClientOption();
@@ -671,13 +673,14 @@ class Class20230301Api
      *
      * Employees
      *
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function xhrEmployees20230301Async()
+    public function xhrEmployees20230301Async($employment_status = null)
     {
-        return $this->xhrEmployees20230301AsyncWithHttpInfo()
+        return $this->xhrEmployees20230301AsyncWithHttpInfo($employment_status)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -690,14 +693,15 @@ class Class20230301Api
      *
      * Employees
      *
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function xhrEmployees20230301AsyncWithHttpInfo()
+    public function xhrEmployees20230301AsyncWithHttpInfo($employment_status = null)
     {
         $returnType = '\OpenAPI\Client\Model\EmployeeResponse[]';
-        $request = $this->xhrEmployees20230301Request();
+        $request = $this->xhrEmployees20230301Request($employment_status);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -735,11 +739,12 @@ class Class20230301Api
     /**
      * Create request for operation 'xhrEmployees20230301'
      *
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function xhrEmployees20230301Request()
+    public function xhrEmployees20230301Request($employment_status = null)
     {
 
         $resourcePath = '/2023-03-01/xhr/employees';
@@ -749,6 +754,17 @@ class Class20230301Api
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($employment_status !== null) {
+            if('form' === 'form' && is_array($employment_status)) {
+                foreach($employment_status as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['employment_status'] = $employment_status;
+            }
+        }
 
 
 

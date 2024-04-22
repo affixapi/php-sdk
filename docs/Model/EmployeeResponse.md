@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **ethnicity** | **string** |  |
 **marital_status** | **string** | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, divorced, widowed, etc |
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  |
-**employment_status** | **string** |  |
+**employment_status** | [**\OpenAPI\Client\Model\EmploymentStatusResponse**](EmploymentStatusResponse.md) |  |
 **employment_type** | **string** |  |
 **start_date** | [**\DateTime**](\DateTime.md) |  |
 **remote_created_at** | [**\DateTime**](\DateTime.md) |  | [readonly]
@@ -33,5 +33,7 @@ Name | Type | Description | Notes
 **employments** | [**\OpenAPI\Client\Model\EmploymentResponse[]**](EmploymentResponse.md) |  |
 **custom_fields** | **object** |  |
 **groups** | [**\OpenAPI\Client\Model\GroupResponse[]**](GroupResponse.md) |  |
+**dependents** | [**\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]**](CreateEmployeeRequestDependents.md) |  |
+**emergency_contacts** | [**\OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]**](CreateEmployeeRequestEmergencyContacts.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

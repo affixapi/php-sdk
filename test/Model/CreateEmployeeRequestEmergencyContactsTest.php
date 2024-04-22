@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmployeeRequestTest
+ * CreateEmployeeRequestEmergencyContactsTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateEmployeeRequestTest Class Doc Comment
+ * CreateEmployeeRequestEmergencyContactsTest Class Doc Comment
  *
  * @category    Class
- * @description CreateEmployeeRequest
+ * @description CreateEmployeeRequestEmergencyContacts
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CreateEmployeeRequestTest extends TestCase
+class CreateEmployeeRequestEmergencyContactsTest extends TestCase
 {
 
     /**
@@ -72,18 +72,9 @@ class CreateEmployeeRequestTest extends TestCase
     }
 
     /**
-     * Test "CreateEmployeeRequest"
+     * Test "CreateEmployeeRequestEmergencyContacts"
      */
-    public function testCreateEmployeeRequest()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employee_number"
-     */
-    public function testPropertyEmployeeNumber()
+    public function testCreateEmployeeRequestEmergencyContacts()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -108,45 +99,9 @@ class CreateEmployeeRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "display_full_name"
+     * Test attribute "relationship"
      */
-    public function testPropertyDisplayFullName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "nationality"
-     */
-    public function testPropertyNationality()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "job_title"
-     */
-    public function testPropertyJobTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "work_email"
-     */
-    public function testPropertyWorkEmail()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "personal_email"
-     */
-    public function testPropertyPersonalEmail()
+    public function testPropertyRelationship()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -162,171 +117,9 @@ class CreateEmployeeRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "tax_id"
+     * Test attribute "primary_contact"
      */
-    public function testPropertyTaxId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "gender"
-     */
-    public function testPropertyGender()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ethnicity"
-     */
-    public function testPropertyEthnicity()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "marital_status"
-     */
-    public function testPropertyMaritalStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "date_of_birth"
-     */
-    public function testPropertyDateOfBirth()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employment_status"
-     */
-    public function testPropertyEmploymentStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employment_type"
-     */
-    public function testPropertyEmploymentType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "termination_date"
-     */
-    public function testPropertyTerminationDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "avatar"
-     */
-    public function testPropertyAvatar()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "home_location"
-     */
-    public function testPropertyHomeLocation()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "work_location"
-     */
-    public function testPropertyWorkLocation()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "manager"
-     */
-    public function testPropertyManager()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bank_account"
-     */
-    public function testPropertyBankAccount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employments"
-     */
-    public function testPropertyEmployments()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "custom_fields"
-     */
-    public function testPropertyCustomFields()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "groups"
-     */
-    public function testPropertyGroups()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dependents"
-     */
-    public function testPropertyDependents()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "emergency_contacts"
-     */
-    public function testPropertyEmergencyContacts()
+    public function testPropertyPrimaryContact()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

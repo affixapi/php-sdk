@@ -74,7 +74,7 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'ethnicity' => 'string',
         'marital_status' => 'string',
         'date_of_birth' => '\DateTime',
-        'employment_status' => 'string',
+        'employment_status' => '\OpenAPI\Client\Model\EmploymentStatusNotNullRequest',
         'employment_type' => 'string',
         'start_date' => '\DateTime',
         'termination_date' => '\DateTime',
@@ -85,7 +85,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'bank_account' => '\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount',
         'employments' => '\OpenAPI\Client\Model\EmploymentNoNullEnumRequest[]',
         'custom_fields' => 'object',
-        'groups' => '\OpenAPI\Client\Model\GroupNoNullEnumRequest[]'
+        'groups' => '\OpenAPI\Client\Model\GroupNoNullEnumRequest[]',
+        'dependents' => '\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]',
+        'emergency_contacts' => '\OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]'
     ];
 
     /**
@@ -121,7 +123,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'bank_account' => null,
         'employments' => null,
         'custom_fields' => null,
-        'groups' => null
+        'groups' => null,
+        'dependents' => null,
+        'emergency_contacts' => null
     ];
 
     /**
@@ -176,7 +180,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'bank_account' => 'bank_account',
         'employments' => 'employments',
         'custom_fields' => 'custom_fields',
-        'groups' => 'groups'
+        'groups' => 'groups',
+        'dependents' => 'dependents',
+        'emergency_contacts' => 'emergency_contacts'
     ];
 
     /**
@@ -210,7 +216,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'bank_account' => 'setBankAccount',
         'employments' => 'setEmployments',
         'custom_fields' => 'setCustomFields',
-        'groups' => 'setGroups'
+        'groups' => 'setGroups',
+        'dependents' => 'setDependents',
+        'emergency_contacts' => 'setEmergencyContacts'
     ];
 
     /**
@@ -244,7 +252,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'bank_account' => 'getBankAccount',
         'employments' => 'getEmployments',
         'custom_fields' => 'getCustomFields',
-        'groups' => 'getGroups'
+        'groups' => 'getGroups',
+        'dependents' => 'getDependents',
+        'emergency_contacts' => 'getEmergencyContacts'
     ];
 
     /**
@@ -301,10 +311,6 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     const MARITAL_STATUS_SINGLE = 'single';
     const MARITAL_STATUS_MARRIED = 'married';
     const MARITAL_STATUS_NOT_SPECIFIED = 'not_specified';
-    const EMPLOYMENT_STATUS_ACTIVE = 'active';
-    const EMPLOYMENT_STATUS_INACTIVE = 'inactive';
-    const EMPLOYMENT_STATUS_PENDING = 'pending';
-    const EMPLOYMENT_STATUS_LEAVE = 'leave';
     const EMPLOYMENT_TYPE_FULL_TIME = 'full_time';
     const EMPLOYMENT_TYPE_PART_TIME = 'part_time';
     const EMPLOYMENT_TYPE_CONTRACTOR = 'contractor';
@@ -353,21 +359,6 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             self::MARITAL_STATUS_SINGLE,
             self::MARITAL_STATUS_MARRIED,
             self::MARITAL_STATUS_NOT_SPECIFIED,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getEmploymentStatusAllowableValues()
-    {
-        return [
-            self::EMPLOYMENT_STATUS_ACTIVE,
-            self::EMPLOYMENT_STATUS_INACTIVE,
-            self::EMPLOYMENT_STATUS_PENDING,
-            self::EMPLOYMENT_STATUS_LEAVE,
         ];
     }
 
@@ -427,6 +418,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['employments'] = $data['employments'] ?? null;
         $this->container['custom_fields'] = $data['custom_fields'] ?? null;
         $this->container['groups'] = $data['groups'] ?? null;
+        $this->container['dependents'] = $data['dependents'] ?? null;
+        $this->container['emergency_contacts'] = $data['emergency_contacts'] ?? null;
     }
 
     /**
@@ -467,15 +460,6 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'marital_status', must be one of '%s'",
                 $this->container['marital_status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getEmploymentStatusAllowableValues();
-        if (!is_null($this->container['employment_status']) && !in_array($this->container['employment_status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'employment_status', must be one of '%s'",
-                $this->container['employment_status'],
                 implode("', '", $allowedValues)
             );
         }
@@ -873,7 +857,7 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets employment_status
      *
-     * @return string|null
+     * @return \OpenAPI\Client\Model\EmploymentStatusNotNullRequest|null
      */
     public function getEmploymentStatus()
     {
@@ -883,22 +867,12 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets employment_status
      *
-     * @param string|null $employment_status employment_status
+     * @param \OpenAPI\Client\Model\EmploymentStatusNotNullRequest|null $employment_status employment_status
      *
      * @return self
      */
     public function setEmploymentStatus($employment_status)
     {
-        $allowedValues = $this->getEmploymentStatusAllowableValues();
-        if (!is_null($employment_status) && !in_array($employment_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'employment_status', must be one of '%s'",
-                    $employment_status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['employment_status'] = $employment_status;
 
         return $this;
@@ -1174,6 +1148,54 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setGroups($groups)
     {
         $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets dependents
+     *
+     * @return \OpenAPI\Client\Model\CreateEmployeeRequestDependents[]|null
+     */
+    public function getDependents()
+    {
+        return $this->container['dependents'];
+    }
+
+    /**
+     * Sets dependents
+     *
+     * @param \OpenAPI\Client\Model\CreateEmployeeRequestDependents[]|null $dependents dependents
+     *
+     * @return self
+     */
+    public function setDependents($dependents)
+    {
+        $this->container['dependents'] = $dependents;
+
+        return $this;
+    }
+
+    /**
+     * Gets emergency_contacts
+     *
+     * @return \OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]|null
+     */
+    public function getEmergencyContacts()
+    {
+        return $this->container['emergency_contacts'];
+    }
+
+    /**
+     * Sets emergency_contacts
+     *
+     * @param \OpenAPI\Client\Model\CreateEmployeeRequestEmergencyContacts[]|null $emergency_contacts emergency_contacts
+     *
+     * @return self
+     */
+    public function setEmergencyContacts($emergency_contacts)
+    {
+        $this->container['emergency_contacts'] = $emergency_contacts;
 
         return $this;
     }

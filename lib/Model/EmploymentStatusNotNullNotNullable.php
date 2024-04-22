@@ -1,6 +1,6 @@
 <?php
 /**
- * EmploymentStatus
+ * EmploymentStatusNotNullNotNullable
  *
  * PHP version 7.2
  *
@@ -31,19 +31,18 @@ namespace OpenAPI\Client\Model;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * EmploymentStatus Class Doc Comment
+ * EmploymentStatusNotNullNotNullable Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class EmploymentStatus
+class EmploymentStatusNotNullNotNullable
 {
     /**
      * Possible values of this enum
      */
-    const NULL = 'null';
     const ACTIVE = 'active';
     const INACTIVE = 'inactive';
     const PENDING = 'pending';
@@ -56,7 +55,6 @@ class EmploymentStatus
     public static function getAllowableEnumValues()
     {
         return [
-            self::NULL,
             self::ACTIVE,
             self::INACTIVE,
             self::PENDING,

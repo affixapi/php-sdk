@@ -25,8 +25,7 @@ docs/Model/EmployeeResponse.md
 docs/Model/EmployeeResponseManager.md
 docs/Model/EmploymentNoNullEnumRequest.md
 docs/Model/EmploymentResponse.md
-docs/Model/EmploymentStatus.md
-docs/Model/EmploymentStatusNotNull.md
+docs/Model/EmploymentStatusNotNullNotNullable.md
 docs/Model/EmploymentStatusNotNullRequest.md
 docs/Model/EmploymentStatusResponse.md
 docs/Model/GroupNoNullEnumRequest.md
@@ -82,8 +81,7 @@ lib/Model/EmployeeResponse.php
 lib/Model/EmployeeResponseManager.php
 lib/Model/EmploymentNoNullEnumRequest.php
 lib/Model/EmploymentResponse.php
-lib/Model/EmploymentStatus.php
-lib/Model/EmploymentStatusNotNull.php
+lib/Model/EmploymentStatusNotNullNotNullable.php
 lib/Model/EmploymentStatusNotNullRequest.php
 lib/Model/EmploymentStatusResponse.php
 lib/Model/GroupNoNullEnumRequest.php
@@ -138,10 +136,9 @@ test/Model/EmployeeResponseManagerTest.php
 test/Model/EmployeeResponseTest.php
 test/Model/EmploymentNoNullEnumRequestTest.php
 test/Model/EmploymentResponseTest.php
+test/Model/EmploymentStatusNotNullNotNullableTest.php
 test/Model/EmploymentStatusNotNullRequestTest.php
-test/Model/EmploymentStatusNotNullTest.php
 test/Model/EmploymentStatusResponseTest.php
-test/Model/EmploymentStatusTest.php
 test/Model/GroupNoNullEnumRequestTest.php
 test/Model/GroupResponseTest.php
 test/Model/IdAndMessageResponseTest.php

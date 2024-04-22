@@ -470,7 +470,7 @@ class Class20230301Api
      *
      * Employees
      *
-     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNullNotNullable $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -487,7 +487,7 @@ class Class20230301Api
      *
      * Employees
      *
-     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNullNotNullable $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -673,7 +673,7 @@ class Class20230301Api
      *
      * Employees
      *
-     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNullNotNullable $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -693,7 +693,7 @@ class Class20230301Api
      *
      * Employees
      *
-     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNullNotNullable $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -739,7 +739,7 @@ class Class20230301Api
     /**
      * Create request for operation 'xhrEmployees20230301'
      *
-     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNull $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
+     * @param  \OpenAPI\Client\Model\EmploymentStatusNotNullNotNullable $employment_status Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

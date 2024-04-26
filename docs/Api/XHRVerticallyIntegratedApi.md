@@ -443,7 +443,7 @@ This endpoint does not need any parameter.
 ## `xhrTimeOffEntries20230301()`
 
 ```php
-xhrTimeOffEntries20230301(): \OpenAPI\Client\Model\TimeOffEntryResponse[]
+xhrTimeOffEntries20230301($start_date, $end_date): \OpenAPI\Client\Model\TimeOffEntryResponse[]
 ```
 
 Time off entries
@@ -469,9 +469,11 @@ $apiInstance = new OpenAPI\Client\Api\XHRVerticallyIntegratedApi(
     new GuzzleHttp\Client(),
     $config
 );
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date of the search period
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the search period
 
 try {
-    $result = $apiInstance->xhrTimeOffEntries20230301();
+    $result = $apiInstance->xhrTimeOffEntries20230301($start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling XHRVerticallyIntegratedApi->xhrTimeOffEntries20230301: ', $e->getMessage(), PHP_EOL;
@@ -480,7 +482,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**| The start date of the search period |
+ **end_date** | **\DateTime**| The end date of the search period |
 
 ### Return type
 
@@ -502,7 +507,7 @@ This endpoint does not need any parameter.
 ## `xhrTimesheets20230301()`
 
 ```php
-xhrTimesheets20230301(): \OpenAPI\Client\Model\TimesheetResponse[]
+xhrTimesheets20230301($start_date, $end_date): \OpenAPI\Client\Model\TimesheetResponse[]
 ```
 
 Timesheets
@@ -528,9 +533,11 @@ $apiInstance = new OpenAPI\Client\Api\XHRVerticallyIntegratedApi(
     new GuzzleHttp\Client(),
     $config
 );
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date of the search period
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the search period
 
 try {
-    $result = $apiInstance->xhrTimesheets20230301();
+    $result = $apiInstance->xhrTimesheets20230301($start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling XHRVerticallyIntegratedApi->xhrTimesheets20230301: ', $e->getMessage(), PHP_EOL;
@@ -539,7 +546,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**| The start date of the search period |
+ **end_date** | **\DateTime**| The end date of the search period |
 
 ### Return type
 

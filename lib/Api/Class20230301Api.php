@@ -2609,14 +2609,16 @@ class Class20230301Api
      *
      * Time off entries
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\TimeOffEntryResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function xhrTimeOffEntries20230301()
+    public function xhrTimeOffEntries20230301($start_date, $end_date)
     {
-        list($response) = $this->xhrTimeOffEntries20230301WithHttpInfo();
+        list($response) = $this->xhrTimeOffEntries20230301WithHttpInfo($start_date, $end_date);
         return $response;
     }
 
@@ -2625,14 +2627,16 @@ class Class20230301Api
      *
      * Time off entries
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\TimeOffEntryResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function xhrTimeOffEntries20230301WithHttpInfo()
+    public function xhrTimeOffEntries20230301WithHttpInfo($start_date, $end_date)
     {
-        $request = $this->xhrTimeOffEntries20230301Request();
+        $request = $this->xhrTimeOffEntries20230301Request($start_date, $end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2810,13 +2814,15 @@ class Class20230301Api
      *
      * Time off entries
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function xhrTimeOffEntries20230301Async()
+    public function xhrTimeOffEntries20230301Async($start_date, $end_date)
     {
-        return $this->xhrTimeOffEntries20230301AsyncWithHttpInfo()
+        return $this->xhrTimeOffEntries20230301AsyncWithHttpInfo($start_date, $end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2829,14 +2835,16 @@ class Class20230301Api
      *
      * Time off entries
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function xhrTimeOffEntries20230301AsyncWithHttpInfo()
+    public function xhrTimeOffEntries20230301AsyncWithHttpInfo($start_date, $end_date)
     {
         $returnType = '\OpenAPI\Client\Model\TimeOffEntryResponse[]';
-        $request = $this->xhrTimeOffEntries20230301Request();
+        $request = $this->xhrTimeOffEntries20230301Request($start_date, $end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2874,12 +2882,26 @@ class Class20230301Api
     /**
      * Create request for operation 'xhrTimeOffEntries20230301'
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function xhrTimeOffEntries20230301Request()
+    public function xhrTimeOffEntries20230301Request($start_date, $end_date)
     {
+        // verify the required parameter 'start_date' is set
+        if ($start_date === null || (is_array($start_date) && count($start_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $start_date when calling xhrTimeOffEntries20230301'
+            );
+        }
+        // verify the required parameter 'end_date' is set
+        if ($end_date === null || (is_array($end_date) && count($end_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $end_date when calling xhrTimeOffEntries20230301'
+            );
+        }
 
         $resourcePath = '/2023-03-01/xhr/time-off-entries';
         $formParams = [];
@@ -2888,6 +2910,28 @@ class Class20230301Api
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($start_date !== null) {
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
+        }
+        // query params
+        if ($end_date !== null) {
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
+        }
 
 
 
@@ -2959,14 +3003,16 @@ class Class20230301Api
      *
      * Timesheets
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\TimesheetResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse
      */
-    public function xhrTimesheets20230301()
+    public function xhrTimesheets20230301($start_date, $end_date)
     {
-        list($response) = $this->xhrTimesheets20230301WithHttpInfo();
+        list($response) = $this->xhrTimesheets20230301WithHttpInfo($start_date, $end_date);
         return $response;
     }
 
@@ -2975,14 +3021,16 @@ class Class20230301Api
      *
      * Timesheets
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\TimesheetResponse[]|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\InlineResponse401|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse|\OpenAPI\Client\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function xhrTimesheets20230301WithHttpInfo()
+    public function xhrTimesheets20230301WithHttpInfo($start_date, $end_date)
     {
-        $request = $this->xhrTimesheets20230301Request();
+        $request = $this->xhrTimesheets20230301Request($start_date, $end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3160,13 +3208,15 @@ class Class20230301Api
      *
      * Timesheets
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function xhrTimesheets20230301Async()
+    public function xhrTimesheets20230301Async($start_date, $end_date)
     {
-        return $this->xhrTimesheets20230301AsyncWithHttpInfo()
+        return $this->xhrTimesheets20230301AsyncWithHttpInfo($start_date, $end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3179,14 +3229,16 @@ class Class20230301Api
      *
      * Timesheets
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function xhrTimesheets20230301AsyncWithHttpInfo()
+    public function xhrTimesheets20230301AsyncWithHttpInfo($start_date, $end_date)
     {
         $returnType = '\OpenAPI\Client\Model\TimesheetResponse[]';
-        $request = $this->xhrTimesheets20230301Request();
+        $request = $this->xhrTimesheets20230301Request($start_date, $end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3224,12 +3276,26 @@ class Class20230301Api
     /**
      * Create request for operation 'xhrTimesheets20230301'
      *
+     * @param  \DateTime $start_date The start date of the search period (required)
+     * @param  \DateTime $end_date The end date of the search period (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function xhrTimesheets20230301Request()
+    public function xhrTimesheets20230301Request($start_date, $end_date)
     {
+        // verify the required parameter 'start_date' is set
+        if ($start_date === null || (is_array($start_date) && count($start_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $start_date when calling xhrTimesheets20230301'
+            );
+        }
+        // verify the required parameter 'end_date' is set
+        if ($end_date === null || (is_array($end_date) && count($end_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $end_date when calling xhrTimesheets20230301'
+            );
+        }
 
         $resourcePath = '/2023-03-01/xhr/timesheets';
         $formParams = [];
@@ -3238,6 +3304,28 @@ class Class20230301Api
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($start_date !== null) {
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
+        }
+        // query params
+        if ($end_date !== null) {
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
+        }
 
 
 

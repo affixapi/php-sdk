@@ -61,7 +61,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'employee_id' => 'string',
-        'remote_id' => 'string',
+        'remote_employee_id' => 'string',
         'balance' => 'float',
         'used' => 'float',
         'policy_name' => 'string',
@@ -79,7 +79,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'employee_id' => null,
-        'remote_id' => null,
+        'remote_employee_id' => null,
         'balance' => null,
         'used' => null,
         'policy_name' => null,
@@ -116,7 +116,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'employee_id' => 'employee_id',
-        'remote_id' => 'remote_id',
+        'remote_employee_id' => 'remote_employee_id',
         'balance' => 'balance',
         'used' => 'used',
         'policy_name' => 'policy_name',
@@ -132,7 +132,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'employee_id' => 'setEmployeeId',
-        'remote_id' => 'setRemoteId',
+        'remote_employee_id' => 'setRemoteEmployeeId',
         'balance' => 'setBalance',
         'used' => 'setUsed',
         'policy_name' => 'setPolicyName',
@@ -148,7 +148,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'employee_id' => 'getEmployeeId',
-        'remote_id' => 'getRemoteId',
+        'remote_employee_id' => 'getRemoteEmployeeId',
         'balance' => 'getBalance',
         'used' => 'getUsed',
         'policy_name' => 'getPolicyName',
@@ -240,7 +240,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['remote_id'] = $data['remote_id'] ?? null;
+        $this->container['remote_employee_id'] = $data['remote_employee_id'] ?? null;
         $this->container['balance'] = $data['balance'] ?? null;
         $this->container['used'] = $data['used'] ?? null;
         $this->container['policy_name'] = $data['policy_name'] ?? null;
@@ -261,8 +261,8 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
         }
-        if ($this->container['remote_id'] === null) {
-            $invalidProperties[] = "'remote_id' can't be null";
+        if ($this->container['remote_employee_id'] === null) {
+            $invalidProperties[] = "'remote_employee_id' can't be null";
         }
         if ($this->container['balance'] === null) {
             $invalidProperties[] = "'balance' can't be null";
@@ -331,25 +331,25 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets remote_id
+     * Gets remote_employee_id
      *
      * @return string
      */
-    public function getRemoteId()
+    public function getRemoteEmployeeId()
     {
-        return $this->container['remote_id'];
+        return $this->container['remote_employee_id'];
     }
 
     /**
-     * Sets remote_id
+     * Sets remote_employee_id
      *
-     * @param string $remote_id the remote system-assigned id of the individual
+     * @param string $remote_employee_id the remote system-assigned id of the individual
      *
      * @return self
      */
-    public function setRemoteId($remote_id)
+    public function setRemoteEmployeeId($remote_employee_id)
     {
-        $this->container['remote_id'] = $remote_id;
+        $this->container['remote_employee_id'] = $remote_employee_id;
 
         return $this;
     }

@@ -63,6 +63,7 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'string',
         'remote_id' => 'string',
         'employee_id' => 'string',
+        'remote_employee_id' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'amount' => 'float',
@@ -85,6 +86,7 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => null,
         'remote_id' => null,
         'employee_id' => null,
+        'remote_employee_id' => null,
         'start_date' => 'date',
         'end_date' => 'date',
         'amount' => null,
@@ -126,6 +128,7 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'id',
         'remote_id' => 'remote_id',
         'employee_id' => 'employee_id',
+        'remote_employee_id' => 'remote_employee_id',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
         'amount' => 'amount',
@@ -146,6 +149,7 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'setId',
         'remote_id' => 'setRemoteId',
         'employee_id' => 'setEmployeeId',
+        'remote_employee_id' => 'setRemoteEmployeeId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'amount' => 'setAmount',
@@ -166,6 +170,7 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'getId',
         'remote_id' => 'getRemoteId',
         'employee_id' => 'getEmployeeId',
+        'remote_employee_id' => 'getRemoteEmployeeId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'amount' => 'getAmount',
@@ -275,6 +280,7 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['id'] = $data['id'] ?? null;
         $this->container['remote_id'] = $data['remote_id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['remote_employee_id'] = $data['remote_employee_id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
@@ -303,6 +309,9 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
+        }
+        if ($this->container['remote_employee_id'] === null) {
+            $invalidProperties[] = "'remote_employee_id' can't be null";
         }
         if ($this->container['start_date'] === null) {
             $invalidProperties[] = "'start_date' can't be null";
@@ -432,6 +441,30 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setEmployeeId($employee_id)
     {
         $this->container['employee_id'] = $employee_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets remote_employee_id
+     *
+     * @return string
+     */
+    public function getRemoteEmployeeId()
+    {
+        return $this->container['remote_employee_id'];
+    }
+
+    /**
+     * Sets remote_employee_id
+     *
+     * @param string $remote_employee_id the remote system-assigned id of the individual
+     *
+     * @return self
+     */
+    public function setRemoteEmployeeId($remote_employee_id)
+    {
+        $this->container['remote_employee_id'] = $remote_employee_id;
 
         return $this;
     }

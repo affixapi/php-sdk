@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** | The Affix-assigned id of the time off entry |
 **remote_id** | **string** | the remote system-assigned id of the time off entry |
 **employee_id** | **string** | the Affix-assigned id of the individual |
+**remote_employee_id** | **string** | the remote system-assigned id of the individual |
 **start_date** | [**\DateTime**](\DateTime.md) |  |
 **end_date** | [**\DateTime**](\DateTime.md) |  |
 **amount** | **float** |  |

@@ -90,9 +90,9 @@ class TimeOffBalanceResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "remote_id"
+     * Test attribute "remote_employee_id"
      */
-    public function testPropertyRemoteId()
+    public function testPropertyRemoteEmployeeId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -63,6 +63,7 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'id' => 'string',
         'remote_id' => 'string',
         'employee_id' => 'string',
+        'remote_employee_id' => 'string',
         'start_time' => '\DateTime',
         'end_time' => '\DateTime',
         'hours_worked' => 'float',
@@ -81,6 +82,7 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'id' => null,
         'remote_id' => null,
         'employee_id' => null,
+        'remote_employee_id' => null,
         'start_time' => 'date-time',
         'end_time' => 'date-time',
         'hours_worked' => null,
@@ -118,6 +120,7 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'id' => 'id',
         'remote_id' => 'remote_id',
         'employee_id' => 'employee_id',
+        'remote_employee_id' => 'remote_employee_id',
         'start_time' => 'start_time',
         'end_time' => 'end_time',
         'hours_worked' => 'hours_worked',
@@ -134,6 +137,7 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'id' => 'setId',
         'remote_id' => 'setRemoteId',
         'employee_id' => 'setEmployeeId',
+        'remote_employee_id' => 'setRemoteEmployeeId',
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'hours_worked' => 'setHoursWorked',
@@ -150,6 +154,7 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'id' => 'getId',
         'remote_id' => 'getRemoteId',
         'employee_id' => 'getEmployeeId',
+        'remote_employee_id' => 'getRemoteEmployeeId',
         'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
         'hours_worked' => 'getHoursWorked',
@@ -217,6 +222,7 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['id'] = $data['id'] ?? null;
         $this->container['remote_id'] = $data['remote_id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['remote_employee_id'] = $data['remote_employee_id'] ?? null;
         $this->container['start_time'] = $data['start_time'] ?? null;
         $this->container['end_time'] = $data['end_time'] ?? null;
         $this->container['hours_worked'] = $data['hours_worked'] ?? null;
@@ -241,6 +247,9 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
+        }
+        if ($this->container['remote_employee_id'] === null) {
+            $invalidProperties[] = "'remote_employee_id' can't be null";
         }
         if ($this->container['start_time'] === null) {
             $invalidProperties[] = "'start_time' can't be null";
@@ -340,6 +349,30 @@ class TimesheetResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setEmployeeId($employee_id)
     {
         $this->container['employee_id'] = $employee_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets remote_employee_id
+     *
+     * @return string
+     */
+    public function getRemoteEmployeeId()
+    {
+        return $this->container['remote_employee_id'];
+    }
+
+    /**
+     * Sets remote_employee_id
+     *
+     * @param string $remote_employee_id the remote system-assigned id of the individual
+     *
+     * @return self
+     */
+    public function setRemoteEmployeeId($remote_employee_id)
+    {
+        $this->container['remote_employee_id'] = $remote_employee_id;
 
         return $this;
     }

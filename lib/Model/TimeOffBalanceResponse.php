@@ -61,11 +61,13 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'employee_id' => 'string',
-        'remote_employee_id' => 'string',
+        'employee_remote_id' => 'string',
         'balance' => 'float',
         'used' => 'float',
+        'policy_id' => 'string',
+        'policy_remote_id' => 'string',
         'policy_name' => 'string',
-        'policy_type' => 'string',
+        'policy_type' => '\OpenAPI\Client\Model\PolicyTypeResponse',
         'remote_created_at' => '\DateTime',
         'remote_modified_at' => '\DateTime'
     ];
@@ -79,9 +81,11 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'employee_id' => null,
-        'remote_employee_id' => null,
+        'employee_remote_id' => null,
         'balance' => null,
         'used' => null,
+        'policy_id' => null,
+        'policy_remote_id' => null,
         'policy_name' => null,
         'policy_type' => null,
         'remote_created_at' => 'date',
@@ -116,9 +120,11 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'employee_id' => 'employee_id',
-        'remote_employee_id' => 'remote_employee_id',
+        'employee_remote_id' => 'employee_remote_id',
         'balance' => 'balance',
         'used' => 'used',
+        'policy_id' => 'policy_id',
+        'policy_remote_id' => 'policy_remote_id',
         'policy_name' => 'policy_name',
         'policy_type' => 'policy_type',
         'remote_created_at' => 'remote_created_at',
@@ -132,9 +138,11 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'employee_id' => 'setEmployeeId',
-        'remote_employee_id' => 'setRemoteEmployeeId',
+        'employee_remote_id' => 'setEmployeeRemoteId',
         'balance' => 'setBalance',
         'used' => 'setUsed',
+        'policy_id' => 'setPolicyId',
+        'policy_remote_id' => 'setPolicyRemoteId',
         'policy_name' => 'setPolicyName',
         'policy_type' => 'setPolicyType',
         'remote_created_at' => 'setRemoteCreatedAt',
@@ -148,9 +156,11 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'employee_id' => 'getEmployeeId',
-        'remote_employee_id' => 'getRemoteEmployeeId',
+        'employee_remote_id' => 'getEmployeeRemoteId',
         'balance' => 'getBalance',
         'used' => 'getUsed',
+        'policy_id' => 'getPolicyId',
+        'policy_remote_id' => 'getPolicyRemoteId',
         'policy_name' => 'getPolicyName',
         'policy_type' => 'getPolicyType',
         'remote_created_at' => 'getRemoteCreatedAt',
@@ -198,31 +208,6 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
         return self::$openAPIModelName;
     }
 
-    const POLICY_TYPE_NULL = 'null';
-    const POLICY_TYPE_VACATION = 'vacation';
-    const POLICY_TYPE_SICK = 'sick';
-    const POLICY_TYPE_PERSONAL = 'personal';
-    const POLICY_TYPE_JURY_DUTY = 'jury_duty';
-    const POLICY_TYPE_VOLUNTEER = 'volunteer';
-    const POLICY_TYPE_BEREAVEMENT = 'bereavement';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPolicyTypeAllowableValues()
-    {
-        return [
-            self::POLICY_TYPE_NULL,
-            self::POLICY_TYPE_VACATION,
-            self::POLICY_TYPE_SICK,
-            self::POLICY_TYPE_PERSONAL,
-            self::POLICY_TYPE_JURY_DUTY,
-            self::POLICY_TYPE_VOLUNTEER,
-            self::POLICY_TYPE_BEREAVEMENT,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -240,9 +225,11 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['remote_employee_id'] = $data['remote_employee_id'] ?? null;
+        $this->container['employee_remote_id'] = $data['employee_remote_id'] ?? null;
         $this->container['balance'] = $data['balance'] ?? null;
         $this->container['used'] = $data['used'] ?? null;
+        $this->container['policy_id'] = $data['policy_id'] ?? null;
+        $this->container['policy_remote_id'] = $data['policy_remote_id'] ?? null;
         $this->container['policy_name'] = $data['policy_name'] ?? null;
         $this->container['policy_type'] = $data['policy_type'] ?? null;
         $this->container['remote_created_at'] = $data['remote_created_at'] ?? null;
@@ -261,8 +248,8 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
         }
-        if ($this->container['remote_employee_id'] === null) {
-            $invalidProperties[] = "'remote_employee_id' can't be null";
+        if ($this->container['employee_remote_id'] === null) {
+            $invalidProperties[] = "'employee_remote_id' can't be null";
         }
         if ($this->container['balance'] === null) {
             $invalidProperties[] = "'balance' can't be null";
@@ -270,21 +257,18 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['used'] === null) {
             $invalidProperties[] = "'used' can't be null";
         }
+        if ($this->container['policy_id'] === null) {
+            $invalidProperties[] = "'policy_id' can't be null";
+        }
+        if ($this->container['policy_remote_id'] === null) {
+            $invalidProperties[] = "'policy_remote_id' can't be null";
+        }
         if ($this->container['policy_name'] === null) {
             $invalidProperties[] = "'policy_name' can't be null";
         }
         if ($this->container['policy_type'] === null) {
             $invalidProperties[] = "'policy_type' can't be null";
         }
-        $allowedValues = $this->getPolicyTypeAllowableValues();
-        if (!is_null($this->container['policy_type']) && !in_array($this->container['policy_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'policy_type', must be one of '%s'",
-                $this->container['policy_type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['remote_created_at'] === null) {
             $invalidProperties[] = "'remote_created_at' can't be null";
         }
@@ -331,25 +315,25 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets remote_employee_id
+     * Gets employee_remote_id
      *
      * @return string
      */
-    public function getRemoteEmployeeId()
+    public function getEmployeeRemoteId()
     {
-        return $this->container['remote_employee_id'];
+        return $this->container['employee_remote_id'];
     }
 
     /**
-     * Sets remote_employee_id
+     * Sets employee_remote_id
      *
-     * @param string $remote_employee_id the remote system-assigned id of the individual
+     * @param string $employee_remote_id the remote system-assigned id of the individual
      *
      * @return self
      */
-    public function setRemoteEmployeeId($remote_employee_id)
+    public function setEmployeeRemoteId($employee_remote_id)
     {
-        $this->container['remote_employee_id'] = $remote_employee_id;
+        $this->container['employee_remote_id'] = $employee_remote_id;
 
         return $this;
     }
@@ -403,6 +387,54 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets policy_id
+     *
+     * @return string
+     */
+    public function getPolicyId()
+    {
+        return $this->container['policy_id'];
+    }
+
+    /**
+     * Sets policy_id
+     *
+     * @param string $policy_id The Affix-assigned id of the policy
+     *
+     * @return self
+     */
+    public function setPolicyId($policy_id)
+    {
+        $this->container['policy_id'] = $policy_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets policy_remote_id
+     *
+     * @return string
+     */
+    public function getPolicyRemoteId()
+    {
+        return $this->container['policy_remote_id'];
+    }
+
+    /**
+     * Sets policy_remote_id
+     *
+     * @param string $policy_remote_id The remote system-assigned id of the policy
+     *
+     * @return self
+     */
+    public function setPolicyRemoteId($policy_remote_id)
+    {
+        $this->container['policy_remote_id'] = $policy_remote_id;
+
+        return $this;
+    }
+
+    /**
      * Gets policy_name
      *
      * @return string
@@ -429,7 +461,7 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets policy_type
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\PolicyTypeResponse
      */
     public function getPolicyType()
     {
@@ -439,22 +471,12 @@ class TimeOffBalanceResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets policy_type
      *
-     * @param string $policy_type policy_type
+     * @param \OpenAPI\Client\Model\PolicyTypeResponse $policy_type policy_type
      *
      * @return self
      */
     public function setPolicyType($policy_type)
     {
-        $allowedValues = $this->getPolicyTypeAllowableValues();
-        if (!in_array($policy_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'policy_type', must be one of '%s'",
-                    $policy_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['policy_type'] = $policy_type;
 
         return $this;

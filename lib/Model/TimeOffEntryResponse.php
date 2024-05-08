@@ -63,14 +63,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'string',
         'remote_id' => 'string',
         'employee_id' => 'string',
-        'remote_employee_id' => 'string',
+        'employee_remote_id' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'amount' => 'float',
         'unit' => 'string',
         'status' => 'string',
         'employee_note' => 'string',
-        'request_type' => 'string',
+        'policy_id' => 'string',
+        'policy_remote_id' => 'string',
+        'policy_name' => 'string',
+        'policy_type' => '\OpenAPI\Client\Model\PolicyTypeResponse',
         'remote_created_at' => '\DateTime',
         'remote_modified_at' => '\DateTime'
     ];
@@ -86,14 +89,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => null,
         'remote_id' => null,
         'employee_id' => null,
-        'remote_employee_id' => null,
+        'employee_remote_id' => null,
         'start_date' => 'date',
         'end_date' => 'date',
         'amount' => null,
         'unit' => null,
         'status' => null,
         'employee_note' => null,
-        'request_type' => null,
+        'policy_id' => null,
+        'policy_remote_id' => null,
+        'policy_name' => null,
+        'policy_type' => null,
         'remote_created_at' => 'date',
         'remote_modified_at' => 'date'
     ];
@@ -128,14 +134,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'id',
         'remote_id' => 'remote_id',
         'employee_id' => 'employee_id',
-        'remote_employee_id' => 'remote_employee_id',
+        'employee_remote_id' => 'employee_remote_id',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
         'amount' => 'amount',
         'unit' => 'unit',
         'status' => 'status',
         'employee_note' => 'employee_note',
-        'request_type' => 'request_type',
+        'policy_id' => 'policy_id',
+        'policy_remote_id' => 'policy_remote_id',
+        'policy_name' => 'policy_name',
+        'policy_type' => 'policy_type',
         'remote_created_at' => 'remote_created_at',
         'remote_modified_at' => 'remote_modified_at'
     ];
@@ -149,14 +158,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'setId',
         'remote_id' => 'setRemoteId',
         'employee_id' => 'setEmployeeId',
-        'remote_employee_id' => 'setRemoteEmployeeId',
+        'employee_remote_id' => 'setEmployeeRemoteId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'amount' => 'setAmount',
         'unit' => 'setUnit',
         'status' => 'setStatus',
         'employee_note' => 'setEmployeeNote',
-        'request_type' => 'setRequestType',
+        'policy_id' => 'setPolicyId',
+        'policy_remote_id' => 'setPolicyRemoteId',
+        'policy_name' => 'setPolicyName',
+        'policy_type' => 'setPolicyType',
         'remote_created_at' => 'setRemoteCreatedAt',
         'remote_modified_at' => 'setRemoteModifiedAt'
     ];
@@ -170,14 +182,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'getId',
         'remote_id' => 'getRemoteId',
         'employee_id' => 'getEmployeeId',
-        'remote_employee_id' => 'getRemoteEmployeeId',
+        'employee_remote_id' => 'getEmployeeRemoteId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'amount' => 'getAmount',
         'unit' => 'getUnit',
         'status' => 'getStatus',
         'employee_note' => 'getEmployeeNote',
-        'request_type' => 'getRequestType',
+        'policy_id' => 'getPolicyId',
+        'policy_remote_id' => 'getPolicyRemoteId',
+        'policy_name' => 'getPolicyName',
+        'policy_type' => 'getPolicyType',
         'remote_created_at' => 'getRemoteCreatedAt',
         'remote_modified_at' => 'getRemoteModifiedAt'
     ];
@@ -280,14 +295,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['id'] = $data['id'] ?? null;
         $this->container['remote_id'] = $data['remote_id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['remote_employee_id'] = $data['remote_employee_id'] ?? null;
+        $this->container['employee_remote_id'] = $data['employee_remote_id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['unit'] = $data['unit'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['employee_note'] = $data['employee_note'] ?? null;
-        $this->container['request_type'] = $data['request_type'] ?? null;
+        $this->container['policy_id'] = $data['policy_id'] ?? null;
+        $this->container['policy_remote_id'] = $data['policy_remote_id'] ?? null;
+        $this->container['policy_name'] = $data['policy_name'] ?? null;
+        $this->container['policy_type'] = $data['policy_type'] ?? null;
         $this->container['remote_created_at'] = $data['remote_created_at'] ?? null;
         $this->container['remote_modified_at'] = $data['remote_modified_at'] ?? null;
     }
@@ -310,8 +328,8 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
         }
-        if ($this->container['remote_employee_id'] === null) {
-            $invalidProperties[] = "'remote_employee_id' can't be null";
+        if ($this->container['employee_remote_id'] === null) {
+            $invalidProperties[] = "'employee_remote_id' can't be null";
         }
         if ($this->container['start_date'] === null) {
             $invalidProperties[] = "'start_date' can't be null";
@@ -349,8 +367,17 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['employee_note'] === null) {
             $invalidProperties[] = "'employee_note' can't be null";
         }
-        if ($this->container['request_type'] === null) {
-            $invalidProperties[] = "'request_type' can't be null";
+        if ($this->container['policy_id'] === null) {
+            $invalidProperties[] = "'policy_id' can't be null";
+        }
+        if ($this->container['policy_remote_id'] === null) {
+            $invalidProperties[] = "'policy_remote_id' can't be null";
+        }
+        if ($this->container['policy_name'] === null) {
+            $invalidProperties[] = "'policy_name' can't be null";
+        }
+        if ($this->container['policy_type'] === null) {
+            $invalidProperties[] = "'policy_type' can't be null";
         }
         if ($this->container['remote_created_at'] === null) {
             $invalidProperties[] = "'remote_created_at' can't be null";
@@ -446,25 +473,25 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets remote_employee_id
+     * Gets employee_remote_id
      *
      * @return string
      */
-    public function getRemoteEmployeeId()
+    public function getEmployeeRemoteId()
     {
-        return $this->container['remote_employee_id'];
+        return $this->container['employee_remote_id'];
     }
 
     /**
-     * Sets remote_employee_id
+     * Sets employee_remote_id
      *
-     * @param string $remote_employee_id the remote system-assigned id of the individual
+     * @param string $employee_remote_id the remote system-assigned id of the individual
      *
      * @return self
      */
-    public function setRemoteEmployeeId($remote_employee_id)
+    public function setEmployeeRemoteId($employee_remote_id)
     {
-        $this->container['remote_employee_id'] = $remote_employee_id;
+        $this->container['employee_remote_id'] = $employee_remote_id;
 
         return $this;
     }
@@ -636,25 +663,97 @@ class TimeOffEntryResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets request_type
+     * Gets policy_id
      *
      * @return string
      */
-    public function getRequestType()
+    public function getPolicyId()
     {
-        return $this->container['request_type'];
+        return $this->container['policy_id'];
     }
 
     /**
-     * Sets request_type
+     * Sets policy_id
      *
-     * @param string $request_type request_type
+     * @param string $policy_id The Affix-assigned id of the policy
      *
      * @return self
      */
-    public function setRequestType($request_type)
+    public function setPolicyId($policy_id)
     {
-        $this->container['request_type'] = $request_type;
+        $this->container['policy_id'] = $policy_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets policy_remote_id
+     *
+     * @return string
+     */
+    public function getPolicyRemoteId()
+    {
+        return $this->container['policy_remote_id'];
+    }
+
+    /**
+     * Sets policy_remote_id
+     *
+     * @param string $policy_remote_id The remote system-assigned id of the policy
+     *
+     * @return self
+     */
+    public function setPolicyRemoteId($policy_remote_id)
+    {
+        $this->container['policy_remote_id'] = $policy_remote_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets policy_name
+     *
+     * @return string
+     */
+    public function getPolicyName()
+    {
+        return $this->container['policy_name'];
+    }
+
+    /**
+     * Sets policy_name
+     *
+     * @param string $policy_name The name of the policy, as assigned by the remote system
+     *
+     * @return self
+     */
+    public function setPolicyName($policy_name)
+    {
+        $this->container['policy_name'] = $policy_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets policy_type
+     *
+     * @return \OpenAPI\Client\Model\PolicyTypeResponse
+     */
+    public function getPolicyType()
+    {
+        return $this->container['policy_type'];
+    }
+
+    /**
+     * Sets policy_type
+     *
+     * @param \OpenAPI\Client\Model\PolicyTypeResponse $policy_type policy_type
+     *
+     * @return self
+     */
+    public function setPolicyType($policy_type)
+    {
+        $this->container['policy_type'] = $policy_type;
 
         return $this;
     }

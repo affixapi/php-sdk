@@ -108,9 +108,9 @@ class TimeOffEntryResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "remote_employee_id"
+     * Test attribute "employee_remote_id"
      */
-    public function testPropertyRemoteEmployeeId()
+    public function testPropertyEmployeeRemoteId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -171,9 +171,36 @@ class TimeOffEntryResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "request_type"
+     * Test attribute "policy_id"
      */
-    public function testPropertyRequestType()
+    public function testPropertyPolicyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "policy_remote_id"
+     */
+    public function testPropertyPolicyRemoteId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "policy_name"
+     */
+    public function testPropertyPolicyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "policy_type"
+     */
+    public function testPropertyPolicyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

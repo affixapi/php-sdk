@@ -1,6 +1,6 @@
 <?php
 /**
- * TimesheetResponseTest
+ * PolicyTypeResponseTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TimesheetResponseTest Class Doc Comment
+ * PolicyTypeResponseTest Class Doc Comment
  *
  * @category    Class
- * @description TimesheetResponse
+ * @description PolicyTypeResponse
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TimesheetResponseTest extends TestCase
+class PolicyTypeResponseTest extends TestCase
 {
 
     /**
@@ -72,90 +72,9 @@ class TimesheetResponseTest extends TestCase
     }
 
     /**
-     * Test "TimesheetResponse"
+     * Test "PolicyTypeResponse"
      */
-    public function testTimesheetResponse()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "remote_id"
-     */
-    public function testPropertyRemoteId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employee_id"
-     */
-    public function testPropertyEmployeeId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employee_remote_id"
-     */
-    public function testPropertyEmployeeRemoteId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "start_time"
-     */
-    public function testPropertyStartTime()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "end_time"
-     */
-    public function testPropertyEndTime()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "hours_worked"
-     */
-    public function testPropertyHoursWorked()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "remote_created_at"
-     */
-    public function testPropertyRemoteCreatedAt()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "remote_modified_at"
-     */
-    public function testPropertyRemoteModifiedAt()
+    public function testPolicyTypeResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

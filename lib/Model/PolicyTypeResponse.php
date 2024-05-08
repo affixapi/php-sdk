@@ -45,6 +45,7 @@ class PolicyTypeResponse
      */
     const NULL = 'null';
     const VACATION = 'vacation';
+    const HOLIDAY = 'holiday';
     const SICK = 'sick';
     const PERSONAL = 'personal';
     const JURY_DUTY = 'jury_duty';
@@ -60,6 +61,7 @@ class PolicyTypeResponse
         return [
             self::NULL,
             self::VACATION,
+            self::HOLIDAY,
             self::SICK,
             self::PERSONAL,
             self::JURY_DUTY,

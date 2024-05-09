@@ -44,13 +44,13 @@ class PolicyTypeResponse
      * Possible values of this enum
      */
     const NULL = 'null';
-    const VACATION = 'vacation';
-    const HOLIDAY = 'holiday';
-    const SICK = 'sick';
-    const PERSONAL = 'personal';
-    const JURY_DUTY = 'jury_duty';
-    const VOLUNTEER = 'volunteer';
     const BEREAVEMENT = 'bereavement';
+    const HOLIDAY = 'holiday';
+    const JURY_DUTY = 'jury_duty';
+    const PERSONAL = 'personal';
+    const SICK = 'sick';
+    const VACATION = 'vacation';
+    const VOLUNTEER = 'volunteer';
     
     /**
      * Gets allowable values of the enum
@@ -60,13 +60,13 @@ class PolicyTypeResponse
     {
         return [
             self::NULL,
-            self::VACATION,
-            self::HOLIDAY,
-            self::SICK,
-            self::PERSONAL,
-            self::JURY_DUTY,
-            self::VOLUNTEER,
             self::BEREAVEMENT,
+            self::HOLIDAY,
+            self::JURY_DUTY,
+            self::PERSONAL,
+            self::SICK,
+            self::VACATION,
+            self::VOLUNTEER,
         ];
     }
 }

@@ -83,7 +83,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'work_location' => '\OpenAPI\Client\Model\LocationNoNonNullRequest',
         'manager' => '\OpenAPI\Client\Model\CreateEmployeeRequestManager',
         'bank_account' => '\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount',
-        'employments' => '\OpenAPI\Client\Model\EmploymentNoNullEnumRequest[]',
+        'employment_history' => '\OpenAPI\Client\Model\EmploymentHistoryNoNonNullRequest[]',
+        'compensation_history' => '\OpenAPI\Client\Model\CompensationHistoryNoNonNullRequest[]',
         'custom_fields' => 'object',
         'groups' => '\OpenAPI\Client\Model\GroupNoNullEnumRequest[]',
         'dependents' => '\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]',
@@ -121,7 +122,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'work_location' => null,
         'manager' => null,
         'bank_account' => null,
-        'employments' => null,
+        'employment_history' => null,
+        'compensation_history' => null,
         'custom_fields' => null,
         'groups' => null,
         'dependents' => null,
@@ -178,7 +180,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'work_location' => 'work_location',
         'manager' => 'manager',
         'bank_account' => 'bank_account',
-        'employments' => 'employments',
+        'employment_history' => 'employment_history',
+        'compensation_history' => 'compensation_history',
         'custom_fields' => 'custom_fields',
         'groups' => 'groups',
         'dependents' => 'dependents',
@@ -214,7 +217,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'work_location' => 'setWorkLocation',
         'manager' => 'setManager',
         'bank_account' => 'setBankAccount',
-        'employments' => 'setEmployments',
+        'employment_history' => 'setEmploymentHistory',
+        'compensation_history' => 'setCompensationHistory',
         'custom_fields' => 'setCustomFields',
         'groups' => 'setGroups',
         'dependents' => 'setDependents',
@@ -250,7 +254,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'work_location' => 'getWorkLocation',
         'manager' => 'getManager',
         'bank_account' => 'getBankAccount',
-        'employments' => 'getEmployments',
+        'employment_history' => 'getEmploymentHistory',
+        'compensation_history' => 'getCompensationHistory',
         'custom_fields' => 'getCustomFields',
         'groups' => 'getGroups',
         'dependents' => 'getDependents',
@@ -415,7 +420,8 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['work_location'] = $data['work_location'] ?? null;
         $this->container['manager'] = $data['manager'] ?? null;
         $this->container['bank_account'] = $data['bank_account'] ?? null;
-        $this->container['employments'] = $data['employments'] ?? null;
+        $this->container['employment_history'] = $data['employment_history'] ?? null;
+        $this->container['compensation_history'] = $data['compensation_history'] ?? null;
         $this->container['custom_fields'] = $data['custom_fields'] ?? null;
         $this->container['groups'] = $data['groups'] ?? null;
         $this->container['dependents'] = $data['dependents'] ?? null;
@@ -1081,25 +1087,49 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets employments
+     * Gets employment_history
      *
-     * @return \OpenAPI\Client\Model\EmploymentNoNullEnumRequest[]|null
+     * @return \OpenAPI\Client\Model\EmploymentHistoryNoNonNullRequest[]|null
      */
-    public function getEmployments()
+    public function getEmploymentHistory()
     {
-        return $this->container['employments'];
+        return $this->container['employment_history'];
     }
 
     /**
-     * Sets employments
+     * Sets employment_history
      *
-     * @param \OpenAPI\Client\Model\EmploymentNoNullEnumRequest[]|null $employments employments
+     * @param \OpenAPI\Client\Model\EmploymentHistoryNoNonNullRequest[]|null $employment_history employment_history
      *
      * @return self
      */
-    public function setEmployments($employments)
+    public function setEmploymentHistory($employment_history)
     {
-        $this->container['employments'] = $employments;
+        $this->container['employment_history'] = $employment_history;
+
+        return $this;
+    }
+
+    /**
+     * Gets compensation_history
+     *
+     * @return \OpenAPI\Client\Model\CompensationHistoryNoNonNullRequest[]|null
+     */
+    public function getCompensationHistory()
+    {
+        return $this->container['compensation_history'];
+    }
+
+    /**
+     * Sets compensation_history
+     *
+     * @param \OpenAPI\Client\Model\CompensationHistoryNoNonNullRequest[]|null $compensation_history compensation_history
+     *
+     * @return self
+     */
+    public function setCompensationHistory($compensation_history)
+    {
+        $this->container['compensation_history'] = $compensation_history;
 
         return $this;
     }

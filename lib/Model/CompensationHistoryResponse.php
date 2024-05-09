@@ -1,6 +1,6 @@
 <?php
 /**
- * EmploymentResponse
+ * CompensationHistoryResponse
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * EmploymentResponse Class Doc Comment
+ * CompensationHistoryResponse Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class CompensationHistoryResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'employmentResponse';
+    protected static $openAPIModelName = 'compensation-historyResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +60,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'job_title' => 'string',
         'pay_rate' => 'float',
         'pay_period' => 'string',
         'pay_frequency' => 'string',
@@ -77,7 +76,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'job_title' => null,
         'pay_rate' => null,
         'pay_period' => null,
         'pay_frequency' => null,
@@ -113,7 +111,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'job_title' => 'job_title',
         'pay_rate' => 'pay_rate',
         'pay_period' => 'pay_period',
         'pay_frequency' => 'pay_frequency',
@@ -128,7 +125,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'job_title' => 'setJobTitle',
         'pay_rate' => 'setPayRate',
         'pay_period' => 'setPayPeriod',
         'pay_frequency' => 'setPayFrequency',
@@ -143,7 +139,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'job_title' => 'getJobTitle',
         'pay_rate' => 'getPayRate',
         'pay_period' => 'getPayPeriod',
         'pay_frequency' => 'getPayFrequency',
@@ -253,7 +248,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['job_title'] = $data['job_title'] ?? null;
         $this->container['pay_rate'] = $data['pay_rate'] ?? null;
         $this->container['pay_period'] = $data['pay_period'] ?? null;
         $this->container['pay_frequency'] = $data['pay_frequency'] ?? null;
@@ -271,9 +265,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['job_title'] === null) {
-            $invalidProperties[] = "'job_title' can't be null";
-        }
         if ($this->container['pay_rate'] === null) {
             $invalidProperties[] = "'pay_rate' can't be null";
         }
@@ -324,30 +315,6 @@ class EmploymentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets job_title
-     *
-     * @return string
-     */
-    public function getJobTitle()
-    {
-        return $this->container['job_title'];
-    }
-
-    /**
-     * Sets job_title
-     *
-     * @param string $job_title job_title
-     *
-     * @return self
-     */
-    public function setJobTitle($job_title)
-    {
-        $this->container['job_title'] = $job_title;
-
-        return $this;
-    }
 
     /**
      * Gets pay_rate

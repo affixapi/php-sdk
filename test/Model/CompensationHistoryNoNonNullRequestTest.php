@@ -1,6 +1,6 @@
 <?php
 /**
- * EmploymentNoNullEnumRequestTest
+ * CompensationHistoryNoNonNullRequestTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EmploymentNoNullEnumRequestTest Class Doc Comment
+ * CompensationHistoryNoNonNullRequestTest Class Doc Comment
  *
  * @category    Class
- * @description EmploymentNoNullEnumRequest
+ * @description CompensationHistoryNoNonNullRequest
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EmploymentNoNullEnumRequestTest extends TestCase
+class CompensationHistoryNoNonNullRequestTest extends TestCase
 {
 
     /**
@@ -72,18 +72,9 @@ class EmploymentNoNullEnumRequestTest extends TestCase
     }
 
     /**
-     * Test "EmploymentNoNullEnumRequest"
+     * Test "CompensationHistoryNoNonNullRequest"
      */
-    public function testEmploymentNoNullEnumRequest()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "job_title"
-     */
-    public function testPropertyJobTitle()
+    public function testCompensationHistoryNoNonNullRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

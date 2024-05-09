@@ -30,7 +30,8 @@ Name | Type | Description | Notes
 **work_location** | [**\OpenAPI\Client\Model\LocationResponse**](LocationResponse.md) |  |
 **manager** | [**\OpenAPI\Client\Model\EmployeeResponseManager**](EmployeeResponseManager.md) |  |
 **bank_account** | [**\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  |
-**employments** | [**\OpenAPI\Client\Model\EmploymentResponse[]**](EmploymentResponse.md) |  |
+**employment_history** | [**\OpenAPI\Client\Model\EmploymentHistoryResponse[]**](EmploymentHistoryResponse.md) |  |
+**compensation_history** | [**\OpenAPI\Client\Model\CompensationHistoryResponse[]**](CompensationHistoryResponse.md) |  |
 **custom_fields** | **object** |  |
 **groups** | [**\OpenAPI\Client\Model\GroupResponse[]**](GroupResponse.md) |  |
 **dependents** | [**\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]**](CreateEmployeeRequestDependents.md) |  |

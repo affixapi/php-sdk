@@ -1,6 +1,6 @@
 <?php
 /**
- * EmploymentResponseTest
+ * CurrencyRequestTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EmploymentResponseTest Class Doc Comment
+ * CurrencyRequestTest Class Doc Comment
  *
  * @category    Class
- * @description EmploymentResponse
+ * @description CurrencyRequest
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EmploymentResponseTest extends TestCase
+class CurrencyRequestTest extends TestCase
 {
 
     /**
@@ -72,72 +72,9 @@ class EmploymentResponseTest extends TestCase
     }
 
     /**
-     * Test "EmploymentResponse"
+     * Test "CurrencyRequest"
      */
-    public function testEmploymentResponse()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "job_title"
-     */
-    public function testPropertyJobTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pay_rate"
-     */
-    public function testPropertyPayRate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pay_period"
-     */
-    public function testPropertyPayPeriod()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pay_frequency"
-     */
-    public function testPropertyPayFrequency()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employment_type"
-     */
-    public function testPropertyEmploymentType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "effective_date"
-     */
-    public function testPropertyEffectiveDate()
+    public function testCurrencyRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

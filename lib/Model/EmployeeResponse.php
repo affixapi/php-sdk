@@ -86,7 +86,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'work_location' => '\OpenAPI\Client\Model\LocationResponse',
         'manager' => '\OpenAPI\Client\Model\EmployeeResponseManager',
         'bank_account' => '\OpenAPI\Client\Model\CreateEmployeeRequestBankAccount',
-        'employments' => '\OpenAPI\Client\Model\EmploymentResponse[]',
+        'employment_history' => '\OpenAPI\Client\Model\EmploymentHistoryResponse[]',
+        'compensation_history' => '\OpenAPI\Client\Model\CompensationHistoryResponse[]',
         'custom_fields' => 'object',
         'groups' => '\OpenAPI\Client\Model\GroupResponse[]',
         'dependents' => '\OpenAPI\Client\Model\CreateEmployeeRequestDependents[]',
@@ -127,7 +128,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'work_location' => null,
         'manager' => null,
         'bank_account' => null,
-        'employments' => null,
+        'employment_history' => null,
+        'compensation_history' => null,
         'custom_fields' => null,
         'groups' => null,
         'dependents' => null,
@@ -187,7 +189,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'work_location' => 'work_location',
         'manager' => 'manager',
         'bank_account' => 'bank_account',
-        'employments' => 'employments',
+        'employment_history' => 'employment_history',
+        'compensation_history' => 'compensation_history',
         'custom_fields' => 'custom_fields',
         'groups' => 'groups',
         'dependents' => 'dependents',
@@ -226,7 +229,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'work_location' => 'setWorkLocation',
         'manager' => 'setManager',
         'bank_account' => 'setBankAccount',
-        'employments' => 'setEmployments',
+        'employment_history' => 'setEmploymentHistory',
+        'compensation_history' => 'setCompensationHistory',
         'custom_fields' => 'setCustomFields',
         'groups' => 'setGroups',
         'dependents' => 'setDependents',
@@ -265,7 +269,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'work_location' => 'getWorkLocation',
         'manager' => 'getManager',
         'bank_account' => 'getBankAccount',
-        'employments' => 'getEmployments',
+        'employment_history' => 'getEmploymentHistory',
+        'compensation_history' => 'getCompensationHistory',
         'custom_fields' => 'getCustomFields',
         'groups' => 'getGroups',
         'dependents' => 'getDependents',
@@ -443,7 +448,8 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['work_location'] = $data['work_location'] ?? null;
         $this->container['manager'] = $data['manager'] ?? null;
         $this->container['bank_account'] = $data['bank_account'] ?? null;
-        $this->container['employments'] = $data['employments'] ?? null;
+        $this->container['employment_history'] = $data['employment_history'] ?? null;
+        $this->container['compensation_history'] = $data['compensation_history'] ?? null;
         $this->container['custom_fields'] = $data['custom_fields'] ?? null;
         $this->container['groups'] = $data['groups'] ?? null;
         $this->container['dependents'] = $data['dependents'] ?? null;
@@ -573,8 +579,11 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
-        if ($this->container['employments'] === null) {
-            $invalidProperties[] = "'employments' can't be null";
+        if ($this->container['employment_history'] === null) {
+            $invalidProperties[] = "'employment_history' can't be null";
+        }
+        if ($this->container['compensation_history'] === null) {
+            $invalidProperties[] = "'compensation_history' can't be null";
         }
         if ($this->container['custom_fields'] === null) {
             $invalidProperties[] = "'custom_fields' can't be null";
@@ -1268,25 +1277,49 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets employments
+     * Gets employment_history
      *
-     * @return \OpenAPI\Client\Model\EmploymentResponse[]
+     * @return \OpenAPI\Client\Model\EmploymentHistoryResponse[]
      */
-    public function getEmployments()
+    public function getEmploymentHistory()
     {
-        return $this->container['employments'];
+        return $this->container['employment_history'];
     }
 
     /**
-     * Sets employments
+     * Sets employment_history
      *
-     * @param \OpenAPI\Client\Model\EmploymentResponse[] $employments employments
+     * @param \OpenAPI\Client\Model\EmploymentHistoryResponse[] $employment_history employment_history
      *
      * @return self
      */
-    public function setEmployments($employments)
+    public function setEmploymentHistory($employment_history)
     {
-        $this->container['employments'] = $employments;
+        $this->container['employment_history'] = $employment_history;
+
+        return $this;
+    }
+
+    /**
+     * Gets compensation_history
+     *
+     * @return \OpenAPI\Client\Model\CompensationHistoryResponse[]
+     */
+    public function getCompensationHistory()
+    {
+        return $this->container['compensation_history'];
+    }
+
+    /**
+     * Sets compensation_history
+     *
+     * @param \OpenAPI\Client\Model\CompensationHistoryResponse[] $compensation_history compensation_history
+     *
+     * @return self
+     */
+    public function setCompensationHistory($compensation_history)
+    {
+        $this->container['compensation_history'] = $compensation_history;
 
         return $this;
     }

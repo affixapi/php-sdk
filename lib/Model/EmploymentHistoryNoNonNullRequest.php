@@ -1,6 +1,6 @@
 <?php
 /**
- * EmploymentNoNullEnumRequest
+ * EmploymentHistoryNoNonNullRequest
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * EmploymentNoNullEnumRequest Class Doc Comment
+ * EmploymentHistoryNoNonNullRequest Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class EmploymentHistoryNoNonNullRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'employment-no-null-enumRequest';
+    protected static $openAPIModelName = 'employment-history-no-non-nullRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,12 +61,10 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'job_title' => 'string',
-        'pay_rate' => 'float',
-        'pay_period' => 'string',
-        'pay_frequency' => 'string',
-        'employment_type' => 'string',
-        'currency' => '\OpenAPI\Client\Model\CurrencyNotNullRequest',
-        'effective_date' => '\DateTime'
+        'effective_date' => '\DateTime',
+        'group_id' => 'string',
+        'group_remote_id' => 'string',
+        'group_name' => 'string'
     ];
 
     /**
@@ -78,12 +76,10 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'job_title' => null,
-        'pay_rate' => null,
-        'pay_period' => null,
-        'pay_frequency' => null,
-        'employment_type' => null,
-        'currency' => null,
-        'effective_date' => 'date'
+        'effective_date' => 'date',
+        'group_id' => null,
+        'group_remote_id' => null,
+        'group_name' => null
     ];
 
     /**
@@ -114,12 +110,10 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'job_title' => 'job_title',
-        'pay_rate' => 'pay_rate',
-        'pay_period' => 'pay_period',
-        'pay_frequency' => 'pay_frequency',
-        'employment_type' => 'employment_type',
-        'currency' => 'currency',
-        'effective_date' => 'effective_date'
+        'effective_date' => 'effective_date',
+        'group_id' => 'group_id',
+        'group_remote_id' => 'group_remote_id',
+        'group_name' => 'group_name'
     ];
 
     /**
@@ -129,12 +123,10 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'job_title' => 'setJobTitle',
-        'pay_rate' => 'setPayRate',
-        'pay_period' => 'setPayPeriod',
-        'pay_frequency' => 'setPayFrequency',
-        'employment_type' => 'setEmploymentType',
-        'currency' => 'setCurrency',
-        'effective_date' => 'setEffectiveDate'
+        'effective_date' => 'setEffectiveDate',
+        'group_id' => 'setGroupId',
+        'group_remote_id' => 'setGroupRemoteId',
+        'group_name' => 'setGroupName'
     ];
 
     /**
@@ -144,12 +136,10 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'job_title' => 'getJobTitle',
-        'pay_rate' => 'getPayRate',
-        'pay_period' => 'getPayPeriod',
-        'pay_frequency' => 'getPayFrequency',
-        'employment_type' => 'getEmploymentType',
-        'currency' => 'getCurrency',
-        'effective_date' => 'getEffectiveDate'
+        'effective_date' => 'getEffectiveDate',
+        'group_id' => 'getGroupId',
+        'group_remote_id' => 'getGroupRemoteId',
+        'group_name' => 'getGroupName'
     ];
 
     /**
@@ -193,46 +183,6 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
         return self::$openAPIModelName;
     }
 
-    const PAY_FREQUENCY_WEEKLY = 'weekly';
-    const PAY_FREQUENCY_BIWEEKLY = 'biweekly';
-    const PAY_FREQUENCY_SEMIMONTHLY = 'semimonthly';
-    const PAY_FREQUENCY_MONTHLY = 'monthly';
-    const PAY_FREQUENCY_OTHER = 'other';
-    const EMPLOYMENT_TYPE_FULL_TIME = 'full_time';
-    const EMPLOYMENT_TYPE_PART_TIME = 'part_time';
-    const EMPLOYMENT_TYPE_CONTRACTOR = 'contractor';
-    const EMPLOYMENT_TYPE_OTHER = 'other';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPayFrequencyAllowableValues()
-    {
-        return [
-            self::PAY_FREQUENCY_WEEKLY,
-            self::PAY_FREQUENCY_BIWEEKLY,
-            self::PAY_FREQUENCY_SEMIMONTHLY,
-            self::PAY_FREQUENCY_MONTHLY,
-            self::PAY_FREQUENCY_OTHER,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getEmploymentTypeAllowableValues()
-    {
-        return [
-            self::EMPLOYMENT_TYPE_FULL_TIME,
-            self::EMPLOYMENT_TYPE_PART_TIME,
-            self::EMPLOYMENT_TYPE_CONTRACTOR,
-            self::EMPLOYMENT_TYPE_OTHER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -250,12 +200,10 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(array $data = null)
     {
         $this->container['job_title'] = $data['job_title'] ?? null;
-        $this->container['pay_rate'] = $data['pay_rate'] ?? null;
-        $this->container['pay_period'] = $data['pay_period'] ?? null;
-        $this->container['pay_frequency'] = $data['pay_frequency'] ?? null;
-        $this->container['employment_type'] = $data['employment_type'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
         $this->container['effective_date'] = $data['effective_date'] ?? null;
+        $this->container['group_id'] = $data['group_id'] ?? null;
+        $this->container['group_remote_id'] = $data['group_remote_id'] ?? null;
+        $this->container['group_name'] = $data['group_name'] ?? null;
     }
 
     /**
@@ -270,41 +218,17 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['job_title'] === null) {
             $invalidProperties[] = "'job_title' can't be null";
         }
-        if ($this->container['pay_rate'] === null) {
-            $invalidProperties[] = "'pay_rate' can't be null";
-        }
-        if ($this->container['pay_period'] === null) {
-            $invalidProperties[] = "'pay_period' can't be null";
-        }
-        if ($this->container['pay_frequency'] === null) {
-            $invalidProperties[] = "'pay_frequency' can't be null";
-        }
-        $allowedValues = $this->getPayFrequencyAllowableValues();
-        if (!is_null($this->container['pay_frequency']) && !in_array($this->container['pay_frequency'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'pay_frequency', must be one of '%s'",
-                $this->container['pay_frequency'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['employment_type'] === null) {
-            $invalidProperties[] = "'employment_type' can't be null";
-        }
-        $allowedValues = $this->getEmploymentTypeAllowableValues();
-        if (!is_null($this->container['employment_type']) && !in_array($this->container['employment_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'employment_type', must be one of '%s'",
-                $this->container['employment_type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         if ($this->container['effective_date'] === null) {
             $invalidProperties[] = "'effective_date' can't be null";
+        }
+        if ($this->container['group_id'] === null) {
+            $invalidProperties[] = "'group_id' can't be null";
+        }
+        if ($this->container['group_remote_id'] === null) {
+            $invalidProperties[] = "'group_remote_id' can't be null";
+        }
+        if ($this->container['group_name'] === null) {
+            $invalidProperties[] = "'group_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -346,146 +270,6 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets pay_rate
-     *
-     * @return float
-     */
-    public function getPayRate()
-    {
-        return $this->container['pay_rate'];
-    }
-
-    /**
-     * Sets pay_rate
-     *
-     * @param float $pay_rate pay_rate
-     *
-     * @return self
-     */
-    public function setPayRate($pay_rate)
-    {
-        $this->container['pay_rate'] = $pay_rate;
-
-        return $this;
-    }
-
-    /**
-     * Gets pay_period
-     *
-     * @return string
-     */
-    public function getPayPeriod()
-    {
-        return $this->container['pay_period'];
-    }
-
-    /**
-     * Sets pay_period
-     *
-     * @param string $pay_period pay_period
-     *
-     * @return self
-     */
-    public function setPayPeriod($pay_period)
-    {
-        $this->container['pay_period'] = $pay_period;
-
-        return $this;
-    }
-
-    /**
-     * Gets pay_frequency
-     *
-     * @return string
-     */
-    public function getPayFrequency()
-    {
-        return $this->container['pay_frequency'];
-    }
-
-    /**
-     * Sets pay_frequency
-     *
-     * @param string $pay_frequency pay_frequency
-     *
-     * @return self
-     */
-    public function setPayFrequency($pay_frequency)
-    {
-        $allowedValues = $this->getPayFrequencyAllowableValues();
-        if (!in_array($pay_frequency, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'pay_frequency', must be one of '%s'",
-                    $pay_frequency,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['pay_frequency'] = $pay_frequency;
-
-        return $this;
-    }
-
-    /**
-     * Gets employment_type
-     *
-     * @return string
-     */
-    public function getEmploymentType()
-    {
-        return $this->container['employment_type'];
-    }
-
-    /**
-     * Sets employment_type
-     *
-     * @param string $employment_type employment_type
-     *
-     * @return self
-     */
-    public function setEmploymentType($employment_type)
-    {
-        $allowedValues = $this->getEmploymentTypeAllowableValues();
-        if (!in_array($employment_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'employment_type', must be one of '%s'",
-                    $employment_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['employment_type'] = $employment_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return \OpenAPI\Client\Model\CurrencyNotNullRequest
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param \OpenAPI\Client\Model\CurrencyNotNullRequest $currency currency
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
      * Gets effective_date
      *
      * @return \DateTime
@@ -505,6 +289,78 @@ class EmploymentNoNullEnumRequest implements ModelInterface, ArrayAccess, \JsonS
     public function setEffectiveDate($effective_date)
     {
         $this->container['effective_date'] = $effective_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_id
+     *
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->container['group_id'];
+    }
+
+    /**
+     * Sets group_id
+     *
+     * @param string $group_id group_id
+     *
+     * @return self
+     */
+    public function setGroupId($group_id)
+    {
+        $this->container['group_id'] = $group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_remote_id
+     *
+     * @return string
+     */
+    public function getGroupRemoteId()
+    {
+        return $this->container['group_remote_id'];
+    }
+
+    /**
+     * Sets group_remote_id
+     *
+     * @param string $group_remote_id group_remote_id
+     *
+     * @return self
+     */
+    public function setGroupRemoteId($group_remote_id)
+    {
+        $this->container['group_remote_id'] = $group_remote_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_name
+     *
+     * @return string
+     */
+    public function getGroupName()
+    {
+        return $this->container['group_name'];
+    }
+
+    /**
+     * Sets group_name
+     *
+     * @param string $group_name group_name
+     *
+     * @return self
+     */
+    public function setGroupName($group_name)
+    {
+        $this->container['group_name'] = $group_name;
 
         return $this;
     }

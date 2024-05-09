@@ -315,9 +315,18 @@ class EmployeeResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "employments"
+     * Test attribute "employment_history"
      */
-    public function testPropertyEmployments()
+    public function testPropertyEmploymentHistory()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "compensation_history"
+     */
+    public function testPropertyCompensationHistory()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

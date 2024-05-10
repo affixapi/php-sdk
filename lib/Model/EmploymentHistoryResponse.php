@@ -64,7 +64,9 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         'effective_date' => '\DateTime',
         'group_id' => 'string',
         'group_remote_id' => 'string',
-        'group_name' => 'string'
+        'group_name' => 'string',
+        'manager_id' => 'string',
+        'manager_remote_id' => 'string'
     ];
 
     /**
@@ -79,7 +81,9 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         'effective_date' => 'date',
         'group_id' => null,
         'group_remote_id' => null,
-        'group_name' => null
+        'group_name' => null,
+        'manager_id' => null,
+        'manager_remote_id' => null
     ];
 
     /**
@@ -113,7 +117,9 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         'effective_date' => 'effective_date',
         'group_id' => 'group_id',
         'group_remote_id' => 'group_remote_id',
-        'group_name' => 'group_name'
+        'group_name' => 'group_name',
+        'manager_id' => 'manager_id',
+        'manager_remote_id' => 'manager_remote_id'
     ];
 
     /**
@@ -126,7 +132,9 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         'effective_date' => 'setEffectiveDate',
         'group_id' => 'setGroupId',
         'group_remote_id' => 'setGroupRemoteId',
-        'group_name' => 'setGroupName'
+        'group_name' => 'setGroupName',
+        'manager_id' => 'setManagerId',
+        'manager_remote_id' => 'setManagerRemoteId'
     ];
 
     /**
@@ -139,7 +147,9 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         'effective_date' => 'getEffectiveDate',
         'group_id' => 'getGroupId',
         'group_remote_id' => 'getGroupRemoteId',
-        'group_name' => 'getGroupName'
+        'group_name' => 'getGroupName',
+        'manager_id' => 'getManagerId',
+        'manager_remote_id' => 'getManagerRemoteId'
     ];
 
     /**
@@ -204,6 +214,8 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['group_id'] = $data['group_id'] ?? null;
         $this->container['group_remote_id'] = $data['group_remote_id'] ?? null;
         $this->container['group_name'] = $data['group_name'] ?? null;
+        $this->container['manager_id'] = $data['manager_id'] ?? null;
+        $this->container['manager_remote_id'] = $data['manager_remote_id'] ?? null;
     }
 
     /**
@@ -229,6 +241,12 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
         }
         if ($this->container['group_name'] === null) {
             $invalidProperties[] = "'group_name' can't be null";
+        }
+        if ($this->container['manager_id'] === null) {
+            $invalidProperties[] = "'manager_id' can't be null";
+        }
+        if ($this->container['manager_remote_id'] === null) {
+            $invalidProperties[] = "'manager_remote_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -361,6 +379,54 @@ class EmploymentHistoryResponse implements ModelInterface, ArrayAccess, \JsonSer
     public function setGroupName($group_name)
     {
         $this->container['group_name'] = $group_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets manager_id
+     *
+     * @return string
+     */
+    public function getManagerId()
+    {
+        return $this->container['manager_id'];
+    }
+
+    /**
+     * Sets manager_id
+     *
+     * @param string $manager_id manager_id
+     *
+     * @return self
+     */
+    public function setManagerId($manager_id)
+    {
+        $this->container['manager_id'] = $manager_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets manager_remote_id
+     *
+     * @return string
+     */
+    public function getManagerRemoteId()
+    {
+        return $this->container['manager_remote_id'];
+    }
+
+    /**
+     * Sets manager_remote_id
+     *
+     * @param string $manager_remote_id manager_remote_id
+     *
+     * @return self
+     */
+    public function setManagerRemoteId($manager_remote_id)
+    {
+        $this->container['manager_remote_id'] = $manager_remote_id;
 
         return $this;
     }

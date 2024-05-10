@@ -65,7 +65,8 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         'pay_frequency' => 'string',
         'employment_type' => 'string',
         'currency' => '\OpenAPI\Client\Model\CurrencyNotNullRequest',
-        'effective_date' => '\DateTime'
+        'effective_date' => '\DateTime',
+        'notes' => 'string'
     ];
 
     /**
@@ -81,7 +82,8 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         'pay_frequency' => null,
         'employment_type' => null,
         'currency' => null,
-        'effective_date' => 'date'
+        'effective_date' => 'date',
+        'notes' => null
     ];
 
     /**
@@ -116,7 +118,8 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         'pay_frequency' => 'pay_frequency',
         'employment_type' => 'employment_type',
         'currency' => 'currency',
-        'effective_date' => 'effective_date'
+        'effective_date' => 'effective_date',
+        'notes' => 'notes'
     ];
 
     /**
@@ -130,7 +133,8 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         'pay_frequency' => 'setPayFrequency',
         'employment_type' => 'setEmploymentType',
         'currency' => 'setCurrency',
-        'effective_date' => 'setEffectiveDate'
+        'effective_date' => 'setEffectiveDate',
+        'notes' => 'setNotes'
     ];
 
     /**
@@ -144,7 +148,8 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         'pay_frequency' => 'getPayFrequency',
         'employment_type' => 'getEmploymentType',
         'currency' => 'getCurrency',
-        'effective_date' => 'getEffectiveDate'
+        'effective_date' => 'getEffectiveDate',
+        'notes' => 'getNotes'
     ];
 
     /**
@@ -252,6 +257,7 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         $this->container['employment_type'] = $data['employment_type'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
         $this->container['effective_date'] = $data['effective_date'] ?? null;
+        $this->container['notes'] = $data['notes'] ?? null;
     }
 
     /**
@@ -298,6 +304,9 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         }
         if ($this->container['effective_date'] === null) {
             $invalidProperties[] = "'effective_date' can't be null";
+        }
+        if ($this->container['notes'] === null) {
+            $invalidProperties[] = "'notes' can't be null";
         }
         return $invalidProperties;
     }
@@ -474,6 +483,30 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
     public function setEffectiveDate($effective_date)
     {
         $this->container['effective_date'] = $effective_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets notes
+     *
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->container['notes'];
+    }
+
+    /**
+     * Sets notes
+     *
+     * @param string $notes notes
+     *
+     * @return self
+     */
+    public function setNotes($notes)
+    {
+        $this->container['notes'] = $notes;
 
         return $this;
     }

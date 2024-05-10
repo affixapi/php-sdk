@@ -124,4 +124,22 @@ class EmploymentHistoryResponseTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "manager_id"
+     */
+    public function testPropertyManagerId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "manager_remote_id"
+     */
+    public function testPropertyManagerRemoteId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

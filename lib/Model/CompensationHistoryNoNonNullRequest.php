@@ -64,7 +64,7 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
         'pay_period' => 'string',
         'pay_frequency' => 'string',
         'employment_type' => 'string',
-        'currency' => '\OpenAPI\Client\Model\CurrencyRequest',
+        'currency' => '\OpenAPI\Client\Model\CurrencyNotNullRequest',
         'effective_date' => '\DateTime'
     ];
 
@@ -433,7 +433,7 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
     /**
      * Gets currency
      *
-     * @return \OpenAPI\Client\Model\CurrencyRequest
+     * @return \OpenAPI\Client\Model\CurrencyNotNullRequest
      */
     public function getCurrency()
     {
@@ -443,7 +443,7 @@ class CompensationHistoryNoNonNullRequest implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param \OpenAPI\Client\Model\CurrencyRequest $currency currency
+     * @param \OpenAPI\Client\Model\CurrencyNotNullRequest $currency currency
      *
      * @return self
      */

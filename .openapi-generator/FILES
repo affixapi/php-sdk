@@ -20,7 +20,7 @@ docs/Model/CreateEmployeeRequestBankAccount.md
 docs/Model/CreateEmployeeRequestDependents.md
 docs/Model/CreateEmployeeRequestEmergencyContacts.md
 docs/Model/CreateEmployeeRequestManager.md
-docs/Model/CurrencyRequest.md
+docs/Model/CurrencyNotNullRequest.md
 docs/Model/CurrencyResponse.md
 docs/Model/DisconnectResponse.md
 docs/Model/EmployeeResponse.md
@@ -79,7 +79,7 @@ lib/Model/CreateEmployeeRequestBankAccount.php
 lib/Model/CreateEmployeeRequestDependents.php
 lib/Model/CreateEmployeeRequestEmergencyContacts.php
 lib/Model/CreateEmployeeRequestManager.php
-lib/Model/CurrencyRequest.php
+lib/Model/CurrencyNotNullRequest.php
 lib/Model/CurrencyResponse.php
 lib/Model/DisconnectResponse.php
 lib/Model/EmployeeResponse.php
@@ -137,7 +137,7 @@ test/Model/CreateEmployeeRequestDependentsTest.php
 test/Model/CreateEmployeeRequestEmergencyContactsTest.php
 test/Model/CreateEmployeeRequestManagerTest.php
 test/Model/CreateEmployeeRequestTest.php
-test/Model/CurrencyRequestTest.php
+test/Model/CurrencyNotNullRequestTest.php
 test/Model/CurrencyResponseTest.php
 test/Model/DisconnectResponseTest.php
 test/Model/EmployeeResponseManagerTest.php

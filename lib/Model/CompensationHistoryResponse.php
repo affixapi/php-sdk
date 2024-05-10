@@ -188,6 +188,7 @@ class CompensationHistoryResponse implements ModelInterface, ArrayAccess, \JsonS
         return self::$openAPIModelName;
     }
 
+    const PAY_FREQUENCY_YEAR = 'year';
     const PAY_FREQUENCY_WEEKLY = 'weekly';
     const PAY_FREQUENCY_BIWEEKLY = 'biweekly';
     const PAY_FREQUENCY_SEMIMONTHLY = 'semimonthly';
@@ -208,6 +209,7 @@ class CompensationHistoryResponse implements ModelInterface, ArrayAccess, \JsonS
     public function getPayFrequencyAllowableValues()
     {
         return [
+            self::PAY_FREQUENCY_YEAR,
             self::PAY_FREQUENCY_WEEKLY,
             self::PAY_FREQUENCY_BIWEEKLY,
             self::PAY_FREQUENCY_SEMIMONTHLY,

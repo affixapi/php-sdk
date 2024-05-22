@@ -332,6 +332,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const ETHNICITY_WHITE = 'white';
     const MARITAL_STATUS_SINGLE = 'single';
     const MARITAL_STATUS_MARRIED = 'married';
+    const MARITAL_STATUS_DIVORCED = 'divorced';
     const MARITAL_STATUS_NOT_SPECIFIED = 'not_specified';
     const MARITAL_STATUS_OTHER = 'other';
     const MARITAL_STATUS_NULL = 'null';
@@ -385,6 +386,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::MARITAL_STATUS_SINGLE,
             self::MARITAL_STATUS_MARRIED,
+            self::MARITAL_STATUS_DIVORCED,
             self::MARITAL_STATUS_NOT_SPECIFIED,
             self::MARITAL_STATUS_OTHER,
             self::MARITAL_STATUS_NULL,
@@ -981,7 +983,7 @@ class EmployeeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets marital_status
      *
-     * @param string $marital_status `other` option can include co-habitating, civil partnership, separated, divorced, widowed, etc
+     * @param string $marital_status `other` option can include co-habitating, civil partnership, separated, widowed, etc
      *
      * @return self
      */

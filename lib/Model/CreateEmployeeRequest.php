@@ -315,7 +315,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     const ETHNICITY_WHITE = 'white';
     const MARITAL_STATUS_SINGLE = 'single';
     const MARITAL_STATUS_MARRIED = 'married';
+    const MARITAL_STATUS_DIVORCED = 'divorced';
     const MARITAL_STATUS_NOT_SPECIFIED = 'not_specified';
+    const MARITAL_STATUS_OTHER = 'other';
     const EMPLOYMENT_TYPE_FULL_TIME = 'full_time';
     const EMPLOYMENT_TYPE_PART_TIME = 'part_time';
     const EMPLOYMENT_TYPE_CONTRACTOR = 'contractor';
@@ -363,7 +365,9 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         return [
             self::MARITAL_STATUS_SINGLE,
             self::MARITAL_STATUS_MARRIED,
+            self::MARITAL_STATUS_DIVORCED,
             self::MARITAL_STATUS_NOT_SPECIFIED,
+            self::MARITAL_STATUS_OTHER,
         ];
     }
 
@@ -815,7 +819,7 @@ class CreateEmployeeRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets marital_status
      *
-     * @param string|null $marital_status marital_status
+     * @param string|null $marital_status `other` option can include co-habitating, civil partnership, separated, widowed, etc
      *
      * @return self
      */

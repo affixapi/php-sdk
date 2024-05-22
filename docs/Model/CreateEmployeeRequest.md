@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **tax_id** | **string** |  | [optional]
 **gender** | **string** |  | [optional]
 **ethnicity** | **string** |  | [optional]
-**marital_status** | **string** |  | [optional]
+**marital_status** | **string** | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, widowed, etc | [optional]
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  | [optional]
 **employment_status** | [**\OpenAPI\Client\Model\EmploymentStatusNotNullRequest**](EmploymentStatusNotNullRequest.md) |  | [optional]
 **employment_type** | **string** |  | [optional]

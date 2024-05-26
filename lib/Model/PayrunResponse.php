@@ -195,7 +195,12 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
     const RUN_STATE_PAID = 'paid';
     const RUN_STATE_PENDING = 'pending';
+    const RUN_STATE_NULL = 'null';
     const RUN_TYPE_REGULAR = 'regular';
+    const RUN_TYPE_ONE_TIME = 'one-time';
+    const RUN_TYPE_OFF_CYCLE = 'off-cycle';
+    const RUN_TYPE_CORRECTION = 'correction';
+    const RUN_TYPE_REVERSAL = 'reversal';
     const RUN_TYPE_NULL = 'null';
 
     /**
@@ -208,6 +213,7 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::RUN_STATE_PAID,
             self::RUN_STATE_PENDING,
+            self::RUN_STATE_NULL,
         ];
     }
 
@@ -220,6 +226,10 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return [
             self::RUN_TYPE_REGULAR,
+            self::RUN_TYPE_ONE_TIME,
+            self::RUN_TYPE_OFF_CYCLE,
+            self::RUN_TYPE_CORRECTION,
+            self::RUN_TYPE_REVERSAL,
             self::RUN_TYPE_NULL,
         ];
     }

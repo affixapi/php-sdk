@@ -99,18 +99,18 @@ class PayrunResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "run_state"
+     * Test attribute "state"
      */
-    public function testPropertyRunState()
+    public function testPropertyState()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "run_type"
+     * Test attribute "type"
      */
-    public function testPropertyRunType()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

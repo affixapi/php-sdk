@@ -1,6 +1,6 @@
 <?php
 /**
- * PayslipResponseTest
+ * PayrunTypeResponseTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PayslipResponseTest Class Doc Comment
+ * PayrunTypeResponseTest Class Doc Comment
  *
  * @category    Class
- * @description PayslipResponse
+ * @description PayrunTypeResponse
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PayslipResponseTest extends TestCase
+class PayrunTypeResponseTest extends TestCase
 {
 
     /**
@@ -72,162 +72,9 @@ class PayslipResponseTest extends TestCase
     }
 
     /**
-     * Test "PayslipResponse"
+     * Test "PayrunTypeResponse"
      */
-    public function testPayslipResponse()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "remote_id"
-     */
-    public function testPropertyRemoteId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employee_id"
-     */
-    public function testPropertyEmployeeId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "employee_remote_id"
-     */
-    public function testPropertyEmployeeRemoteId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payrun_id"
-     */
-    public function testPropertyPayrunId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payrun_remote_id"
-     */
-    public function testPropertyPayrunRemoteId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payrun_type"
-     */
-    public function testPropertyPayrunType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "gross_pay"
-     */
-    public function testPropertyGrossPay()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "net_pay"
-     */
-    public function testPropertyNetPay()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_date"
-     */
-    public function testPropertyPaymentDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "earnings"
-     */
-    public function testPropertyEarnings()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "contributions"
-     */
-    public function testPropertyContributions()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "deductions"
-     */
-    public function testPropertyDeductions()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "taxes"
-     */
-    public function testPropertyTaxes()
+    public function testPayrunTypeResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

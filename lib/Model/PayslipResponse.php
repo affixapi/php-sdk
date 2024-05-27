@@ -63,8 +63,11 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'remote_id' => 'string',
         'employee_id' => 'string',
+        'employee_remote_id' => 'string',
         'payrun_id' => 'string',
-        'currency' => 'string',
+        'payrun_remote_id' => 'string',
+        'payrun_type' => '\OpenAPI\Client\Model\PayrunTypeResponse',
+        'currency' => '\OpenAPI\Client\Model\CurrencyNotNullResponse',
         'gross_pay' => 'float',
         'net_pay' => 'float',
         'start_date' => '\DateTime',
@@ -87,7 +90,10 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'remote_id' => null,
         'employee_id' => null,
+        'employee_remote_id' => null,
         'payrun_id' => null,
+        'payrun_remote_id' => null,
+        'payrun_type' => null,
         'currency' => null,
         'gross_pay' => null,
         'net_pay' => null,
@@ -130,7 +136,10 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'remote_id' => 'remote_id',
         'employee_id' => 'employee_id',
+        'employee_remote_id' => 'employee_remote_id',
         'payrun_id' => 'payrun_id',
+        'payrun_remote_id' => 'payrun_remote_id',
+        'payrun_type' => 'payrun_type',
         'currency' => 'currency',
         'gross_pay' => 'gross_pay',
         'net_pay' => 'net_pay',
@@ -152,7 +161,10 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'remote_id' => 'setRemoteId',
         'employee_id' => 'setEmployeeId',
+        'employee_remote_id' => 'setEmployeeRemoteId',
         'payrun_id' => 'setPayrunId',
+        'payrun_remote_id' => 'setPayrunRemoteId',
+        'payrun_type' => 'setPayrunType',
         'currency' => 'setCurrency',
         'gross_pay' => 'setGrossPay',
         'net_pay' => 'setNetPay',
@@ -174,7 +186,10 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'remote_id' => 'getRemoteId',
         'employee_id' => 'getEmployeeId',
+        'employee_remote_id' => 'getEmployeeRemoteId',
         'payrun_id' => 'getPayrunId',
+        'payrun_remote_id' => 'getPayrunRemoteId',
+        'payrun_type' => 'getPayrunType',
         'currency' => 'getCurrency',
         'gross_pay' => 'getGrossPay',
         'net_pay' => 'getNetPay',
@@ -228,23 +243,6 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const CURRENCY_USD = 'usd';
-    const CURRENCY_EUR = 'eur';
-    const CURRENCY_GBP = 'gbp';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getCurrencyAllowableValues()
-    {
-        return [
-            self::CURRENCY_USD,
-            self::CURRENCY_EUR,
-            self::CURRENCY_GBP,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -264,7 +262,10 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['remote_id'] = $data['remote_id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['employee_remote_id'] = $data['employee_remote_id'] ?? null;
         $this->container['payrun_id'] = $data['payrun_id'] ?? null;
+        $this->container['payrun_remote_id'] = $data['payrun_remote_id'] ?? null;
+        $this->container['payrun_type'] = $data['payrun_type'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
         $this->container['gross_pay'] = $data['gross_pay'] ?? null;
         $this->container['net_pay'] = $data['net_pay'] ?? null;
@@ -295,21 +296,21 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
         }
+        if ($this->container['employee_remote_id'] === null) {
+            $invalidProperties[] = "'employee_remote_id' can't be null";
+        }
         if ($this->container['payrun_id'] === null) {
             $invalidProperties[] = "'payrun_id' can't be null";
+        }
+        if ($this->container['payrun_remote_id'] === null) {
+            $invalidProperties[] = "'payrun_remote_id' can't be null";
+        }
+        if ($this->container['payrun_type'] === null) {
+            $invalidProperties[] = "'payrun_type' can't be null";
         }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
         }
-        $allowedValues = $this->getCurrencyAllowableValues();
-        if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'currency', must be one of '%s'",
-                $this->container['currency'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['gross_pay'] === null) {
             $invalidProperties[] = "'gross_pay' can't be null";
         }
@@ -425,6 +426,30 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets employee_remote_id
+     *
+     * @return string
+     */
+    public function getEmployeeRemoteId()
+    {
+        return $this->container['employee_remote_id'];
+    }
+
+    /**
+     * Sets employee_remote_id
+     *
+     * @param string $employee_remote_id employee_remote_id
+     *
+     * @return self
+     */
+    public function setEmployeeRemoteId($employee_remote_id)
+    {
+        $this->container['employee_remote_id'] = $employee_remote_id;
+
+        return $this;
+    }
+
+    /**
      * Gets payrun_id
      *
      * @return string
@@ -449,9 +474,57 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets currency
+     * Gets payrun_remote_id
      *
      * @return string
+     */
+    public function getPayrunRemoteId()
+    {
+        return $this->container['payrun_remote_id'];
+    }
+
+    /**
+     * Sets payrun_remote_id
+     *
+     * @param string $payrun_remote_id payrun_remote_id
+     *
+     * @return self
+     */
+    public function setPayrunRemoteId($payrun_remote_id)
+    {
+        $this->container['payrun_remote_id'] = $payrun_remote_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets payrun_type
+     *
+     * @return \OpenAPI\Client\Model\PayrunTypeResponse
+     */
+    public function getPayrunType()
+    {
+        return $this->container['payrun_type'];
+    }
+
+    /**
+     * Sets payrun_type
+     *
+     * @param \OpenAPI\Client\Model\PayrunTypeResponse $payrun_type payrun_type
+     *
+     * @return self
+     */
+    public function setPayrunType($payrun_type)
+    {
+        $this->container['payrun_type'] = $payrun_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return \OpenAPI\Client\Model\CurrencyNotNullResponse
      */
     public function getCurrency()
     {
@@ -461,22 +534,12 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string $currency currency
+     * @param \OpenAPI\Client\Model\CurrencyNotNullResponse $currency currency
      *
      * @return self
      */
     public function setCurrency($currency)
     {
-        $allowedValues = $this->getCurrencyAllowableValues();
-        if (!in_array($currency, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'currency', must be one of '%s'",
-                    $currency,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['currency'] = $currency;
 
         return $this;

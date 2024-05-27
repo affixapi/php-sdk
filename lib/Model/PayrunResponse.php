@@ -62,8 +62,8 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'remote_id' => 'string',
-        'run_state' => 'string',
-        'run_type' => 'string',
+        'state' => 'string',
+        'type' => '\OpenAPI\Client\Model\PayrunTypeResponse',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'payment_date' => '\DateTime'
@@ -79,8 +79,8 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'remote_id' => null,
-        'run_state' => null,
-        'run_type' => null,
+        'state' => null,
+        'type' => null,
         'start_date' => 'date',
         'end_date' => 'date',
         'payment_date' => 'date'
@@ -115,8 +115,8 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'remote_id' => 'remote_id',
-        'run_state' => 'run_state',
-        'run_type' => 'run_type',
+        'state' => 'state',
+        'type' => 'type',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
         'payment_date' => 'payment_date'
@@ -130,8 +130,8 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'remote_id' => 'setRemoteId',
-        'run_state' => 'setRunState',
-        'run_type' => 'setRunType',
+        'state' => 'setState',
+        'type' => 'setType',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'payment_date' => 'setPaymentDate'
@@ -145,8 +145,8 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'remote_id' => 'getRemoteId',
-        'run_state' => 'getRunState',
-        'run_type' => 'getRunType',
+        'state' => 'getState',
+        'type' => 'getType',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'payment_date' => 'getPaymentDate'
@@ -193,44 +193,21 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const RUN_STATE_PAID = 'paid';
-    const RUN_STATE_PENDING = 'pending';
-    const RUN_STATE_NULL = 'null';
-    const RUN_TYPE_REGULAR = 'regular';
-    const RUN_TYPE_ONE_TIME = 'one-time';
-    const RUN_TYPE_OFF_CYCLE = 'off-cycle';
-    const RUN_TYPE_CORRECTION = 'correction';
-    const RUN_TYPE_REVERSAL = 'reversal';
-    const RUN_TYPE_NULL = 'null';
+    const STATE_PAID = 'paid';
+    const STATE_PENDING = 'pending';
+    const STATE_NULL = 'null';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getRunStateAllowableValues()
+    public function getStateAllowableValues()
     {
         return [
-            self::RUN_STATE_PAID,
-            self::RUN_STATE_PENDING,
-            self::RUN_STATE_NULL,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getRunTypeAllowableValues()
-    {
-        return [
-            self::RUN_TYPE_REGULAR,
-            self::RUN_TYPE_ONE_TIME,
-            self::RUN_TYPE_OFF_CYCLE,
-            self::RUN_TYPE_CORRECTION,
-            self::RUN_TYPE_REVERSAL,
-            self::RUN_TYPE_NULL,
+            self::STATE_PAID,
+            self::STATE_PENDING,
+            self::STATE_NULL,
         ];
     }
 
@@ -251,8 +228,8 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['remote_id'] = $data['remote_id'] ?? null;
-        $this->container['run_state'] = $data['run_state'] ?? null;
-        $this->container['run_type'] = $data['run_type'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['payment_date'] = $data['payment_date'] ?? null;
@@ -273,30 +250,21 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['remote_id'] === null) {
             $invalidProperties[] = "'remote_id' can't be null";
         }
-        if ($this->container['run_state'] === null) {
-            $invalidProperties[] = "'run_state' can't be null";
+        if ($this->container['state'] === null) {
+            $invalidProperties[] = "'state' can't be null";
         }
-        $allowedValues = $this->getRunStateAllowableValues();
-        if (!is_null($this->container['run_state']) && !in_array($this->container['run_state'], $allowedValues, true)) {
+        $allowedValues = $this->getStateAllowableValues();
+        if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'run_state', must be one of '%s'",
-                $this->container['run_state'],
+                "invalid value '%s' for 'state', must be one of '%s'",
+                $this->container['state'],
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['run_type'] === null) {
-            $invalidProperties[] = "'run_type' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
-        $allowedValues = $this->getRunTypeAllowableValues();
-        if (!is_null($this->container['run_type']) && !in_array($this->container['run_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'run_type', must be one of '%s'",
-                $this->container['run_type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['start_date'] === null) {
             $invalidProperties[] = "'start_date' can't be null";
         }
@@ -370,69 +338,59 @@ class PayrunResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets run_state
+     * Gets state
      *
      * @return string
      */
-    public function getRunState()
+    public function getState()
     {
-        return $this->container['run_state'];
+        return $this->container['state'];
     }
 
     /**
-     * Sets run_state
+     * Sets state
      *
-     * @param string $run_state run_state
+     * @param string $state state
      *
      * @return self
      */
-    public function setRunState($run_state)
+    public function setState($state)
     {
-        $allowedValues = $this->getRunStateAllowableValues();
-        if (!in_array($run_state, $allowedValues, true)) {
+        $allowedValues = $this->getStateAllowableValues();
+        if (!in_array($state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'run_state', must be one of '%s'",
-                    $run_state,
+                    "Invalid value '%s' for 'state', must be one of '%s'",
+                    $state,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['run_state'] = $run_state;
+        $this->container['state'] = $state;
 
         return $this;
     }
 
     /**
-     * Gets run_type
+     * Gets type
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\PayrunTypeResponse
      */
-    public function getRunType()
+    public function getType()
     {
-        return $this->container['run_type'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets run_type
+     * Sets type
      *
-     * @param string $run_type run_type
+     * @param \OpenAPI\Client\Model\PayrunTypeResponse $type type
      *
      * @return self
      */
-    public function setRunType($run_type)
+    public function setType($type)
     {
-        $allowedValues = $this->getRunTypeAllowableValues();
-        if (!in_array($run_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'run_type', must be one of '%s'",
-                    $run_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['run_type'] = $run_type;
+        $this->container['type'] = $type;
 
         return $this;
     }

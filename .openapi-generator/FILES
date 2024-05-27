@@ -21,6 +21,7 @@ docs/Model/CreateEmployeeRequestDependents.md
 docs/Model/CreateEmployeeRequestEmergencyContacts.md
 docs/Model/CreateEmployeeRequestManager.md
 docs/Model/CurrencyNotNullRequest.md
+docs/Model/CurrencyNotNullResponse.md
 docs/Model/CurrencyResponse.md
 docs/Model/DisconnectResponse.md
 docs/Model/EmployeeResponse.md
@@ -44,6 +45,7 @@ docs/Model/MessageResponse.md
 docs/Model/ModeRequest.md
 docs/Model/ModeResponse.md
 docs/Model/PayrunResponse.md
+docs/Model/PayrunTypeResponse.md
 docs/Model/PayslipResponse.md
 docs/Model/PayslipResponseContributions.md
 docs/Model/PayslipResponseDeductions.md
@@ -80,6 +82,7 @@ lib/Model/CreateEmployeeRequestDependents.php
 lib/Model/CreateEmployeeRequestEmergencyContacts.php
 lib/Model/CreateEmployeeRequestManager.php
 lib/Model/CurrencyNotNullRequest.php
+lib/Model/CurrencyNotNullResponse.php
 lib/Model/CurrencyResponse.php
 lib/Model/DisconnectResponse.php
 lib/Model/EmployeeResponse.php
@@ -104,6 +107,7 @@ lib/Model/ModeRequest.php
 lib/Model/ModeResponse.php
 lib/Model/ModelInterface.php
 lib/Model/PayrunResponse.php
+lib/Model/PayrunTypeResponse.php
 lib/Model/PayslipResponse.php
 lib/Model/PayslipResponseContributions.php
 lib/Model/PayslipResponseDeductions.php
@@ -138,6 +142,7 @@ test/Model/CreateEmployeeRequestEmergencyContactsTest.php
 test/Model/CreateEmployeeRequestManagerTest.php
 test/Model/CreateEmployeeRequestTest.php
 test/Model/CurrencyNotNullRequestTest.php
+test/Model/CurrencyNotNullResponseTest.php
 test/Model/CurrencyResponseTest.php
 test/Model/DisconnectResponseTest.php
 test/Model/EmployeeResponseManagerTest.php
@@ -161,6 +166,7 @@ test/Model/MessageResponseTest.php
 test/Model/ModeRequestTest.php
 test/Model/ModeResponseTest.php
 test/Model/PayrunResponseTest.php
+test/Model/PayrunTypeResponseTest.php
 test/Model/PayslipResponseContributionsTest.php
 test/Model/PayslipResponseDeductionsTest.php
 test/Model/PayslipResponseEarningsTest.php

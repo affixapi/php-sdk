@@ -44,8 +44,8 @@ class PayrunTypeResponse
      * Possible values of this enum
      */
     const REGULAR = 'regular';
-    const ONE_TIME = 'one-time';
-    const OFF_CYCLE = 'off-cycle';
+    const ONE_TIME = 'one_time';
+    const OFF_CYCLE = 'off_cycle';
     const CORRECTION = 'correction';
     const REVERSAL = 'reversal';
     const NULL = 'null';

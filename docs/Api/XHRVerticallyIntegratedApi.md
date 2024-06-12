@@ -263,7 +263,7 @@ xhrPayruns20230301($start_date, $end_date): \OpenAPI\Client\Model\PayrunResponse
 
 Payruns
 
-List all the pay runs that occurred during the respective period.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk
+List all the pay runs that occurred during the respective period.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   # - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk
 
 ### Example
 
@@ -327,7 +327,7 @@ xhrPayslips20230301($payrun_id): \OpenAPI\Client\Model\PayslipResponse[]
 
 Payslips
 
-Retrieves payslips from a specific payrun.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk
+Retrieves payslips from a specific payrun.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   # - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk
 
 ### Example
 

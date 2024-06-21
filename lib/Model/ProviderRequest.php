@@ -78,7 +78,6 @@ class ProviderRequest
     const PENTO_IO = 'pento.io';
     const PEOPLEHR = 'peoplehr';
     const REMOTE_COM = 'remote.com';
-    const RIPPLING = 'rippling';
     const SAGEONE = 'sageone';
     const SHAPE_PAYROLL = 'shape payroll';
     const SIMPLEPAY_IE = 'simplepay.ie';
@@ -127,7 +126,6 @@ class ProviderRequest
             self::PENTO_IO,
             self::PEOPLEHR,
             self::REMOTE_COM,
-            self::RIPPLING,
             self::SAGEONE,
             self::SHAPE_PAYROLL,
             self::SIMPLEPAY_IE,

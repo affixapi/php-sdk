@@ -1,6 +1,6 @@
 <?php
 /**
- * PayslipResponse
+ * PayslipResponseReimbursements
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * PayslipResponse Class Doc Comment
+ * PayslipResponseReimbursements Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class PayslipResponseReimbursements implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayslipResponse';
+    protected static $openAPIModelName = 'PayslipResponse_reimbursements';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,24 +60,8 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'remote_id' => 'string',
-        'employee_id' => 'string',
-        'employee_remote_id' => 'string',
-        'payrun_id' => 'string',
-        'payrun_remote_id' => 'string',
-        'payrun_type' => '\OpenAPI\Client\Model\PayrunTypeResponse',
-        'currency' => '\OpenAPI\Client\Model\CurrencyNotNullResponse',
-        'gross_pay' => 'float',
-        'net_pay' => 'float',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'payment_date' => '\DateTime',
-        'earnings' => '\OpenAPI\Client\Model\PayslipResponseEarnings[]',
-        'contributions' => '\OpenAPI\Client\Model\PayslipResponseContributions[]',
-        'deductions' => '\OpenAPI\Client\Model\PayslipResponseDeductions[]',
-        'taxes' => '\OpenAPI\Client\Model\PayslipResponseTaxes[]',
-        'reimbursements' => '\OpenAPI\Client\Model\PayslipResponseReimbursements[]'
+        'name' => 'string',
+        'amount' => 'float'
     ];
 
     /**
@@ -88,24 +72,8 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'remote_id' => null,
-        'employee_id' => null,
-        'employee_remote_id' => null,
-        'payrun_id' => null,
-        'payrun_remote_id' => null,
-        'payrun_type' => null,
-        'currency' => null,
-        'gross_pay' => null,
-        'net_pay' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'payment_date' => 'date',
-        'earnings' => null,
-        'contributions' => null,
-        'deductions' => null,
-        'taxes' => null,
-        'reimbursements' => null
+        'name' => null,
+        'amount' => null
     ];
 
     /**
@@ -135,24 +103,8 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'remote_id' => 'remote_id',
-        'employee_id' => 'employee_id',
-        'employee_remote_id' => 'employee_remote_id',
-        'payrun_id' => 'payrun_id',
-        'payrun_remote_id' => 'payrun_remote_id',
-        'payrun_type' => 'payrun_type',
-        'currency' => 'currency',
-        'gross_pay' => 'gross_pay',
-        'net_pay' => 'net_pay',
-        'start_date' => 'start_date',
-        'end_date' => 'end_date',
-        'payment_date' => 'payment_date',
-        'earnings' => 'earnings',
-        'contributions' => 'contributions',
-        'deductions' => 'deductions',
-        'taxes' => 'taxes',
-        'reimbursements' => 'reimbursements'
+        'name' => 'name',
+        'amount' => 'amount'
     ];
 
     /**
@@ -161,24 +113,8 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'remote_id' => 'setRemoteId',
-        'employee_id' => 'setEmployeeId',
-        'employee_remote_id' => 'setEmployeeRemoteId',
-        'payrun_id' => 'setPayrunId',
-        'payrun_remote_id' => 'setPayrunRemoteId',
-        'payrun_type' => 'setPayrunType',
-        'currency' => 'setCurrency',
-        'gross_pay' => 'setGrossPay',
-        'net_pay' => 'setNetPay',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'payment_date' => 'setPaymentDate',
-        'earnings' => 'setEarnings',
-        'contributions' => 'setContributions',
-        'deductions' => 'setDeductions',
-        'taxes' => 'setTaxes',
-        'reimbursements' => 'setReimbursements'
+        'name' => 'setName',
+        'amount' => 'setAmount'
     ];
 
     /**
@@ -187,24 +123,8 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'remote_id' => 'getRemoteId',
-        'employee_id' => 'getEmployeeId',
-        'employee_remote_id' => 'getEmployeeRemoteId',
-        'payrun_id' => 'getPayrunId',
-        'payrun_remote_id' => 'getPayrunRemoteId',
-        'payrun_type' => 'getPayrunType',
-        'currency' => 'getCurrency',
-        'gross_pay' => 'getGrossPay',
-        'net_pay' => 'getNetPay',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'payment_date' => 'getPaymentDate',
-        'earnings' => 'getEarnings',
-        'contributions' => 'getContributions',
-        'deductions' => 'getDeductions',
-        'taxes' => 'getTaxes',
-        'reimbursements' => 'getReimbursements'
+        'name' => 'getName',
+        'amount' => 'getAmount'
     ];
 
     /**
@@ -264,24 +184,8 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['remote_id'] = $data['remote_id'] ?? null;
-        $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['employee_remote_id'] = $data['employee_remote_id'] ?? null;
-        $this->container['payrun_id'] = $data['payrun_id'] ?? null;
-        $this->container['payrun_remote_id'] = $data['payrun_remote_id'] ?? null;
-        $this->container['payrun_type'] = $data['payrun_type'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['gross_pay'] = $data['gross_pay'] ?? null;
-        $this->container['net_pay'] = $data['net_pay'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['payment_date'] = $data['payment_date'] ?? null;
-        $this->container['earnings'] = $data['earnings'] ?? null;
-        $this->container['contributions'] = $data['contributions'] ?? null;
-        $this->container['deductions'] = $data['deductions'] ?? null;
-        $this->container['taxes'] = $data['taxes'] ?? null;
-        $this->container['reimbursements'] = $data['reimbursements'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
     }
 
     /**
@@ -293,59 +197,11 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['remote_id'] === null) {
-            $invalidProperties[] = "'remote_id' can't be null";
-        }
-        if ($this->container['employee_id'] === null) {
-            $invalidProperties[] = "'employee_id' can't be null";
-        }
-        if ($this->container['employee_remote_id'] === null) {
-            $invalidProperties[] = "'employee_remote_id' can't be null";
-        }
-        if ($this->container['payrun_id'] === null) {
-            $invalidProperties[] = "'payrun_id' can't be null";
-        }
-        if ($this->container['payrun_remote_id'] === null) {
-            $invalidProperties[] = "'payrun_remote_id' can't be null";
-        }
-        if ($this->container['payrun_type'] === null) {
-            $invalidProperties[] = "'payrun_type' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['gross_pay'] === null) {
-            $invalidProperties[] = "'gross_pay' can't be null";
-        }
-        if ($this->container['net_pay'] === null) {
-            $invalidProperties[] = "'net_pay' can't be null";
-        }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
-        if ($this->container['end_date'] === null) {
-            $invalidProperties[] = "'end_date' can't be null";
-        }
-        if ($this->container['payment_date'] === null) {
-            $invalidProperties[] = "'payment_date' can't be null";
-        }
-        if ($this->container['earnings'] === null) {
-            $invalidProperties[] = "'earnings' can't be null";
-        }
-        if ($this->container['contributions'] === null) {
-            $invalidProperties[] = "'contributions' can't be null";
-        }
-        if ($this->container['deductions'] === null) {
-            $invalidProperties[] = "'deductions' can't be null";
-        }
-        if ($this->container['taxes'] === null) {
-            $invalidProperties[] = "'taxes' can't be null";
-        }
-        if ($this->container['reimbursements'] === null) {
-            $invalidProperties[] = "'reimbursements' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
         return $invalidProperties;
     }
@@ -363,433 +219,49 @@ class PayslipResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets name
      *
      * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->container['id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets id
+     * Sets name
      *
-     * @param string $id The Affix-assigned id of the payslip
+     * @param string $name name
      *
      * @return self
      */
-    public function setId($id)
+    public function setName($name)
     {
-        $this->container['id'] = $id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets remote_id
-     *
-     * @return string
-     */
-    public function getRemoteId()
-    {
-        return $this->container['remote_id'];
-    }
-
-    /**
-     * Sets remote_id
-     *
-     * @param string $remote_id the remote system-assigned id of the payrun
-     *
-     * @return self
-     */
-    public function setRemoteId($remote_id)
-    {
-        $this->container['remote_id'] = $remote_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets employee_id
-     *
-     * @return string
-     */
-    public function getEmployeeId()
-    {
-        return $this->container['employee_id'];
-    }
-
-    /**
-     * Sets employee_id
-     *
-     * @param string $employee_id employee_id
-     *
-     * @return self
-     */
-    public function setEmployeeId($employee_id)
-    {
-        $this->container['employee_id'] = $employee_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets employee_remote_id
-     *
-     * @return string
-     */
-    public function getEmployeeRemoteId()
-    {
-        return $this->container['employee_remote_id'];
-    }
-
-    /**
-     * Sets employee_remote_id
-     *
-     * @param string $employee_remote_id employee_remote_id
-     *
-     * @return self
-     */
-    public function setEmployeeRemoteId($employee_remote_id)
-    {
-        $this->container['employee_remote_id'] = $employee_remote_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payrun_id
-     *
-     * @return string
-     */
-    public function getPayrunId()
-    {
-        return $this->container['payrun_id'];
-    }
-
-    /**
-     * Sets payrun_id
-     *
-     * @param string $payrun_id payrun_id
-     *
-     * @return self
-     */
-    public function setPayrunId($payrun_id)
-    {
-        $this->container['payrun_id'] = $payrun_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payrun_remote_id
-     *
-     * @return string
-     */
-    public function getPayrunRemoteId()
-    {
-        return $this->container['payrun_remote_id'];
-    }
-
-    /**
-     * Sets payrun_remote_id
-     *
-     * @param string $payrun_remote_id payrun_remote_id
-     *
-     * @return self
-     */
-    public function setPayrunRemoteId($payrun_remote_id)
-    {
-        $this->container['payrun_remote_id'] = $payrun_remote_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payrun_type
-     *
-     * @return \OpenAPI\Client\Model\PayrunTypeResponse
-     */
-    public function getPayrunType()
-    {
-        return $this->container['payrun_type'];
-    }
-
-    /**
-     * Sets payrun_type
-     *
-     * @param \OpenAPI\Client\Model\PayrunTypeResponse $payrun_type payrun_type
-     *
-     * @return self
-     */
-    public function setPayrunType($payrun_type)
-    {
-        $this->container['payrun_type'] = $payrun_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return \OpenAPI\Client\Model\CurrencyNotNullResponse
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param \OpenAPI\Client\Model\CurrencyNotNullResponse $currency currency
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets gross_pay
+     * Gets amount
      *
      * @return float
      */
-    public function getGrossPay()
+    public function getAmount()
     {
-        return $this->container['gross_pay'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets gross_pay
+     * Sets amount
      *
-     * @param float $gross_pay if USD/EUR/GBP, in cent
+     * @param float $amount if USD/EUR/GBP, in cent
      *
      * @return self
      */
-    public function setGrossPay($gross_pay)
+    public function setAmount($amount)
     {
-        $this->container['gross_pay'] = $gross_pay;
-
-        return $this;
-    }
-
-    /**
-     * Gets net_pay
-     *
-     * @return float
-     */
-    public function getNetPay()
-    {
-        return $this->container['net_pay'];
-    }
-
-    /**
-     * Sets net_pay
-     *
-     * @param float $net_pay if USD/EUR/GBP, in cent
-     *
-     * @return self
-     */
-    public function setNetPay($net_pay)
-    {
-        $this->container['net_pay'] = $net_pay;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_date
-     *
-     * @return \DateTime
-     */
-    public function getPaymentDate()
-    {
-        return $this->container['payment_date'];
-    }
-
-    /**
-     * Sets payment_date
-     *
-     * @param \DateTime $payment_date payment_date
-     *
-     * @return self
-     */
-    public function setPaymentDate($payment_date)
-    {
-        $this->container['payment_date'] = $payment_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets earnings
-     *
-     * @return \OpenAPI\Client\Model\PayslipResponseEarnings[]
-     */
-    public function getEarnings()
-    {
-        return $this->container['earnings'];
-    }
-
-    /**
-     * Sets earnings
-     *
-     * @param \OpenAPI\Client\Model\PayslipResponseEarnings[] $earnings earnings
-     *
-     * @return self
-     */
-    public function setEarnings($earnings)
-    {
-        $this->container['earnings'] = $earnings;
-
-        return $this;
-    }
-
-    /**
-     * Gets contributions
-     *
-     * @return \OpenAPI\Client\Model\PayslipResponseContributions[]
-     */
-    public function getContributions()
-    {
-        return $this->container['contributions'];
-    }
-
-    /**
-     * Sets contributions
-     *
-     * @param \OpenAPI\Client\Model\PayslipResponseContributions[] $contributions Items paid by the employer that are not included in gross pay, such as employer-paid portion of private health insurance
-     *
-     * @return self
-     */
-    public function setContributions($contributions)
-    {
-        $this->container['contributions'] = $contributions;
-
-        return $this;
-    }
-
-    /**
-     * Gets deductions
-     *
-     * @return \OpenAPI\Client\Model\PayslipResponseDeductions[]
-     */
-    public function getDeductions()
-    {
-        return $this->container['deductions'];
-    }
-
-    /**
-     * Sets deductions
-     *
-     * @param \OpenAPI\Client\Model\PayslipResponseDeductions[] $deductions deductions
-     *
-     * @return self
-     */
-    public function setDeductions($deductions)
-    {
-        $this->container['deductions'] = $deductions;
-
-        return $this;
-    }
-
-    /**
-     * Gets taxes
-     *
-     * @return \OpenAPI\Client\Model\PayslipResponseTaxes[]
-     */
-    public function getTaxes()
-    {
-        return $this->container['taxes'];
-    }
-
-    /**
-     * Sets taxes
-     *
-     * @param \OpenAPI\Client\Model\PayslipResponseTaxes[] $taxes taxes
-     *
-     * @return self
-     */
-    public function setTaxes($taxes)
-    {
-        $this->container['taxes'] = $taxes;
-
-        return $this;
-    }
-
-    /**
-     * Gets reimbursements
-     *
-     * @return \OpenAPI\Client\Model\PayslipResponseReimbursements[]
-     */
-    public function getReimbursements()
-    {
-        return $this->container['reimbursements'];
-    }
-
-    /**
-     * Sets reimbursements
-     *
-     * @param \OpenAPI\Client\Model\PayslipResponseReimbursements[] $reimbursements reimbursements
-     *
-     * @return self
-     */
-    public function setReimbursements($reimbursements)
-    {
-        $this->container['reimbursements'] = $reimbursements;
+        $this->container['amount'] = $amount;
 
         return $this;
     }

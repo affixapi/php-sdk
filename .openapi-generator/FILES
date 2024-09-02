@@ -50,6 +50,7 @@ docs/Model/PayslipResponse.md
 docs/Model/PayslipResponseContributions.md
 docs/Model/PayslipResponseDeductions.md
 docs/Model/PayslipResponseEarnings.md
+docs/Model/PayslipResponseReimbursements.md
 docs/Model/PayslipResponseTaxes.md
 docs/Model/PolicyTypeResponse.md
 docs/Model/ProviderRequest.md
@@ -112,6 +113,7 @@ lib/Model/PayslipResponse.php
 lib/Model/PayslipResponseContributions.php
 lib/Model/PayslipResponseDeductions.php
 lib/Model/PayslipResponseEarnings.php
+lib/Model/PayslipResponseReimbursements.php
 lib/Model/PayslipResponseTaxes.php
 lib/Model/PolicyTypeResponse.php
 lib/Model/ProviderRequest.php
@@ -170,6 +172,7 @@ test/Model/PayrunTypeResponseTest.php
 test/Model/PayslipResponseContributionsTest.php
 test/Model/PayslipResponseDeductionsTest.php
 test/Model/PayslipResponseEarningsTest.php
+test/Model/PayslipResponseReimbursementsTest.php
 test/Model/PayslipResponseTaxesTest.php
 test/Model/PayslipResponseTest.php
 test/Model/PolicyTypeResponseTest.php

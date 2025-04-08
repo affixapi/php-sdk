@@ -220,6 +220,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const COUNTRY_NL = 'NL';
     const COUNTRY_NO = 'NO';
     const COUNTRY_PL = 'PL';
+    const COUNTRY_PT = 'PT';
     const COUNTRY_RO = 'RO';
     const COUNTRY_RU = 'RU';
     const COUNTRY_SE = 'SE';
@@ -289,6 +290,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             self::COUNTRY_NL,
             self::COUNTRY_NO,
             self::COUNTRY_PL,
+            self::COUNTRY_PT,
             self::COUNTRY_RO,
             self::COUNTRY_RU,
             self::COUNTRY_SE,

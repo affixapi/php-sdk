@@ -195,6 +195,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const COUNTRY_AR = 'AR';
     const COUNTRY_BR = 'BR';
     const COUNTRY_CL = 'CL';
+    const COUNTRY_CO = 'CO';
     const COUNTRY_PE = 'PE';
     const COUNTRY_AT = 'AT';
     const COUNTRY_BE = 'BE';
@@ -217,6 +218,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const COUNTRY_LT = 'LT';
     const COUNTRY_LU = 'LU';
     const COUNTRY_LV = 'LV';
+    const COUNTRY_MK = 'MK';
     const COUNTRY_NL = 'NL';
     const COUNTRY_NO = 'NO';
     const COUNTRY_PL = 'PL';
@@ -225,6 +227,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const COUNTRY_RU = 'RU';
     const COUNTRY_SE = 'SE';
     const COUNTRY_SK = 'SK';
+    const COUNTRY_BD = 'BD';
     const COUNTRY_CN = 'CN';
     const COUNTRY_HK = 'HK';
     const COUNTRY_ID = 'ID';
@@ -232,12 +235,17 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     const COUNTRY_IN = 'IN';
     const COUNTRY_JP = 'JP';
     const COUNTRY_KR = 'KR';
+    const COUNTRY_KZ = 'KZ';
     const COUNTRY_MO = 'MO';
     const COUNTRY_MY = 'MY';
     const COUNTRY_PH = 'PH';
+    const COUNTRY_PK = 'PK';
     const COUNTRY_PS = 'PS';
+    const COUNTRY_SA = 'SA';
     const COUNTRY_SG = 'SG';
     const COUNTRY_TH = 'TH';
+    const COUNTRY_TJ = 'TJ';
+    const COUNTRY_TM = 'TM';
     const COUNTRY_TR = 'TR';
     const COUNTRY_TW = 'TW';
     const COUNTRY_VN = 'VN';
@@ -265,6 +273,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             self::COUNTRY_AR,
             self::COUNTRY_BR,
             self::COUNTRY_CL,
+            self::COUNTRY_CO,
             self::COUNTRY_PE,
             self::COUNTRY_AT,
             self::COUNTRY_BE,
@@ -287,6 +296,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             self::COUNTRY_LT,
             self::COUNTRY_LU,
             self::COUNTRY_LV,
+            self::COUNTRY_MK,
             self::COUNTRY_NL,
             self::COUNTRY_NO,
             self::COUNTRY_PL,
@@ -295,6 +305,7 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             self::COUNTRY_RU,
             self::COUNTRY_SE,
             self::COUNTRY_SK,
+            self::COUNTRY_BD,
             self::COUNTRY_CN,
             self::COUNTRY_HK,
             self::COUNTRY_ID,
@@ -302,12 +313,17 @@ class AddressResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             self::COUNTRY_IN,
             self::COUNTRY_JP,
             self::COUNTRY_KR,
+            self::COUNTRY_KZ,
             self::COUNTRY_MO,
             self::COUNTRY_MY,
             self::COUNTRY_PH,
+            self::COUNTRY_PK,
             self::COUNTRY_PS,
+            self::COUNTRY_SA,
             self::COUNTRY_SG,
             self::COUNTRY_TH,
+            self::COUNTRY_TJ,
+            self::COUNTRY_TM,
             self::COUNTRY_TR,
             self::COUNTRY_TW,
             self::COUNTRY_VN,

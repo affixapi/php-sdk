@@ -47,6 +47,8 @@ class CurrencyResponse
     const USD = 'usd';
     const GBP = 'gbp';
     const EUR = 'eur';
+    const SEK = 'sek';
+    const CAD = 'cad';
     
     /**
      * Gets allowable values of the enum
@@ -59,6 +61,8 @@ class CurrencyResponse
             self::USD,
             self::GBP,
             self::EUR,
+            self::SEK,
+            self::CAD,
         ];
     }
 }

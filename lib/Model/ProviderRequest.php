@@ -72,6 +72,7 @@ class ProviderRequest
     const GUSTO = 'gusto';
     const ITRENT = 'itrent';
     const JUSTWORKS = 'justworks';
+    const KONTEK_SE = 'kontek.se';
     const ONPAY = 'onpay';
     const OYSTERHR = 'oysterhr';
     const PAYCIRCLE = 'paycircle';
@@ -120,6 +121,7 @@ class ProviderRequest
             self::GUSTO,
             self::ITRENT,
             self::JUSTWORKS,
+            self::KONTEK_SE,
             self::ONPAY,
             self::OYSTERHR,
             self::PAYCIRCLE,

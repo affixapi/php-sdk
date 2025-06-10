@@ -78,11 +78,12 @@ class ProviderResponse
     const PAYCIRCLE = 'paycircle';
     const PENTO_IO = 'pento.io';
     const PEOPLEHR = 'peoplehr';
+    const QUICKBOOKS_ONLINE = 'quickbooks online';
     const REMOTE_COM = 'remote.com';
     const SAGEONE = 'sageone';
     const SHAPE_PAYROLL = 'shape payroll';
     const SIMPLEPAY_IE = 'simplepay.ie';
-    const QUICKBOOKS_ONLINE = 'quickbooks online';
+    const TALENOX = 'talenox';
     const ZOHO = 'zoho';
     
     /**
@@ -127,11 +128,12 @@ class ProviderResponse
             self::PAYCIRCLE,
             self::PENTO_IO,
             self::PEOPLEHR,
+            self::QUICKBOOKS_ONLINE,
             self::REMOTE_COM,
             self::SAGEONE,
             self::SHAPE_PAYROLL,
             self::SIMPLEPAY_IE,
-            self::QUICKBOOKS_ONLINE,
+            self::TALENOX,
             self::ZOHO,
         ];
     }

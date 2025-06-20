@@ -80,10 +80,12 @@ class ProviderResponse
     const PEOPLEHR = 'peoplehr';
     const QUICKBOOKS_ONLINE = 'quickbooks online';
     const REMOTE_COM = 'remote.com';
+    const RUNA = 'runa';
     const SAGEONE = 'sageone';
     const SHAPE_PAYROLL = 'shape payroll';
     const SIMPLEPAY_IE = 'simplepay.ie';
     const TALENOX = 'talenox';
+    const UNITY = 'unity';
     const ZOHO = 'zoho';
     
     /**
@@ -130,10 +132,12 @@ class ProviderResponse
             self::PEOPLEHR,
             self::QUICKBOOKS_ONLINE,
             self::REMOTE_COM,
+            self::RUNA,
             self::SAGEONE,
             self::SHAPE_PAYROLL,
             self::SIMPLEPAY_IE,
             self::TALENOX,
+            self::UNITY,
             self::ZOHO,
         ];
     }

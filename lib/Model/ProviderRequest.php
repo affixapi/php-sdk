@@ -66,7 +66,9 @@ class ProviderRequest
     const XERO_UK = 'xero uk';
     const BRAIN_PAYROLL = 'brain payroll';
     const BRIGHTPAY_CONNECT = 'brightpay connect';
+    const BUK = 'buk';
     const EMPLOYMENT_HERO = 'employment hero';
+    const EPE = 'epe';
     const FACTORIALHR = 'factorialhr';
     const FOURTHHR = 'fourthhr';
     const GUSTO = 'gusto';
@@ -87,6 +89,7 @@ class ProviderRequest
     const TALENOX = 'talenox';
     const UNITY = 'unity';
     const ZOHO = 'zoho';
+    const ZUCCHETTI = 'zucchetti';
     
     /**
      * Gets allowable values of the enum
@@ -118,7 +121,9 @@ class ProviderRequest
             self::XERO_UK,
             self::BRAIN_PAYROLL,
             self::BRIGHTPAY_CONNECT,
+            self::BUK,
             self::EMPLOYMENT_HERO,
+            self::EPE,
             self::FACTORIALHR,
             self::FOURTHHR,
             self::GUSTO,
@@ -139,6 +144,7 @@ class ProviderRequest
             self::TALENOX,
             self::UNITY,
             self::ZOHO,
+            self::ZUCCHETTI,
         ];
     }
 }
